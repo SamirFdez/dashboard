@@ -1,0 +1,28 @@
+.colTitle {
+    background-color: #6c757c;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 2em;
+    border-radius: 1em;
+
+}
+
+.colBody {
+    margin-top: 3em;
+    justify-content: center;
+    text-align: center;
+}
+
+.card {
+    justify-content: center;
+    text-align: center;
+    background-color: #6c757c;
+    border-radius: 10em;
+
+
+}
+
+.divTitle {
+    color: #FFFFFF;
+    font-size: 1.5em;
+}

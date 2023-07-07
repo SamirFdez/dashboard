@@ -1,0 +1,16 @@
+
+/* font size 65.25% = 10 px, 1 em = 10px */
+
+html{
+    text-decoration: none; 
+    font-size: 65.25%; 
+}
+
+body{
+    background-color: #3c3f40 !important;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+}
