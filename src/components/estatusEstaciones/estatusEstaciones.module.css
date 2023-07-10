@@ -16,6 +16,7 @@
     text-align: center;
     background-color: #6c757c;
     border-radius: 1em;
+    margin-top: 1em;
     margin-bottom: 1em;
     margin-right: 0.3em;
 }
@@ -27,6 +28,6 @@
     font-weight: 500;
     text-align: center;
     justify-content: center;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.8em;
     border-radius: 0.5em;
 }
