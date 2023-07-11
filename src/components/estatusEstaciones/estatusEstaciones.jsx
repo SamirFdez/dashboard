@@ -6,13 +6,13 @@ export const EstatusEstaciones = function() {
 
     return (   
         <>
-            <Row style={{marginTop: "2em", marginBottom: "1em"}}>
-                <Col></Col>
-                <Col lg={10} md={10} sm={10} xs={10} className= { estatusEstacionesStyles.colTitle }> 
-                    <h1>Estatus estaciones </h1>
-                </Col>
-                <Col></Col>
-            </Row>
+            <Container>
+                <Row style={{marginTop: "1em", marginBottom: "1em"}}>
+                    <Col className= { estatusEstacionesStyles.colTitle }> 
+                        <h1>Estatus estaciones </h1>
+                    </Col>
+                </Row>
+            </Container>
 
             <Container>
             <Row className= { estatusEstacionesStyles.colBody }>

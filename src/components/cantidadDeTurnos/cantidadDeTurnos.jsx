@@ -6,13 +6,13 @@ export const CantidadDeTurnos = function() {
 
     return (   
         <>
-            <Row style={{marginTop: "1em", marginBottom: "1em"}}>
-                <Col></Col>
-                <Col lg={10} md={10} sm={10} xs={10} className= { cantidadDeTurnosStyles.colTitle }> 
-                    <h1>Cantidad de turnos y tiempo de espera por área </h1>
-                </Col>
-                <Col></Col>
-            </Row>
+            <Container>
+                <Row style={{marginTop: "1em", marginBottom: "1em"}}>
+                    <Col className= { cantidadDeTurnosStyles.colTitle }> 
+                        <h1>Cantidad de turnos y tiempo de espera por área </h1>
+                    </Col>
+                </Row>
+            </Container>
 
             <Container>
             <Row className= { cantidadDeTurnosStyles.colBody }>
