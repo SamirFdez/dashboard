@@ -124,7 +124,7 @@ export const EstatusColaboradores = function() {
                                     </Col>
                                 </Row>
                             </Col>
-                            <Col xs={8} className= { estatusColaboradoresStyles.Offlinecard }>
+                            <Col lg={11} className= { estatusColaboradoresStyles.Offlinecard }>
                                 <Row className= { estatusColaboradoresStyles.rowOfflineImgName }>
                                     <Col xs={5} className={estatusColaboradoresStyles.offlineCardImg}>
                                         <img src={User} alt="" className= { estatusColaboradoresStyles.offlineImg }/>
