@@ -2,7 +2,10 @@
     background-color: #6c757c;
     color: #FFFFFF;
     text-align: center;
-    border-radius: 1em;
+    border-style: solid;
+    border-color: #3c3f40;
+    border-width: 1em;
+    border-radius: 5em;
 
 }
 
@@ -10,7 +13,11 @@
     background-color: #6c757c;
     color: #FFFFFF;
     text-align: center;
-    border-radius: 1em;
+    border-style: solid;
+    border-color: #3c3f40;
+    border-width: 0em;
+    border-radius: 2em;
+    margin-bottom: 1em;
 }
 
 .card {
@@ -20,15 +27,9 @@
     border-radius: 1em;
     border-style: solid;
     border-color: #6c757c;
-    border-width: 1em;
+    border-width: 2em;
     margin-bottom: 1em;
 }
-
-@media only screen and (min-width: 767px) {
-    .card {
-      margin-right: 1em;
-    }
-  }
 
 .rowImgName{
     border-radius: 1em;
@@ -37,7 +38,7 @@
 
 .cardImg {
     align-items: center;
-    width: 10em;
+    width: 9em;
     border-radius: 10em;
     border-style: solid;
     border-color: white;

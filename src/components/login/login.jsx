@@ -4,9 +4,10 @@ import Logo from '../../assets/img/user.png';
 import swal from 'sweetalert';
 import axios from 'axios';
 
+
 export const LoginForm = function() {
 
-    const url = "https://service.laserbluforms.signos-framework.com/GenericWeb?proctoken=spLoginUser&ProcParams=@Username='{login.Usuario}',@Password='{login.Clave}'";
+    const url = "";
 
     const [username, setUsername] = useState ("");
     const [password, setPassword] = useState ("");
@@ -42,23 +43,13 @@ export const LoginForm = function() {
         e.preventDefault();
     }
 
-
-    // const loginValidation = function(){
-    //     if(userLogin.username === "" || userLogin.password === "") {
-    //         swal({
-    //             title: "ERROR",
-    //             text: "Completa todos los campos para iniciar sesión.",
-    //             icon: "info",
-    //           });
-    //     }
-    // }
     return (
         <>
          <div className={logintStyles.LoginBox}>
          <img className={logintStyles.LoginBoxLogo} src={Logo} alt="Logo"/> 
          <h1 className={logintStyles.LoginBoxH1}>Iniciar Sesión</h1>   
 
-         <form onSubmit={noRecargarPagina} method='' >
+         <form onSubmit={noRecargarPagina}>
          <label className={logintStyles.LoginBoxLabel} for="usuario"> Usuario </label>
          <input name="username" value={username} onChange={handleUsername} className={logintStyles.LoginBoxInput} type="text" placeholder="Ingrese su nombre de usuario"/>
 

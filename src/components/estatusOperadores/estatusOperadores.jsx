@@ -6,17 +6,15 @@ export const EstatusOperadores = function() {
 
     return (   
         <>  
-            <Container>
-                <Row style={{marginTop: "2em", marginBottom: "1.5em"}}>
+                <Row style={{marginTop: "2em", marginBottom: "2em", marginLeft: "2em", marginRight: "2em"}}>
                     <Col className= { estatusOperadoresStyles.colTitle }> 
-                        <h1>Estatus Operadores </h1>
+                        <h1 style={{marginTop: "0.3em", marginBottom: "0.3em"}}>Estatus Operadores </h1>
                     </Col>
                 </Row>
-            </Container>
 
             <Container>
                 <Row style={{marginBottom: "1em", justifyContent: "Center"}}>
-                    <Col xl={3} lg={4} md={5} sm={6} xs= {9} className= { estatusOperadoresStyles.card }>
+                    <Col xl={3} lg={4} md={5} sm={10} xs= {10} className= { estatusOperadoresStyles.card }>
                         <Row className= { estatusOperadoresStyles.rowImgName }>
                             <Col xs={5}>
                                 <img src={User} alt="" className= { estatusOperadoresStyles.cardImg }/>

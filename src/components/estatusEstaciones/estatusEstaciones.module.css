@@ -2,7 +2,10 @@
     background-color: #6c757c;
     color: #FFFFFF;
     text-align: center;
-    border-radius: 1em;
+    border-style: solid;
+    border-color: #3c3f40;
+    border-width: 1em;
+    border-radius: 5em;
 
 }
 
@@ -16,9 +19,8 @@
     text-align: center;
     background-color: #6c757c;
     border-radius: 1em;
-    margin-top: 1em;
     margin-bottom: 1em;
-    margin-right: 0.3em;
+    margin-right: 1.5em;
 }
 
 .cardBody {

@@ -4,6 +4,7 @@ import { EstatusEstaciones } from "../../components/estatusEstaciones/estatusEst
 import { Footer } from "../../components/footer/footer"
 import { Header } from "../../components/header/header";
 
+
 export const Estacion = function() {
 
   return (   
