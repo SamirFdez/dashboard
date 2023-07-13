@@ -6,25 +6,25 @@ import axios from 'axios'
 export const EstatusOperadores = function() {
         
 
-    // const baseUrl = 'https://service.laserbluforms.signos-framework.com/GenericWeb?proctoken=SPREPORTEUSUARIOSESTATUSV2';
+    const baseUrl = 'https://service.laserbluforms.signos-framework.com/GenericWeb?proctoken=SPREPORTEUSUARIOSESTATUSV2';
 
-    // const config = {
-    //     headers:{
-    //         'Access-Control-Allow-Origin': 'http://localhost:5173',
-    //         'APIKey': 'AAAAoHa5oyc:APA91bEreCgMCWtdP2oHjsLrdd272TdxLCa0oZGrzBnv1pdj113PFvf_kheHvOhWKg0FO2urWD76wF35jOOq3nIh5urSE9DOgchW7Qx0yCy4evPxKbypb161X-FlFj-rz9es5nKWfQHv'
-    //     }
-    //   };
+    const config = {
+        headers:{
+            'Access-Control-Allow-Origin': 'http://localhost:5173',
+            'APIKey': 'AAAAoHa5oyc:APA91bEreCgMCWtdP2oHjsLrdd272TdxLCa0oZGrzBnv1pdj113PFvf_kheHvOhWKg0FO2urWD76wF35jOOq3nIh5urSE9DOgchW7Qx0yCy4evPxKbypb161X-FlFj-rz9es5nKWfQHv'
+        }
+      };
 
-    //   axios.get(baseUrl, config)
-    //     .then(res=> console.log(res))
-    //     .catch(err=> console.log(err))
+      axios.get(baseUrl, config)
+        .then(res=> console.log(res))
+        .catch(err=> console.log(err))
 
-        fetch(url , {
-            method: 'GET',
-        })
-            .then(response => response.json())
-            .then(response => console.log(response))
-            .catch(err => console.error(err));
+        // fetch(baseUrl , {
+        //     method: 'GET',
+        // })
+        //     .then(response => response.json())
+        //     .then(response => console.log(response))
+        //     .catch(err => console.error(err));
 
     return (   
         <>   
