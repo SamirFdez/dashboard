@@ -1,16 +1,38 @@
 import { Container, Row, Col } from 'react-bootstrap'
 import estatusOperadoresStyles  from "./estatusOperadores.module.css"
 import User from '../../assets/img/person.jpg'
+import axios from 'axios'
 
 export const EstatusOperadores = function() {
+        
+
+    // const baseUrl = 'https://service.laserbluforms.signos-framework.com/GenericWeb?proctoken=SPREPORTEUSUARIOSESTATUSV2';
+
+    // const config = {
+    //     headers:{
+    //         'Access-Control-Allow-Origin': 'http://localhost:5173',
+    //         'APIKey': 'AAAAoHa5oyc:APA91bEreCgMCWtdP2oHjsLrdd272TdxLCa0oZGrzBnv1pdj113PFvf_kheHvOhWKg0FO2urWD76wF35jOOq3nIh5urSE9DOgchW7Qx0yCy4evPxKbypb161X-FlFj-rz9es5nKWfQHv'
+    //     }
+    //   };
+
+    //   axios.get(baseUrl, config)
+    //     .then(res=> console.log(res))
+    //     .catch(err=> console.log(err))
+
+        fetch(url , {
+            method: 'GET',
+        })
+            .then(response => response.json())
+            .then(response => console.log(response))
+            .catch(err => console.error(err));
 
     return (   
-        <>  
-                <Row style={{marginTop: "2em", marginBottom: "2em", marginLeft: "2em", marginRight: "2em"}}>
-                    <Col className= { estatusOperadoresStyles.colTitle }> 
-                        <h1 style={{marginTop: "0.3em", marginBottom: "0.3em"}}>Estatus Operadores </h1>
-                    </Col>
-                </Row>
+        <>   
+            <Row style={{marginTop: "1em", marginBottom: "1em"}}>
+                <Col className= { estatusOperadoresStyles.colTitle }> 
+                    <h1 style={{marginTop: "0.3em", marginBottom: "0.3em"}}>Estatus Operadores</h1>
+                </Col>
+            </Row>
 
             <Container>
                 <Row style={{marginBottom: "1em", justifyContent: "Center"}}>

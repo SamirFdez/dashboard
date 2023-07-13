@@ -3,10 +3,10 @@ import cantidadDeTurnosStyles  from "./cantidadDeTurnos.module.css"
 
 
 export const CantidadDeTurnos = function() {
-
+ 
     return (   
         <>
-            <Row style={{marginTop: "2em", marginBottom: "1em", marginLeft: "1em", marginRight: "1em"}}>
+            <Row style={{marginTop: "1em", marginBottom: "1em"}}>
                 <Col className= { cantidadDeTurnosStyles.colTitle }> 
                     <h1 style={{marginTop: "0.3em", marginBottom: "0.3em"}}>Cantidad de turnos y tiempo de espera por área </h1>
                 </Col>

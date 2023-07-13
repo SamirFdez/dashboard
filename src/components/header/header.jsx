@@ -4,6 +4,7 @@ import headerStyles  from "./header.module.css"
 
 export const Header = function() {
 
+
     return (   
         <>
             <Row className={ headerStyles.row}>
@@ -11,6 +12,7 @@ export const Header = function() {
                     ESTATUS GESTIÓN DE COLA
                 </Col>
             </Row>
+
         </>
  )
 }  

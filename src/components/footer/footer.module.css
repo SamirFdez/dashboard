@@ -1,8 +1,10 @@
 .div {
-    background-color: #000000;
+    background-color: #111;
     color: #FFFFFF;
     text-align: center;
     font-size: 1.3em;
-    width: 100%;
+    width: 99.9%;
     height: 2em;
+    position: absolute;
+    margin-top: 75%;
 }

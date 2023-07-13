@@ -6,7 +6,7 @@ export const EstatusEstaciones = function() {
 
     return (   
         <>
-            <Row style={{marginBottom: "1em", marginLeft: "1em", marginRight: "1em"}}>
+            <Row style={{marginBottom: "1em"}}>
                 <Col className= { estatusEstacionesStyles.colTitle }> 
                     <h1 style={{marginTop: "0.3em", marginBottom: "0.3em"}}>Estatus estaciones </h1>
                 </Col>
