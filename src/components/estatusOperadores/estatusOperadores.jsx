@@ -10,7 +10,8 @@ export const EstatusOperadores = function() {
 
     const config = {
         headers:{
-            'Access-Control-Allow-Origin': 'http://localhost:5173',
+            "Content-Type": "application/json",
+            // 'Access-Control-Allow-Origin': 'http://localhost:5173',
             'APIKey': 'AAAAoHa5oyc:APA91bEreCgMCWtdP2oHjsLrdd272TdxLCa0oZGrzBnv1pdj113PFvf_kheHvOhWKg0FO2urWD76wF35jOOq3nIh5urSE9DOgchW7Qx0yCy4evPxKbypb161X-FlFj-rz9es5nKWfQHv'
         }
       };
@@ -21,6 +22,9 @@ export const EstatusOperadores = function() {
 
         // fetch(baseUrl , {
         //     method: 'GET',
+        //     headers:{
+        //         'APIKey': 'AAAAoHa5oyc:APA91bEreCgMCWtdP2oHjsLrdd272TdxLCa0oZGrzBnv1pdj113PFvf_kheHvOhWKg0FO2urWD76wF35jOOq3nIh5urSE9DOgchW7Qx0yCy4evPxKbypb161X-FlFj-rz9es5nKWfQHv'
+        //     }
         // })
         //     .then(response => response.json())
         //     .then(response => console.log(response))
