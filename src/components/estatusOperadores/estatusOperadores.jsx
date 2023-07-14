@@ -30,9 +30,7 @@ export const EstatusOperadores = function() {
 
     setTimeout(() => {
         window.location.reload();
-      }, 40000);
-
-    console.log(operadores)
+      }, 90000);
 
 
     return (   
@@ -45,6 +43,7 @@ export const EstatusOperadores = function() {
 
                     <Container>
                         <Row style={{marginBottom: "1em", justifyContent: "Center"}}>
+                            
                             {operadores.map(operador => (
                                 <Col xl={3} lg={4} md={5} sm={10} xs= {10} className= { estatusOperadoresStyles.card }>
                                     <Row className= { estatusOperadoresStyles.rowImgName }>
@@ -108,7 +107,7 @@ export const EstatusOperadores = function() {
                                             </Col>
                                         </Row>
                                     </Row>
-                                    <Row className= { estatusOperadoresStyles.rowTimeOffline } style={{marginTop: "1em"}}>
+                                    {/* <Row className= { estatusOperadoresStyles.rowTimeOffline } style={{marginTop: "1em"}}>
                                         <Row style={{marginTop: "0.5em"}}>
                                             <Col xs={7}>
                                                 <h4> Tiempo Offline:</h4>
@@ -117,7 +116,7 @@ export const EstatusOperadores = function() {
                                                 <h4> 00:00:00 </h4>
                                             </Col>
                                         </Row>
-                                    </Row>
+                                    </Row> */}
                                 </Col>
                             ))}
                             </Row> 

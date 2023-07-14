@@ -14,7 +14,7 @@ export const EstatusEstaciones = function() {
 
             <Container>
                 <Row className= { estatusEstacionesStyles.colBody }>
-                    <Col xxl={2} xl={2} lg={2} md={4} sm={4} xs= {4} className= { estatusEstacionesStyles.card }>
+                    <Col xl={2} lg={3} md={4} sm={5} xs= {5} className= { estatusEstacionesStyles.card }>
                         <Row>
                         <h3 style={{color: "white"}}>Servicio</h3> 
                         </Row>
@@ -26,7 +26,7 @@ export const EstatusEstaciones = function() {
                         </Container>
                     </Col>
 
-                    <Col xxl={2} xl={2} lg={2} md={4} sm={4} xs= {4} className= { estatusEstacionesStyles.card }>
+                    <Col xl={2} lg={3} md={4} sm={5} xs= {5} className= { estatusEstacionesStyles.card }>
                         <Row>
                         <h3 style={{color: "white"}}>Servicio</h3> 
                         </Row>
@@ -38,7 +38,7 @@ export const EstatusEstaciones = function() {
                         </Container>
                     </Col>
 
-                    <Col xxl={2} xl={2} lg={2} md={4} sm={4} xs= {4} className= { estatusEstacionesStyles.card }>
+                    <Col xl={2} lg={3} md={4} sm={5} xs= {5} className= { estatusEstacionesStyles.card }>
                         <Row>
                         <h3 style={{color: "white"}}>Servicio</h3> 
                         </Row>
@@ -50,7 +50,7 @@ export const EstatusEstaciones = function() {
                         </Container>
                     </Col>
 
-                    <Col xxl={2} xl={2} lg={2} md={4} sm={4} xs= {4} className= { estatusEstacionesStyles.card }>
+                    <Col xl={2} lg={3} md={4} sm={5} xs= {5} className= { estatusEstacionesStyles.card }>
                         <Row>
                         <h3 style={{color: "white"}}>Servicio</h3> 
                         </Row>

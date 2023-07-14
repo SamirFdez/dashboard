@@ -6,10 +6,10 @@ Login: GenericWeb?proctoken=spLoginUser&ProcParams=@Username='{login.Usuario}',@
 
 Consultas:
 
-GenericWeb?proctoken=SPREPORTEAREASDASBOARD
+GenericWeb?proctoken=SPREPORTEAREASDASBOARD // Cantidad de turnos
 
-GenericWeb?proctoken=spReporteEstacionesEstatusDashBoard";
+GenericWeb?proctoken=spReporteEstacionesEstatusDashBoard // colaboradoes
 
-GenericWeb?proctoken=SPREPORTEUSUARIOSESTATUSV2
+GenericWeb?proctoken=SPREPORTEUSUARIOSESTATUSV2 // OPERADORES
 
-Tipo de request: Get
+Tipo de request: Get 

@@ -1,8 +1,32 @@
 import { Container, Row, Col } from 'react-bootstrap'
 import cantidadDeTurnosStyles  from "./cantidadDeTurnos.module.css"
+import axios from 'axios';
+import React from 'react';
 
 
 export const CantidadDeTurnos = function() {
+
+    const baseUrl = 'https://service.laserbluforms.signos-framework.com/GenericWeb?proctoken=SPREPORTEAREASDASBOARD';
+
+    const [cantidadTurno, setCantidadTurno] = React.useState(null);
+
+    const config = {
+        headers:{
+            "Content-Type": "application/json",
+            'APIKey': 'AAAAoHa5oyc:APA91bEreCgMCWtdP2oHjsLrdd272TdxLCa0oZGrzBnv1pdj113PFvf_kheHvOhWKg0FO2urWD76wF35jOOq3nIh5urSE9DOgchW7Qx0yCy4evPxKbypb161X-FlFj-rz9es5nKWfQHv'
+        }
+      };
+
+      React.useEffect(() => {
+        axios.get(baseUrl, config).then((response) => {
+            setCantidadTurno(response.data);
+        });
+      }, []);
+    
+        if (!cantidadTurno) {
+            return null
+        };
+
  
     return (   
         <>
@@ -14,53 +38,32 @@ export const CantidadDeTurnos = function() {
 
             <Container>
                 <Row className= { cantidadDeTurnosStyles.colBody }>
-                    <Col lg={2} md={4} sm={4} xs= {4} className= { cantidadDeTurnosStyles.card }>
+
+                    {cantidadTurno.map(canturno => (
+                    <Col xl={2} lg={3} md={4} sm={5} xs= {5} className= { cantidadDeTurnosStyles.card }>
                         <Row>
-                        <h3 style={{color: "white"}}>Servicio</h3> 
+                        <h3 style={{color: "white"}}> 
+                            
+                            {canturno.DESCRIPCION} 
+                        
+                        </h3> 
                         </Row>
                         <Container>
                         <Row style={{marginBottom:"1em"}}>
-                            <Col className= { cantidadDeTurnosStyles.cardBody } style={{marginRight: "0.5em"}}> 2 T </Col>
-                            <Col className= { cantidadDeTurnosStyles.cardBody }> 32 min </Col>
+                            <Col className= { cantidadDeTurnosStyles.cardBody } style={{marginRight: "0.5em"}}> 
+                            
+                                {canturno.CANTIDAD} T
+                            
+                            </Col>
+                            <Col className= { cantidadDeTurnosStyles.cardBody }> 
+                            
+                                {canturno.TIEPOESPERA}
+                            
+                            </Col>
                         </Row>
                         </Container>
                     </Col>
-
-                    <Col lg={2} md={4} sm={4} xs= {4} className= { cantidadDeTurnosStyles.card }>
-                        <Row>
-                        <h3 style={{color: "white"}}>Servicio</h3> 
-                        </Row>
-                        <Container>
-                        <Row>
-                            <Col className= { cantidadDeTurnosStyles.cardBody } style={{marginRight: "0.5em"}}> 2 T </Col>
-                            <Col className= { cantidadDeTurnosStyles.cardBody }> 32 min </Col>
-                        </Row>
-                        </Container>
-                    </Col>
-
-                    <Col lg={2} md={4} sm={4} xs= {4} className= { cantidadDeTurnosStyles.card }>
-                        <Row>
-                        <h3 style={{color: "white"}}>Servicio</h3> 
-                        </Row>
-                        <Container>
-                        <Row>
-                            <Col className= { cantidadDeTurnosStyles.cardBody } style={{marginRight: "0.5em"}}> 2 T </Col>
-                            <Col className= { cantidadDeTurnosStyles.cardBody }> 32 min </Col>
-                        </Row>
-                        </Container>
-                    </Col>
-
-                    <Col lg={2} md={4} sm={4} xs= {4} className= { cantidadDeTurnosStyles.card }>
-                        <Row>
-                        <h3 style={{color: "white"}}>Servicio</h3> 
-                        </Row>
-                        <Container>
-                        <Row>
-                            <Col className= { cantidadDeTurnosStyles.cardBody } style={{marginRight: "0.5em"}}> 2 T </Col>
-                            <Col className= { cantidadDeTurnosStyles.cardBody }> 32 min </Col>
-                        </Row>
-                        </Container>
-                    </Col>
+                    ))}
                 </Row>
             </Container>
         </>
