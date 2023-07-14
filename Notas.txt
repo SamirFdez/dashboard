@@ -13,3 +13,5 @@ GenericWeb?proctoken=spReporteEstacionesEstatusDashBoard // colaboradoes
 GenericWeb?proctoken=SPREPORTEUSUARIOSESTATUSV2 // OPERADORES
 
 Tipo de request: Get 
+
+Login: krodriguez1428

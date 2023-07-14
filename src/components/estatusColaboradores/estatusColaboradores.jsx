@@ -25,7 +25,7 @@ export const EstatusColaboradores = function() {
     
         if (!colaboradores) {
             return null
-        };
+        };          
 
     return (   
         <>
@@ -43,7 +43,7 @@ export const EstatusColaboradores = function() {
                     
                         <Row style={{textAlign: "Center", justifyContent: "center"}}>
                             {colaboradores.map(colaborador => (
-                            <Col xxl={2} xl={4} lg={4} md={5} sm={8} xs= {12} className= { estatusColaboradoresStyles.card } style={{marginRight: "1.5em"}}>
+                            <Col xxl={3} xl={4} lg={4} md={5} sm={8} xs= {12} className= { estatusColaboradoresStyles.card } style={{marginRight: "1.5em"}}>
                                 <Row className= { estatusColaboradoresStyles.rowImgName }>
                                     <Col xs={4}>
                                         <img src={User} alt="" className= { estatusColaboradoresStyles.cardImg }/>
@@ -89,10 +89,10 @@ export const EstatusColaboradores = function() {
 
                     <Col xl={3} lg={12}>
                         <Col className= { estatusColaboradoresStyles.colSubTitle }>
-                            <h3>3 Offline</h3>
+                            <h3>Offline</h3>
                         </Col>
                         <Row style={{textAlign: "Center", justifyContent: "center"}}>
-                            <Col xl={12} lg={12} className= { estatusColaboradoresStyles.Offlinecard }>
+                            <Col xl={11} lg={12} className= { estatusColaboradoresStyles.Offlinecard }>
                                 <Row className= { estatusColaboradoresStyles.rowOfflineImgName }>
                                     <Col xs={5} className={estatusColaboradoresStyles.offlineCardImg}>
                                         <img src={User} alt="" className= { estatusColaboradoresStyles.offlineImg }/>
@@ -104,7 +104,7 @@ export const EstatusColaboradores = function() {
                                     </Col>
                                 </Row>
                             </Col>
-                            <Col lg={12} className= { estatusColaboradoresStyles.Offlinecard }>
+                            <Col xl={11} lg={12} className= { estatusColaboradoresStyles.Offlinecard }>
                                 <Row className= { estatusColaboradoresStyles.rowOfflineImgName }>
                                     <Col xs={5} className={estatusColaboradoresStyles.offlineCardImg}>
                                         <img src={User} alt="" className= { estatusColaboradoresStyles.offlineImg }/>
