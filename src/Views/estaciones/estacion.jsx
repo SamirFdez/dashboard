@@ -11,7 +11,7 @@ export const Estacion = function() {
   return (   
       <>  
         <NavBar/>
-          <div style={{marginLeft: "4.5em", marginRight: "4.5em"}}>
+          <div style={{marginLeft: "0.5em", marginRight: "4em"}}>
             <Header/>
             <CantidadDeTurnos/>
             <EstatusEstaciones/>

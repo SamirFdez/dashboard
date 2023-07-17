@@ -28,7 +28,6 @@ export const CantidadDeTurnos = function() {
         if (!cantidadTurno) {
             return null
         };
-
  
     return (   
         <>
@@ -59,7 +58,7 @@ export const CantidadDeTurnos = function() {
                             </Col>
                             <Col className= { cantidadDeTurnosStyles.cardBody }> 
                             
-                                {canturno.TIEPOESPERA}
+                                {canturno.TIEPOESPERA} min
                             
                             </Col>
                         </Row>

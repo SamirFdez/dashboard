@@ -6,14 +6,16 @@ import React from 'react'
 export const EstatusOperadores = function() {
         
 
-    const baseUrl = 'https://service.laserbluforms.signos-framework.com/GenericWeb?proctoken=SPREPORTEUSUARIOSESTATUSV2';
+    const baseUrl = import.meta.env.VITE_APP_API_estatusOperadores;
+
+    const ApiKey = import.meta.env.VITE_APP_APIKEY;
 
     const [operadores, setOperadores] = React.useState(null);
 
     const config = {
         headers:{
             "Content-Type": "application/json",
-            'APIKey': 'AAAAoHa5oyc:APA91bEreCgMCWtdP2oHjsLrdd272TdxLCa0oZGrzBnv1pdj113PFvf_kheHvOhWKg0FO2urWD76wF35jOOq3nIh5urSE9DOgchW7Qx0yCy4evPxKbypb161X-FlFj-rz9es5nKWfQHv'
+            'APIKey': ApiKey
         }
       };
 
@@ -48,7 +50,7 @@ export const EstatusOperadores = function() {
                                 <Col xl={3} lg={4} md={5} sm={10} xs= {10} className= { estatusOperadoresStyles.card }>
                                     <Row className= { estatusOperadoresStyles.rowImgName }>
                                         <Col xs={5}>
-                                            <img src={operadores.Foto} alt="Imagen operador" className= { estatusOperadoresStyles.cardImg }/>
+                                            <img src={`data:image/jpeg;base64,${operador.Foto}`} alt="Imagen operador" className= { estatusOperadoresStyles.cardImg }/>
                                         </Col>
                                         <Col xs={7} className= { estatusOperadoresStyles.cardName }> 
                                             <h3 style={{marginTop: "1.2em"}}> {operador.NOMBRE} </h3>

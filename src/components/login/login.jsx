@@ -33,12 +33,11 @@ export const LoginForm = function() {
             try {
 
                 if(username.length === 0 || password.length === 0) {
-                    swal("usuario vacio", "", "error");
+                    swal("Completa todos los campos para continuar", "", "info");
                     return
                 }
 
                 const response = await axios.get(baseUrl+`@Username=${username},@Password=${password}`,config);
-                console.log("Eta' e' la psicopatada: ", response.data)
 
                 if(response.data[0] ) {
                     setLogin(response.data[0]);
@@ -46,7 +45,7 @@ export const LoginForm = function() {
                     return
                 }
 
-                swal("Usuario mal", "", "error");
+                swal("El nombre de usuario y la contraseña no coinciden", "", "error");
                 setUsername("");
                 setPassword("");
 

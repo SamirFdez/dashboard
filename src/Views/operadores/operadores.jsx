@@ -13,7 +13,6 @@ export const Operadores = function() {
         <div style={{marginLeft: "4em", marginRight: "4em"}}>
           <Header/>
           <EstatusOperadores/>
-
         </div>
         <Footer/> 
     </>

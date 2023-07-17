@@ -24,8 +24,9 @@
     border-radius: 1em;
     border-style: solid;
     border-color: #6c757c;
-    border-width: 1.5em;
+    border-width: 1em;
     margin-bottom: 1em;
+    margin-right: 1em;
 }
 
 .rowImgName{
@@ -90,6 +91,6 @@
     width: 10em;
     border-radius: 10em;
     border-style: solid;
-    border-color: #6c757c;
+    border-color: #E13145;
     border-width: 0.4em;
 }

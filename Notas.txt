@@ -16,3 +16,30 @@ Tipo de request: Get
 
 Login: krodriguez
        1428
+
+
+	   spReporteUsuariosEstatus
+
+
+--------------------------------------------------------------------------------------------
+
+DASHBOARD ~
+
+Funcionalidades:
+
+- Login
+	* Valida si todos los campos estan llenos, si no, tira msg de info
+	* Valida si el usuario y la password coinciden, si no, tira msg de error
+
+- Cantidad de turnos y tiempo de espera por area
+	* Se suman los turnos y se pone el tiempo de espera del primer turno en cola. Ej: Si hay dos turnos el primero 10 min y segundo el min 5 (la salida sera 15), cuando se atienda el primero, la cola bajara a 5 min.
+
+- Estatus colaboradores
+	* 
+
+- Estatus operadores
+	* Trae la imagen con exito
+	* Trae con exito, el nombre y la estacion el operador.
+	* Actualiza con exito el tema de: Atendidos, finalizados, declinados, transferidos y en espera.
+	* Lleva con exito el tiempo online del operador.
+	
