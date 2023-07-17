@@ -7,44 +7,60 @@ import axios from 'axios';
 
 export const LoginForm = function() {
 
-    const baseUrl = "GenericWeb?proctoken=spLoginUser&ProcParams=@Username='{login.Usuario}',@Password='{login.Clave}";
-
-    const [login, setlogin] = React.useState(null);
+    const baseUrl = import.meta.env.VITE_APP_API_LOGIN;
+    const ApiKey = import.meta.env.VITE_APP_APIKEY;
+    const [username, setUsername] = useState ("");
+    const [password, setPassword] = useState ("");
+    const [login, setLogin] = React.useState(null);
 
     const config = {
         headers:{
             "Content-Type": "application/json",
-            'APIKey': 'AAAAoHa5oyc:APA91bEreCgMCWtdP2oHjsLrdd272TdxLCa0oZGrzBnv1pdj113PFvf_kheHvOhWKg0FO2urWD76wF35jOOq3nIh5urSE9DOgchW7Qx0yCy4evPxKbypb161X-FlFj-rz9es5nKWfQHv'
+            'APIKey': ApiKey
         }
       };
 
-      React.useEffect(() => {
-        axios.get(baseUrl, config).then((response) => {
-          setlogin(response.data);
-        });
-      }, []);
-    
-        if (!login) {
-            return null
-        };
+        const handleUsername = (e) => {
+            setUsername(e.target.value);
+        }
 
-        console.log(login);
+        const handlePassword = (e) => {
+            setPassword(e.target.value);
+        }
+        
+        const iniciarSesion = async () => {
 
-    const [username, setUsername] = useState ("");
-    const [password, setPassword] = useState ("");
+            try {
 
-    const handleUsername = (e) => {
-        setUsername(e.target.value);
-    }
+                if(username.length === 0 || password.length === 0) {
+                    swal("usuario vacio", "", "error");
+                    return
+                }
 
-    const handlePassword = (e) => {
-        setPassword(e.target.value);
-    }
+                const response = await axios.get(baseUrl+`@Username=${username},@Password=${password}`,config);
+                console.log("Eta' e' la psicopatada: ", response.data)
 
+                if(response.data[0] ) {
+                    setLogin(response.data[0]);
+                    window.location.href = "/estaciones";
+                    return
+                }
 
-    const noRecargarPagina = (e) => {
-        e.preventDefault();
-    }
+                swal("Usuario mal", "", "error");
+                setUsername("");
+                setPassword("");
+
+                } catch(err) {
+                    console.log(err.message)
+                }
+
+        }
+
+        const noRecargarPagina = (e) => {
+            e.preventDefault();
+        }
+
+        console.log(username, password);
 
     return (
         <>
@@ -53,13 +69,13 @@ export const LoginForm = function() {
          <h1 className={logintStyles.LoginBoxH1}>Iniciar Sesión</h1>   
 
          <form onSubmit={noRecargarPagina}>
-         <label className={logintStyles.LoginBoxLabel} for="usuario"> Usuario </label>
+         <label className={logintStyles.LoginBoxLabel} htmlFor="username"> Usuario </label>
          <input name="username" value={username} onChange={handleUsername} className={logintStyles.LoginBoxInput} type="text" placeholder="Ingrese su nombre de usuario"/>
 
-         <label className={logintStyles.LoginBoxLabel} for="password">Contraseña</label>
+         <label className={logintStyles.LoginBoxLabel} htmlFor="password">Contraseña</label>
          <input name="password" value={password} onChange={handlePassword} className={logintStyles.LoginBoxInput} type="password" placeholder="Ingrese su contraseña"/>
 
-         <input onClick= {handleApi} className={logintStyles.LoginBoxButton} type="submit" value="Iniciar sesión"/>
+         <input onClick= {iniciarSesion} className={logintStyles.LoginBoxButton} type="submit" value="Iniciar sesión"/>
         </form>
 
         </div>

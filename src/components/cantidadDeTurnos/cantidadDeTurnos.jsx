@@ -6,14 +6,16 @@ import React from 'react';
 
 export const CantidadDeTurnos = function() {
 
-    const baseUrl = 'https://service.laserbluforms.signos-framework.com/GenericWeb?proctoken=SPREPORTEAREASDASBOARD';
+    const baseUrl = import.meta.env.VITE_APP_API_cantidadDeTurnos;
+
+    const ApiKey = import.meta.env.VITE_APP_APIKEY;
 
     const [cantidadTurno, setCantidadTurno] = React.useState(null);
 
     const config = {
         headers:{
             "Content-Type": "application/json",
-            'APIKey': 'AAAAoHa5oyc:APA91bEreCgMCWtdP2oHjsLrdd272TdxLCa0oZGrzBnv1pdj113PFvf_kheHvOhWKg0FO2urWD76wF35jOOq3nIh5urSE9DOgchW7Qx0yCy4evPxKbypb161X-FlFj-rz9es5nKWfQHv'
+            'APIKey': ApiKey
         }
       };
 
