@@ -8,6 +8,10 @@ import { NavBar } from "../../components/navbar/navbar";
 
 export const Estacion = function() {
 
+  setTimeout(() => {
+    window.location.reload();
+  }, 60000);
+
   return (   
       <>  
         <NavBar/>

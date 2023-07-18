@@ -8,9 +8,13 @@ export const EstatusColaboradores = function() {
 
     const baseUrl = import.meta.env.VITE_APP_API_estatusColaboradores;
 
+    const baseUrlOffline = import.meta.env.VITE_APP_API_estatusOperadores;
+
     const ApiKey = import.meta.env.VITE_APP_APIKEY;
 
     const [colaboradores, setColaboradores] = React.useState(null);
+
+    const [operadoresOff, setOperadoresOff] = React.useState(null);
 
     const config = {
         headers:{
@@ -23,12 +27,16 @@ export const EstatusColaboradores = function() {
         axios.get(baseUrl, config).then((response) => {
             setColaboradores(response.data);
         });
+
+        axios.get(baseUrlOffline, config).then((response) => {
+            setOperadoresOff(response.data);
+          });
       }, []);
     
         if (!colaboradores) {
             return null
-        };          
-
+        };                  
+          
     return (   
         <>
             <Row>
@@ -44,7 +52,9 @@ export const EstatusColaboradores = function() {
                     </Col>
                     
                         <Row style={{textAlign: "Center", justifyContent: "center"}}>
-                            {colaboradores.map(colaborador => (
+
+                            {colaboradores.map(colaborador => ( 
+
                             <Col xxl={3} xl={4} lg={4} md={5} sm={5} xs= {11} className= { estatusColaboradoresStyles.card }>
                                 <Row className= { estatusColaboradoresStyles.rowImgName }>
                                     <Col xs={4}>
@@ -85,7 +95,9 @@ export const EstatusColaboradores = function() {
                                     </Row>
                                 </Row>
                             </Col>
+
                             ))}
+                            
                         </Row>
                     </Col>
 
@@ -94,32 +106,25 @@ export const EstatusColaboradores = function() {
                             <h3>Offline</h3>
                         </Col>
                         <Col style={{textAlign: "Center", justifyContent: "center"}}>
-                            <Col xl={12} lg={12} className= { estatusColaboradoresStyles.Offlinecard }>
-                                <Row className= { estatusColaboradoresStyles.rowOfflineImgName }>
-                                    <Col xs={5} className={estatusColaboradoresStyles.offlineCardImg}>
-                                        <img src={User} alt="" className= { estatusColaboradoresStyles.offlineImg }/>
-                                    </Col>
-                                    <Col xs={7} className= { estatusColaboradoresStyles.OfflinecardName }> 
-                                        <h4 style={{marginTop: "1.2em"}}>Juan Perez Sosa</h4>
-                                        <h5 style={{marginTop: "0.6em"}}>Representate de Servicio</h5>
-                                        <h3>01:53:00</h3>
-                                    </Col>
-                                </Row>
-                            </Col>
-                            <Col xl={12} lg={12} className= { estatusColaboradoresStyles.Offlinecard }>
-                                <Row className= { estatusColaboradoresStyles.rowOfflineImgName }>
-                                    <Col xs={5} className={estatusColaboradoresStyles.offlineCardImg}>
-                                        <img src={User} alt="" className= { estatusColaboradoresStyles.offlineImg }/>
-                                    </Col>
-                                    <Col xs={7} className= { estatusColaboradoresStyles.OfflinecardName }> 
-                                        <h3 style={{marginTop: "1.2em"}}>Juan Perez Sosa</h3>
-                                        <h4 style={{marginTop: "0.6em"}}>Representate de Servicio</h4>
-                                        <h3>01:53:00</h3>
-                                    </Col>
-                                </Row>
-                            </Col>
-                        </Col>
 
+                            {operadoresOff?.length > 1 && operadoresOff.filter(operadorOff => operadorOff.ACCION === "LOGOUT").map(operadorOff =>
+
+                            <Col xl={12} lg={12} className= { estatusColaboradoresStyles.Offlinecard }>
+                                <Row className= { estatusColaboradoresStyles.rowOfflineImgName }>
+                                    <Col xs={5} className={estatusColaboradoresStyles.offlineCardImg}>
+                                        <img src={`data:image/jpeg;base64,${operadorOff.Foto}`} alt="" className= { estatusColaboradoresStyles.offlineImg }/>
+                                    </Col>
+                                    <Col xs={7} className= { estatusColaboradoresStyles.OfflinecardName }> 
+                                        <h4 style={{marginTop: "1.2em"}}> {operadorOff.NOMBRE} </h4>
+                                        <h5 style={{marginTop: "0.6em"}}> {operadorOff.MOTIVO} </h5>
+                                        <h3> {operadorOff.TIEMPOLOGUSUARIO} </h3>
+                                    </Col>
+                                </Row>
+                            </Col>
+
+                            )}
+
+                        </Col>
                     </Col>   
                 </Row>
 

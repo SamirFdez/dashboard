@@ -6,6 +6,10 @@ import { NavBar } from "../../components/navbar/navbar";
 
 export const Operadores = function() {
 
+  setTimeout(() => {
+    window.location.reload();
+  }, 60000);
+
   return (   
     <>  
       <NavBar/>

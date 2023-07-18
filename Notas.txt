@@ -21,6 +21,14 @@ Login: krodriguez
 	   spReporteUsuariosEstatus
 
 
+	   ESPERA	> 1 = amarillo
+	   		  	> 2 = rojo
+				> 3 = azul
+				> 4 = gris
+
+	LOGIN / LOGOUT
+
+
 --------------------------------------------------------------------------------------------
 
 DASHBOARD ~

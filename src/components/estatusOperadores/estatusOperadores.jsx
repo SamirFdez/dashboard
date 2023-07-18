@@ -30,11 +30,6 @@ export const EstatusOperadores = function() {
         return null
     };
 
-    setTimeout(() => {
-        window.location.reload();
-      }, 90000);
-
-
     return (   
         <>   
             <Row style={{marginTop: "1em", marginBottom: "1em"}}>
@@ -102,7 +97,7 @@ export const EstatusOperadores = function() {
                                     <Row className= { estatusOperadoresStyles.rowTimeOnline } style={{marginTop: "1em"}}>
                                         <Row style={{marginTop: "0.5em"}}>
                                             <Col xs={7}>
-                                                <h4> Tiempo Online:</h4>
+                                                <h4> { "Tiempo " + operador.ACCION.toLowerCase()}:</h4>
                                             </Col>
                                             <Col xs={2}> 
                                                 <h4> {operador.TIEMPOLOGUSUARIO} </h4>
