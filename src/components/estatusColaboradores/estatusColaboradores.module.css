@@ -30,40 +30,46 @@
 }
 
 .cardGreen {
-    background-color: #198754;
+    background-color: #28a745;
     justify-content: center;
     text-align: center;
     border-radius: 1em;
     border-style: solid;
-    border-color: #198754;
+    border-color: #28a745;
     border-width: 1em;
     margin-bottom: 1em;
     margin-right: 1em;
 }
 
 .cardYellow {
-    background-color: #FFA800;
+    background-color: #ffc107;
     justify-content: center;
     text-align: center;
     border-radius: 1em;
     border-style: solid;
-    border-color: #FFA800;
+    border-color: #ffc107;
     border-width: 1em;
     margin-bottom: 1em;
     margin-right: 1em;
 }
 
 .cardRed {
-    background-color: #E13145;
+    background-color: #dc3545;
     justify-content: center;
     text-align: center;
     border-radius: 1em;
     border-style: solid;
-    border-color: #E13145;
+    border-color: #dc3545;
     border-width: 1em;
     margin-bottom: 1em;
     margin-right: 1em;
+    /* box-shadow: 0 0.2em 0.6em 0 #6c757c, 0 0.4em 0.8em 0 #6c757c; */
+    /* animation: cardRed 3s infinite; */
 }
+
+/* @keyframes cardRed {
+    1% {scale: 0.8 1;}
+  } */
 
 .rowImgName{
     border-radius: 1em;

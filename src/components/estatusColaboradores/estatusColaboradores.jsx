@@ -57,9 +57,9 @@ export const EstatusColaboradores = function() {
 
                             <Col xxl={3} xl={4} lg={4} md={5} sm={5} xs= {11} 
                                     className = { 
-                                        colaborador.TiempoGlobal > "00:00:00" && colaborador.TiempoGlobal < "00:10:00" ? estatusColaboradoresStyles.cardGreen
-                                        : colaborador.TiempoGlobal > "00:10:00" && colaborador.TiempoGlobal < "00:20:00" ? estatusColaboradoresStyles.cardYellow
-                                        : colaborador.TiempoGlobal > "00:20:00" ? estatusColaboradoresStyles.cardRed
+                                        colaborador.ERROR === 1 ? estatusColaboradoresStyles.cardYellow
+                                        : colaborador.ERROR === 2 ? estatusColaboradoresStyles.cardRed
+                                        : colaborador.ERROR === 3 ? estatusColaboradoresStyles.cardGreen
                                         : estatusColaboradoresStyles.card 
                                     }>
 
@@ -117,7 +117,7 @@ export const EstatusColaboradores = function() {
                         </Col>
                         <Col style={{textAlign: "Center", justifyContent: "center"}}>
 
-                            {operadoresOff?.length > 1 && operadoresOff.filter(operadorOff => operadorOff.ACCION === "LOGOUT").map(operadorOff =>
+                            {operadoresOff?.length > 0 && operadoresOff.filter(operadorOff => operadorOff.ACCION === "LOGOUT").map(operadorOff =>
 
                             <Col xl={12} lg={12} className= { estatusColaboradoresStyles.Offlinecard }>
                                 <Row className= { estatusColaboradoresStyles.rowOfflineImgName }>
