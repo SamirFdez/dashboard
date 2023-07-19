@@ -62,7 +62,7 @@ export const EstatusColaboradores = function() {
                                         : colaborador.TiempoGlobal >= "00:20:00" ? estatusColaboradoresStyles.cardRed
                                         : estatusColaboradoresStyles.card 
                                     }>
-
+ 
                             {/* <Col xxl={3} xl={4} lg={4} md={5} sm={5} xs= {11} 
                                     className = { 
                                         colaborador.ERROR === 1 ? estatusColaboradoresStyles.cardYellow
