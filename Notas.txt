@@ -51,3 +51,4 @@ Funcionalidades:
 	* Actualiza con exito el tema de: Atendidos, finalizados, declinados, transferidos y en espera.
 	* Lleva con exito el tiempo online del operador.
 	
+

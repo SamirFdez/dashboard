@@ -57,11 +57,19 @@ export const EstatusColaboradores = function() {
 
                             <Col xxl={3} xl={4} lg={4} md={5} sm={5} xs= {11} 
                                     className = { 
+                                        colaborador.TiempoGlobal > "00:00:00" && colaborador.TiempoGlobal < "00:09:00" ? estatusColaboradoresStyles.cardGreen
+                                        : colaborador.TiempoGlobal >= "00:10:00" && colaborador.TiempoGlobal <= "00:19:00" ? estatusColaboradoresStyles.cardYellow
+                                        : colaborador.TiempoGlobal >= "00:20:00" ? estatusColaboradoresStyles.cardRed
+                                        : estatusColaboradoresStyles.card 
+                                    }>
+
+                            {/* <Col xxl={3} xl={4} lg={4} md={5} sm={5} xs= {11} 
+                                    className = { 
                                         colaborador.ERROR === 1 ? estatusColaboradoresStyles.cardYellow
                                         : colaborador.ERROR === 2 ? estatusColaboradoresStyles.cardRed
                                         : colaborador.ERROR === 3 ? estatusColaboradoresStyles.cardGreen
                                         : estatusColaboradoresStyles.card 
-                                    }>
+                                    }> */}
 
 
                                 <Row className= { estatusColaboradoresStyles.rowImgName }>
