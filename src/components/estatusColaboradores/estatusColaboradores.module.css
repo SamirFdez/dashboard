@@ -13,7 +13,7 @@
     background-color: #6c757c;
     color: #FFFFFF;
     text-align: center;
-    border-radius: 0.6em;
+    border-radius: 1em;
     margin-bottom: 1em;
 }
 
@@ -24,6 +24,42 @@
     border-radius: 1em;
     border-style: solid;
     border-color: #6c757c;
+    border-width: 1em;
+    margin-bottom: 1em;
+    margin-right: 1em;
+}
+
+.cardGreen {
+    background-color: #198754;
+    justify-content: center;
+    text-align: center;
+    border-radius: 1em;
+    border-style: solid;
+    border-color: #198754;
+    border-width: 1em;
+    margin-bottom: 1em;
+    margin-right: 1em;
+}
+
+.cardYellow {
+    background-color: #FFA800;
+    justify-content: center;
+    text-align: center;
+    border-radius: 1em;
+    border-style: solid;
+    border-color: #FFA800;
+    border-width: 1em;
+    margin-bottom: 1em;
+    margin-right: 1em;
+}
+
+.cardRed {
+    background-color: #E13145;
+    justify-content: center;
+    text-align: center;
+    border-radius: 1em;
+    border-style: solid;
+    border-color: #E13145;
     border-width: 1em;
     margin-bottom: 1em;
     margin-right: 1em;

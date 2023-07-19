@@ -55,7 +55,15 @@ export const EstatusColaboradores = function() {
 
                             {colaboradores.map(colaborador => ( 
 
-                            <Col xxl={3} xl={4} lg={4} md={5} sm={5} xs= {11} className= { estatusColaboradoresStyles.card }>
+                            <Col xxl={3} xl={4} lg={4} md={5} sm={5} xs= {11} 
+                                    className = { 
+                                        colaborador.TiempoGlobal > "00:00:00" && colaborador.TiempoGlobal < "00:10:00" ? estatusColaboradoresStyles.cardGreen
+                                        : colaborador.TiempoGlobal > "00:10:00" && colaborador.TiempoGlobal < "00:20:00" ? estatusColaboradoresStyles.cardYellow
+                                        : colaborador.TiempoGlobal > "00:20:00" ? estatusColaboradoresStyles.cardRed
+                                        : estatusColaboradoresStyles.card 
+                                    }>
+
+
                                 <Row className= { estatusColaboradoresStyles.rowImgName }>
                                     <Col xs={4}>
                                         <img src={`data:image/jpeg;base64,${colaborador.Foto}`} alt="" className= { estatusColaboradoresStyles.cardImg }/>
@@ -73,7 +81,9 @@ export const EstatusColaboradores = function() {
                                     <Col className= { estatusColaboradoresStyles.rowEstacion } >      
                                         <h4 style={{marginTop: "0.5em"}}> Atendiendo: </h4>
                                         <h1> {colaborador.Turno} </h1>
+
                                         <h4> {colaborador.TiempoGlobal} </h4>
+
                                     </Col>
                                 </Row>
                                 <Row className= { estatusColaboradoresStyles.rowPausa } style={{marginTop: "1em"}}>
@@ -81,7 +91,7 @@ export const EstatusColaboradores = function() {
                                         <Col xs={6}>
                                             <h4> {colaborador.EstatusTurno}</h4>
                                         </Col>
-                                        <Col xs={4} style={{color: "red"}}> 
+                                        <Col xs={4}> 
                                             <h4> {colaborador.TiempoUltimoEstatus} </h4>
                                         </Col>
                                     </Row>
