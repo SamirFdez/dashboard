@@ -8,7 +8,7 @@ export const Operadores = function() {
 
   setTimeout(() => {
     window.location.reload();
-  }, 60000);
+  }, 600000);
 
   return (   
     <>  

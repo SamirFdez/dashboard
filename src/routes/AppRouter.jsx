@@ -3,8 +3,6 @@ import { PrivateRoutes } from "./PrivateRoutes"
 import { Login } from '../Views/Login/login'
 import {useSelector} from 'react-redux'
 
-let status = 'authenticated';
-
 export const AppRouter = () => {
     const authenticationState = useSelector(state => state.auth.state)
     

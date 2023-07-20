@@ -12,8 +12,8 @@ export const Estacion = function() {
   const dispatch = useDispatch();
 
   setTimeout(() => {
-    window.location.reload(dispatch(updateAuthenticationState('authenticated')));
-  }, 10000);
+    window.location.reload();
+  }, 600000);
 
   return (   
       <>  
