@@ -1,19 +1,14 @@
-import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import { Estacion } from './Views/estaciones/estacion'
-import { Login } from './Views/Login/login'
-import { Operadores } from './Views/operadores/operadores'
+import { AppRouter } from './routes/AppRouter'
+import { Provider } from 'react-redux'
+import { store }  from './store'
 
 function App() {
 
   return (
-    <>
-        <Routes>
-          <Route path='/' element={<Login/>}/>
-          <Route path='/estaciones' element={<Estacion/>}/>
-          <Route path='/operadores' element={<Operadores/>}/>          
-        </Routes>
-    </>
+    <Provider store={store}>
+      <AppRouter/>
+    </Provider>
   )
 }
 

@@ -4,13 +4,16 @@ import { EstatusEstaciones } from "../../components/estatusEstaciones/estatusEst
 import { Footer } from "../../components/footer/footer"
 import { Header } from "../../components/header/header";
 import { NavBar } from "../../components/navbar/navbar";
-
+import {updateAuthenticationState} from '../../store/authentication'
+import {useDispatch} from 'react-redux'
 
 export const Estacion = function() {
 
+  const dispatch = useDispatch();
+
   setTimeout(() => {
-    window.location.reload();
-  }, 60000);
+    window.location.reload(dispatch(updateAuthenticationState('authenticated')));
+  }, 10000);
 
   return (   
       <>  

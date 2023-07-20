@@ -3,7 +3,9 @@ import logintStyles from './login.module.css'
 import Logo from '../../assets/img/user.png';
 import swal from 'sweetalert';
 import axios from 'axios';
-
+import {useDispatch} from 'react-redux'
+import {updateAuthenticationState} from '../../store/authentication'
+import { useNavigate } from "react-router-dom";
 
 export const LoginForm = function() {
 
@@ -12,6 +14,9 @@ export const LoginForm = function() {
     const [username, setUsername] = useState ("");
     const [password, setPassword] = useState ("");
     const [login, setLogin] = React.useState(null);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
 
     const config = {
         headers:{
@@ -41,7 +46,8 @@ export const LoginForm = function() {
 
                 if(response.data[0] ) {
                     setLogin(response.data[0]);
-                    window.location.href = "/estaciones";
+                    navigate("/estaciones")
+                    dispatch(updateAuthenticationState('authenticated'))
                     return
                 }
 
