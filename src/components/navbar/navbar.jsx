@@ -20,8 +20,8 @@ export const NavBar = function() {
           .then((cerrarSesion) => {
             if (cerrarSesion) {
                 navigate("/estaciones")
-                dispatch(updateAuthenticationState('no-authenticated'))
-
+                dispatch(updateAuthenticationState(false))
+                sessionStorage.removeItem("nombre")
             } else {
             }
           });

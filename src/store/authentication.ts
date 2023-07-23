@@ -1,16 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+const sessionLogin = sessionStorage.getItem("nombre");
+
+
 const initialState = {
-    // state can be 'checking' | 'authenticated' | 'no-authenticated';
-    state: 'no-authenticated'
+    // state can be 'authenticated' | 'no-authenticated';
+    isAuthenticated: sessionLogin ? true : false,
+
 }
+
 
 export const authenticationSlice = createSlice({
   name: 'authentication',
   initialState,
   reducers: {
     updateAuthenticationState: (state, {payload}) => {
-      state.state = payload
+      state.isAuthenticated = payload
     },
   },
 })

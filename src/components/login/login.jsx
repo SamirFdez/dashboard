@@ -14,6 +14,7 @@ export const LoginForm = function() {
     const [username, setUsername] = useState ("");
     const [password, setPassword] = useState ("");
     const [login, setLogin] = React.useState(null);
+    
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -43,11 +44,13 @@ export const LoginForm = function() {
                 }
 
                 const response = await axios.get(baseUrl+`@Username=${username},@Password=${password}`,config);
+                console.log(response.data)
 
                 if(response.data[0] ) {
                     setLogin(response.data[0]);
                     navigate("/estaciones")
-                    dispatch(updateAuthenticationState('authenticated'))
+                    sessionStorage.setItem("nombre", response.data[0].Nombre)
+                    dispatch(updateAuthenticationState(true))
                     return
                 }
 
