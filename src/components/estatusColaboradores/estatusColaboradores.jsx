@@ -1,6 +1,5 @@
 import { Row, Col } from 'react-bootstrap'
 import estatusColaboradoresStyles  from "./estatusColaboradores.module.css"
-import User from '../../assets/img/person.jpg'
 import React from 'react'
 import axios from 'axios'
 
