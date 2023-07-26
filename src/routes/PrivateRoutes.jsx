@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { Estacion } from '../Views/estaciones/estacion'
 import { Operadores } from '../Views/operadores/operadores'
+import { ConfiguracionDashboard } from '../Views/configuracion/configuracion';
 
 export const PrivateRoutes = () => {
     
@@ -8,6 +9,7 @@ export const PrivateRoutes = () => {
         <Routes>
                 <Route path='/estaciones' element={<Estacion/>}/>
                 <Route path='/operadores' element={<Operadores/>}/>   
+                <Route path='/configuracion' element={<ConfiguracionDashboard/>}/> 
         </Routes>
     );
 };

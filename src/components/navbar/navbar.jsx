@@ -19,7 +19,7 @@ export const NavBar = function() {
           })
           .then((cerrarSesion) => {
             if (cerrarSesion) {
-                navigate("/estaciones")
+                navigate("/")
                 dispatch(updateAuthenticationState(false))
                 sessionStorage.removeItem("nombre")
             } else {
@@ -32,28 +32,28 @@ export const NavBar = function() {
         <>
             <div className={navBarStyles.sidenav}>
 
-                <a className={navBarStyles.iconosUp}>
+                <div className={navBarStyles.iconosUp}>
                     <Link to='/estaciones' className={navBarStyles.link}>
                         <SlScreenDesktop/>             
                     </Link>   
-                </a>
-                <a className={navBarStyles.iconosUp}>
+                </div>
+                <div className={navBarStyles.iconosUp}>
                     <Link to='/operadores' className={navBarStyles.link}>
                         <SlUser/>             
                     </Link>  
-                </a>
+                </div>
 
-                <a className={navBarStyles.iconoSetting}>
+                <div className={navBarStyles.iconoSetting}>
                     <Link to='' className={navBarStyles.link}>
                         <SlSettings/>                    
                     </Link>  
-                </a>
+                </div>
 
-                <a className={navBarStyles.iconoLogOut}>
+                <div className={navBarStyles.iconoLogOut}>
                     <Link className={navBarStyles.link} onClick={handleLogOutUser}>
                         <SlLogout/>                    
                     </Link>  
-                </a>
+                </div>
             </div>
         </>
  )
