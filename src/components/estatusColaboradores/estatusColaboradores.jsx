@@ -1,18 +1,14 @@
 import { Row, Col } from 'react-bootstrap'
 import estatusColaboradoresStyles  from "./estatusColaboradores.module.css"
-import React from 'react'
+import React, { useEffect } from 'react'
 import axios from 'axios'
 
 export const EstatusColaboradores = function() {
 
     const baseUrl = import.meta.env.VITE_APP_API_estatusColaboradores;
-
     const baseUrlOffline = import.meta.env.VITE_APP_API_estatusOperadores;
-
     const ApiKey = import.meta.env.VITE_APP_APIKEY;
-
     const [colaboradores, setColaboradores] = React.useState(null);
-
     const [operadoresOff, setOperadoresOff] = React.useState(null);
 
     const config = {
@@ -22,15 +18,22 @@ export const EstatusColaboradores = function() {
         }
       };
 
-      React.useEffect(() => {
-        axios.get(baseUrl, config).then((response) => {
-            setColaboradores(response.data);
-        });
+      const getColaboradores = async () =>{
+        const response = await axios.get(baseUrl, config);
+        setColaboradores(response.data);
+      }
 
-        axios.get(baseUrlOffline, config).then((response) => {
-            setOperadoresOff(response.data);
-          });
-      }, []);
+      const getOperadoresOff = async () => {
+        const response = await axios.get(baseUrlOffline, config);
+        setOperadoresOff(response.data);
+      }
+
+      useEffect(() => {
+        getColaboradores();
+        getOperadoresOff();
+  
+     }, []);
+
     
         if (!colaboradores) {
             return null
@@ -45,30 +48,31 @@ export const EstatusColaboradores = function() {
             </Row>  
 
             <Row>
-                <Col xxl={9} xl={9} lg={12}>
+                <Col xxl={10} xl={9} lg={12}>
                     <Col className= { estatusColaboradoresStyles.colSubTitle } >
                         <h3>Colaboradores Online</h3>
                     </Col>
                     
                         <Row style={{textAlign: "Center", justifyContent: "center"}}>
 
-                            {colaboradores.map(colaborador => ( 
+                            {colaboradores.map((colaborador, index) => ( 
 
-                            <Col xxl={2} xl={4} lg={4} md={5} sm={5} xs= {11} 
-                                    className = { 
-                                        colaborador.TiempoGlobal > "00:00:00" && colaborador.TiempoGlobal < "00:09:00" ? estatusColaboradoresStyles.cardGreen
-                                        : colaborador.TiempoGlobal >= "00:10:00" && colaborador.TiempoGlobal <= "00:19:00" ? estatusColaboradoresStyles.cardYellow
-                                        : colaborador.TiempoGlobal >= "00:20:00" ? estatusColaboradoresStyles.cardRed
-                                        : estatusColaboradoresStyles.card 
-                                    }>
+                            // <Col xxl={2} xl={4} lg={4} md={5} sm={5} xs= {11} 
+                            //     className = { 
+                            //         colaborador.TiempoGlobal > "00:00:00" && colaborador.TiempoGlobal < "00:09:00" ? estatusColaboradoresStyles.cardGreen
+                            //         : colaborador.TiempoGlobal >= "00:10:00" && colaborador.TiempoGlobal <= "00:19:00" ? estatusColaboradoresStyles.cardYellow
+                            //         : colaborador.TiempoGlobal >= "00:20:00" ? estatusColaboradoresStyles.cardRed
+                            //         : estatusColaboradoresStyles.card 
+                            // }>
    
-                            {/* <Col xxl={3} xl={4} lg={4} md={5} sm={5} xs= {11} 
+                            <Col xxl={2} xl={4} lg={4} md={5} sm={5} xs= {11} key={index}
                                     className = { 
-                                        colaborador.ERROR === 1 ? estatusColaboradoresStyles.cardYellow
-                                        : colaborador.ERROR === 2 ? estatusColaboradoresStyles.cardRed
-                                        : colaborador.ERROR === 3 ? estatusColaboradoresStyles.cardGreen
-                                        : estatusColaboradoresStyles.card 
-                                    }> */}
+                                        colaborador.ERROR === 1 ? estatusColaboradoresStyles.cardGray 
+                                        : colaborador.ERROR === 2 ? estatusColaboradoresStyles.cardGreen
+                                        : colaborador.ERROR === 3 ? estatusColaboradoresStyles.cardBlue
+                                        : colaborador.ERROR === 4 ? estatusColaboradoresStyles.cardGreenSpecial
+                                        : estatusColaboradoresStyles.cardGray 
+                                    }> 
 
 
                                 <Row className= { estatusColaboradoresStyles.rowImgName }>
@@ -86,7 +90,7 @@ export const EstatusColaboradores = function() {
                                         <h2>Estación de {colaborador.GrupoEstacion}</h2>
                                     </Col>
                                     <Col className= { estatusColaboradoresStyles.rowEstacion } >      
-                                        <h4 style={{marginTop: "0.5em"}}> Atendiendo: </h4>
+                                        <h4 style={{marginTop: "0.5em"}}> Turno: </h4>
                                         <h1> {colaborador.Turno} </h1>
 
                                         <h4> {colaborador.TiempoGlobal} </h4>
@@ -118,15 +122,15 @@ export const EstatusColaboradores = function() {
                         </Row>
                     </Col>
 
-                    <Col xxl={3} xl={3} lg={12}>
+                    <Col xxl={2} xl={3} lg={12}>
                         <Col className= { estatusColaboradoresStyles.colSubTitle }>
                             <h3>Offline</h3>
                         </Col>
                         <Col style={{textAlign: "Center", justifyContent: "center"}}>
 
-                            {operadoresOff?.length > 0 && operadoresOff.filter(operadorOff => operadorOff.ACCION === "LOGOUT").map(operadorOff =>
+                            {operadoresOff?.length > 0 && operadoresOff.filter(operadorOff => operadorOff.ACCION === "LOGOUT").map((operadorOff, index) =>
 
-                            <Col xl={12} lg={12} className= { estatusColaboradoresStyles.Offlinecard }>
+                            <Col xl={12} lg={12} key={index} className= { estatusColaboradoresStyles.Offlinecard }>
                                 <Row className= { estatusColaboradoresStyles.rowOfflineImgName }>
                                     <Col xs={5} className={estatusColaboradoresStyles.offlineCardImg}>
                                         <img src={`data:image/jpeg;base64,${operadorOff.Foto}`} alt="" className= { estatusColaboradoresStyles.offlineImg }/>

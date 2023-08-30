@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom"
 import { PrivateRoutes } from "./PrivateRoutes"
-import { Login } from '../Views/Login/login'
+import { Login } from "../Views/login"
 import {useSelector} from 'react-redux'
 
 export const AppRouter = () => {

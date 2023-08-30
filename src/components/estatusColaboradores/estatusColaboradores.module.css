@@ -17,7 +17,7 @@
     margin-bottom: 1em;
 }
 
-.card {
+.cardGray {
     background-color: #6c757c;
     justify-content: center;
     text-align: center;
@@ -36,6 +36,30 @@
     border-radius: 1em;
     border-style: solid;
     border-color: #28a745;
+    border-width: 1em;
+    margin-bottom: 1em;
+    margin-right: 1em;
+}
+
+.cardBlue {
+    background-color: #0275d8;
+    justify-content: center;
+    text-align: center;
+    border-radius: 1em;
+    border-style: solid;
+    border-color: #0275d8;
+    border-width: 1em;
+    margin-bottom: 1em;
+    margin-right: 1em;
+}
+
+.cardGreenSpecial {
+    background-color: #19692c;
+    justify-content: center;
+    text-align: center;
+    border-radius: 1em;
+    border-style: solid;
+    border-color: #19692c;
     border-width: 1em;
     margin-bottom: 1em;
     margin-right: 1em;
@@ -79,6 +103,8 @@
 .cardImg {
     align-items: center;
     width: 9em;
+    height: 9em;
+    object-fit: cover;
     border-radius: 4.5em;
     border-style: solid;
     border-color: white;
@@ -130,7 +156,9 @@
 
   .offlineImg {
     align-items: center;
-    width: 10em;
+    width: 9em;
+    height: 9em;
+    object-fit: cover;
     border-radius: 10em;
     border-style: solid;
     border-color: #E13145;

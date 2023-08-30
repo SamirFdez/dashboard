@@ -1,7 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap'
 import cantidadDeTurnosStyles  from "./cantidadDeTurnos.module.css"
 import axios from 'axios';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 
 export const CantidadDeTurnos = function() {
@@ -19,11 +19,15 @@ export const CantidadDeTurnos = function() {
         }
       };
 
-      React.useEffect(() => {
-        axios.get(baseUrl, config).then((response) => {
-            setCantidadTurno(response.data);
-        });
-      }, []);
+      const getCantidadDeTurnos = async () => {
+        const response = await axios.get(baseUrl, config);
+        setCantidadTurno(response.data)
+      }
+
+      useEffect(() => {
+        getCantidadDeTurnos();
+
+     }, []);
     
         if (!cantidadTurno) {
             return null
@@ -40,8 +44,8 @@ export const CantidadDeTurnos = function() {
             <Container>
                 <Row className= { cantidadDeTurnosStyles.colBody }>
 
-                    {cantidadTurno.map(canturno => (
-                    <Col xl={2} lg={3} md={4} sm={5} xs= {5} className= { cantidadDeTurnosStyles.card }>
+                    {cantidadTurno.map((canturno, index) => (
+                    <Col xl={2} lg={3} md={4} sm={5} xs= {5} key={index} className= { cantidadDeTurnosStyles.card }>
                         <Row>
                         <h3 style={{color: "white"}}> 
                             

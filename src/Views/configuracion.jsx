@@ -1,7 +1,7 @@
-import { ConfigDashboard } from "../../components/configuracionDashboard/configuracionDashboard";
-import { Footer } from "../../components/footer/footer"
-import { Header } from "../../components/header/header";
-import { NavBar } from "../../components/navbar/navbar";
+import { ConfigDashboard } from "../components/configuracionDashboard/configuracionDashboard";
+import { Footer } from "../components/footer/footer"
+import { Header } from "../components/header/header";
+import { NavBar } from "../components/navbar/navbar";
 
 export const ConfiguracionDashboard = function() {
 

@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
-import { Estacion } from '../Views/estaciones/estacion'
-import { Operadores } from '../Views/operadores/operadores'
-import { ConfiguracionDashboard } from '../Views/configuracion/configuracion';
+import { Estacion } from '../Views/estacion';
+import { Operadores } from '../Views/operadores';
+import { ConfiguracionDashboard } from '../Views/configuracion';
 
 export const PrivateRoutes = () => {
     
