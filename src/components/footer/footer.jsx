@@ -1,6 +1,4 @@
-import { Navbar, Col } from 'react-bootstrap'
 import footerStyles  from "./footer.module.css"
-
 
 export const Footer = function() {
 

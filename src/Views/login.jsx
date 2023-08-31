@@ -8,7 +8,5 @@ export const Login = function() {
         <LoginForm/>
         <Footer/>
       </>
-
-)
- 
+  ) 
 }  

@@ -1,8 +1,6 @@
-import { Footer } from "../components/footer/footer"
 import { Header } from "../components/header/header";
 import { EstatusOperadores } from "../components/estatusOperadores/estatusOperadores";
 import { NavBar } from "../components/navbar/navbar";
-
 
 export const Operadores = function() {
 
@@ -17,8 +15,6 @@ export const Operadores = function() {
           <Header/>
           <EstatusOperadores/>
         </div>
-      <Footer/> 
     </>
-)
- 
+  )
 }   
