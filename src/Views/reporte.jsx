@@ -2,7 +2,7 @@ import { Header } from "../components/header/header";
 import { EstatusOperadores } from "../components/estatusOperadores/estatusOperadores";
 import { NavBar } from "../components/navbar/navbar";
 
-export const Operadores = function() {
+export const Reporte = function() {
 
   setTimeout(() => {
     window.location.reload();

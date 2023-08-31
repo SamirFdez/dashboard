@@ -1,7 +1,7 @@
 import React from "react"
 import navBarStyles  from "./navbar.module.css"
 import { Link, useNavigate } from "react-router-dom";
-import { SlScreenDesktop, SlUser, SlSettings, SlLogout} from "react-icons/sl";
+import { SlScreenDesktop, SlUser, SlPeople, SlSettings, SlLogout} from "react-icons/sl";
 import {useDispatch} from 'react-redux'
 import {updateAuthenticationState} from '../../store/authentication'
 
@@ -33,13 +33,18 @@ export const NavBar = function() {
             <div className={navBarStyles.sidenav}>
 
                 <div className={navBarStyles.iconosUp}>
-                    <Link to='/estaciones' className={navBarStyles.link}>
-                        <SlScreenDesktop/>             
+                    <Link to='/dashboard' className={navBarStyles.link}>
+                        <SlUser/>
                     </Link>   
                 </div>
                 <div className={navBarStyles.iconosUp}>
-                    <Link to='/operadores' className={navBarStyles.link}>
-                        <SlUser/>             
+                    <Link to='/estaciones' className={navBarStyles.link}>
+                        <SlScreenDesktop/>               
+                    </Link>  
+                </div>
+                <div className={navBarStyles.iconosUp}>
+                    <Link to='/reporte' className={navBarStyles.link}>
+                        <SlPeople/>             
                     </Link>  
                 </div>
 

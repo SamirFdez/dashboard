@@ -1,9 +1,10 @@
-import { EstatusColaboradores } from "../components/estatusColaboradores/estatusColaboradores"
-import { EstatusEstaciones } from "../components/estatusEstaciones/estatusEstaciones"
 import { Header } from "../components/header/header";
 import { NavBar } from "../components/navbar/navbar";
+import { CantidadDeTurnos } from "../components/cantidadDeTurnos/cantidadDeTurnos"
+import { EstatusColaboradores } from "../components/estatusColaboradores/estatusColaboradores"
+import { EstatusEstaciones } from "../components/estatusEstaciones/estatusEstaciones"
 
-export const Estacion = function() {
+export const Dashboard = function() {
 
   setTimeout(() => {
     window.location.reload();
@@ -14,6 +15,7 @@ export const Estacion = function() {
         <NavBar/>
           <div style={{marginLeft: "0.5em", marginRight: "4em"}}>
             <Header/>
+            <CantidadDeTurnos/>
             <EstatusEstaciones/>
             <EstatusColaboradores/>
           </div>
