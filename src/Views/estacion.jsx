@@ -1,4 +1,3 @@
-import { CantidadDeTurnos } from "../components/cantidadDeTurnos/cantidadDeTurnos"
 import { EstatusColaboradores } from "../components/estatusColaboradores/estatusColaboradores"
 import { EstatusEstaciones } from "../components/estatusEstaciones/estatusEstaciones"
 import { Header } from "../components/header/header";
@@ -15,7 +14,6 @@ export const Estacion = function() {
         <NavBar/>
           <div style={{marginLeft: "0.5em", marginRight: "4em"}}>
             <Header/>
-            <CantidadDeTurnos/>
             <EstatusEstaciones/>
             <EstatusColaboradores/>
           </div>

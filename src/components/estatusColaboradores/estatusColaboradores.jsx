@@ -1,4 +1,4 @@
-import { Row, Col } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import estatusColaboradoresStyles  from "./estatusColaboradores.module.css"
 import React, { useEffect } from 'react'
 import axios from 'axios'
@@ -6,10 +6,8 @@ import axios from 'axios'
 export const EstatusColaboradores = function() {
 
     const baseUrl = import.meta.env.VITE_APP_API_estatusColaboradores;
-    const baseUrlOffline = import.meta.env.VITE_APP_API_estatusOperadores;
     const ApiKey = import.meta.env.VITE_APP_APIKEY;
     const [colaboradores, setColaboradores] = React.useState(null);
-    const [operadoresOff, setOperadoresOff] = React.useState(null);
 
     const config = {
         headers:{
@@ -23,14 +21,8 @@ export const EstatusColaboradores = function() {
         setColaboradores(response.data);
       }
 
-      const getOperadoresOff = async () => {
-        const response = await axios.get(baseUrlOffline, config);
-        setOperadoresOff(response.data);
-      }
-
       useEffect(() => {
         getColaboradores();
-        getOperadoresOff();
   
      }, []);
 
@@ -41,30 +33,12 @@ export const EstatusColaboradores = function() {
           
     return (   
         <>
-            <Row>
-                <Col xl={12} xs={12} className= { estatusColaboradoresStyles.colTitle }> 
-                    <h1 style={{marginTop: "0.3em", marginBottom: "0.3em"}}>Estatus colaboradoes </h1>
-                </Col>
-            </Row>  
-
-            <Row>
-                <Col xxl={10} xl={9} lg={12}>
-                    <Col className= { estatusColaboradoresStyles.colSubTitle } >
-                        <h3>Colaboradores Online</h3>
-                    </Col>
-                    
-                        <Row style={{textAlign: "Center", justifyContent: "center"}}>
+            <Container>
+                <Row>
+                    <Col xs={12}>
+                        <Row style={{textAlign: "left", justifyContent: "left"}}>
 
                             {colaboradores.map((colaborador, index) => ( 
-
-                            // <Col xxl={2} xl={4} lg={4} md={5} sm={5} xs= {11} 
-                            //     className = { 
-                            //         colaborador.TiempoGlobal > "00:00:00" && colaborador.TiempoGlobal < "00:09:00" ? estatusColaboradoresStyles.cardGreen
-                            //         : colaborador.TiempoGlobal >= "00:10:00" && colaborador.TiempoGlobal <= "00:19:00" ? estatusColaboradoresStyles.cardYellow
-                            //         : colaborador.TiempoGlobal >= "00:20:00" ? estatusColaboradoresStyles.cardRed
-                            //         : estatusColaboradoresStyles.card 
-                            // }>
-   
                             <Col xxl={2} xl={4} lg={4} md={5} sm={5} xs= {11} key={index}
                                     className = { 
                                         colaborador.ERROR === 1 ? estatusColaboradoresStyles.cardGray 
@@ -73,7 +47,6 @@ export const EstatusColaboradores = function() {
                                         : colaborador.ERROR === 4 ? estatusColaboradoresStyles.cardGreenSpecial
                                         : estatusColaboradoresStyles.cardGray 
                                     }> 
-
 
                                 <Row className= { estatusColaboradoresStyles.rowImgName }>
                                     <Col xs={4}>
@@ -116,41 +89,13 @@ export const EstatusColaboradores = function() {
                                     </Row>
                                 </Row>
                             </Col>
-
                             ))}
                             
                         </Row>
                     </Col>
-
-                    <Col xxl={2} xl={3} lg={12}>
-                        <Col className= { estatusColaboradoresStyles.colSubTitle }>
-                            <h3>Offline</h3>
-                        </Col>
-                        <Col style={{textAlign: "Center", justifyContent: "center"}}>
-
-                            {operadoresOff?.length > 0 && operadoresOff.filter(operadorOff => operadorOff.ACCION === "LOGOUT").map((operadorOff, index) =>
-
-                            <Col xl={12} lg={12} key={index} className= { estatusColaboradoresStyles.Offlinecard }>
-                                <Row className= { estatusColaboradoresStyles.rowOfflineImgName }>
-                                    <Col xs={5} className={estatusColaboradoresStyles.offlineCardImg}>
-                                        <img src={`data:image/jpeg;base64,${operadorOff.Foto}`} alt="" className= { estatusColaboradoresStyles.offlineImg }/>
-                                    </Col>
-                                    <Col xs={7} className= { estatusColaboradoresStyles.OfflinecardName }> 
-                                        <h4 style={{marginTop: "1.2em"}}> {operadorOff.NOMBRE} </h4>
-                                        <h5 style={{marginTop: "0.6em"}}> {operadorOff.MOTIVO} </h5>
-                                        <h3> {operadorOff.TIEMPOLOGUSUARIO} </h3>
-                                    </Col>
-                                </Row>
-                            </Col>
-
-                            )}
-
-                        </Col>
-                    </Col>   
                 </Row>
-
-            
+            </Container>
         </>
- )
+    )
 }  
 
