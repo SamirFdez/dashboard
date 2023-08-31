@@ -41,9 +41,9 @@ export const EstatusEstaciones = function() {
 
             <Row className={estatusEstacionesStyles.colBody}>
                 {estatusEstaciones.map((estatusEstaciones, index) => (
-                    <Col xxl={1} xl={2} lg={3} md={4} sm={5} xs={5} className={estatusEstacionesStyles.card} key={index}>
+                    <Col xxl={2} xl={2} lg={3} md={4} sm={5} xs={5} className={estatusEstacionesStyles.card} key={index}>
                         <Row>
-                            <h3 style={{ color: "white" }}> {estatusEstaciones.Estacion} </h3>
+                            <h3 style={{ color: "white" }}>Servicio</h3>
                         </Row>
 
                         <Container>

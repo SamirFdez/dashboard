@@ -35,7 +35,6 @@ export const LoginForm = function() {
         }
         
         const iniciarSesion = async () => {
-
             try {
 
                 if(username.length === 0 || password.length === 0) {
@@ -46,7 +45,7 @@ export const LoginForm = function() {
 
                 if(response.data[0] ) {
                     setLogin(response.data[0]);
-                    navigate("/estaciones")
+                    navigate("/dashboard")
                     sessionStorage.setItem("nombre", response.data[0].Nombre)
                     dispatch(updateAuthenticationState(true))
                     return
@@ -59,7 +58,6 @@ export const LoginForm = function() {
                 } catch(err) {
                     console.log(err.message)
                 }
-
         }
 
         const noRecargarPagina = (e) => {

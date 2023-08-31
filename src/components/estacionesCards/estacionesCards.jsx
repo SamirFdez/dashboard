@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
 import { Row, Col } from 'react-bootstrap'
-import { EstacionesCardsStyles }  from "./estacionesCards.module.css"
+import EstacionesCardsStyles  from "./estacionesCards.module.css"
 
 export const EstacionsCards = function() {
 
@@ -35,7 +35,7 @@ export const EstacionsCards = function() {
         <>
             <Row>
                 <Col xl={12} xs={12} className= { EstacionesCardsStyles.colTitle }> 
-                    <h1 style={{marginTop: "0.3em", marginBottom: "0.3em"}}>Estatus colaboradoes </h1>
+                    <h1 style={{marginTop: "0.3em", marginBottom: "0.3em"}}>Estatus estaciones </h1>
                 </Col>
             </Row>  
 
@@ -45,7 +45,7 @@ export const EstacionsCards = function() {
                     <Row style={{textAlign: "Center", justifyContent: "center"}}>
 
                         {colaboradores.map((colaborador, index) => ( 
-                            <Col xxl={2} xl={4} lg={4} md={5} sm={5} xs= {11} key={index}
+                            <Col xxl={2} xl={4} lg={4} md={5} sm={11} xs= {11} key={index}
                                 className = { 
                                     colaborador.ERROR === 1 ? EstacionesCardsStyles.cardGray 
                                     : colaborador.ERROR === 2 ? EstacionesCardsStyles.cardGreen

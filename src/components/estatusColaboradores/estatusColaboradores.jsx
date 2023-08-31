@@ -9,9 +9,11 @@ export const EstatusColaboradores = function() {
     const baseUrl = import.meta.env.VITE_APP_BASEURL
     const estatusColaboradesProc = import.meta.env.VITE_APP_API_estatusColaboradores;
     const estatusOperadoresOffProc = import.meta.env.VITE_APP_API_estatusOperadores;
+    const estatusEstacionesProc = import.meta.env.VITE_APP_API_estatusEstaciones;
     const ApiKey = import.meta.env.VITE_APP_APIKEY;
     const [colaboradores, setColaboradores] = React.useState(null);
     const [operadoresOff, setOperadoresOff] = React.useState(null);
+    const [estatusEstaciones, setEstatusEstaciones] = React.useState(null);
 
     const config = {
         headers:{
@@ -25,6 +27,11 @@ export const EstatusColaboradores = function() {
         setColaboradores(response.data);
       }
 
+      const getColaboradoresOnline = async () => {
+        const response = await axios.get(baseUrl+estatusEstacionesProc, config)
+        setEstatusEstaciones(response.data);
+      }
+
       const getOperadoresOff = async () => {
         const response = await axios.get(baseUrl+estatusOperadoresOffProc, config);
         setOperadoresOff(response.data);
@@ -33,13 +40,15 @@ export const EstatusColaboradores = function() {
       useEffect(() => {
         getColaboradores();
         getOperadoresOff();
+        getColaboradoresOnline();
   
      }, []);
 
         if (!colaboradores) {
             return null
         };                    
-          
+
+        console.log(estatusEstaciones)
     return (   
         <>
             <Row>
@@ -54,7 +63,7 @@ export const EstatusColaboradores = function() {
                         <h3>Colaboradores Online</h3>
                     </Col>
                     
-                    <Row style={{textAlign: "Center", justifyContent: "center"}}>
+                    <Row className="justify-content-center px-5" >
 
                         {colaboradores.map((colaborador, index) => ( 
                             <Col xxl={2} xl={4} lg={4} md={5} sm={5} xs= {11} key={index}
