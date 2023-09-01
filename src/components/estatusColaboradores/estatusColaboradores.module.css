@@ -8,13 +8,13 @@
     border-radius: 1.6em;
 
 }
-
+ 
 .colSubTitle {
     background-color: #6c757c;
     color: #FFFFFF;
     text-align: center;
     border-radius: 1em;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
 }
 
 .cardGray {
@@ -125,7 +125,7 @@
     border-color: #6c757c;
     border-width: 0em;
     background-color: white;
-    color: #6c757c;
+    color: #000000;
 }
 
 .rowPausa{

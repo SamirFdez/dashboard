@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
-import { Row, Col } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import estatusColaboradoresStyles  from "./estatusColaboradores.module.css"
 
 
 export const EstatusColaboradores = function() {
 
     const baseUrl = import.meta.env.VITE_APP_BASEURL
-    const estatusColaboradesProc = import.meta.env.VITE_APP_API_estatusColaboradores;
-    const estatusOperadoresOffProc = import.meta.env.VITE_APP_API_estatusOperadores;
+    const estatusColaboradesProc = import.meta.env.VITE_APP_API_estatusOperadores;
     const estatusEstacionesProc = import.meta.env.VITE_APP_API_estatusEstaciones;
     const ApiKey = import.meta.env.VITE_APP_APIKEY;
     const [colaboradores, setColaboradores] = React.useState(null);
@@ -27,14 +26,14 @@ export const EstatusColaboradores = function() {
         setColaboradores(response.data);
       }
 
+      const getOperadoresOff = async () => {
+        const response = await axios.get(baseUrl+estatusColaboradesProc, config);
+        setOperadoresOff(response.data);
+      }
+
       const getColaboradoresOnline = async () => {
         const response = await axios.get(baseUrl+estatusEstacionesProc, config)
         setEstatusEstaciones(response.data);
-      }
-
-      const getOperadoresOff = async () => {
-        const response = await axios.get(baseUrl+estatusOperadoresOffProc, config);
-        setOperadoresOff(response.data);
       }
 
       useEffect(() => {
@@ -47,15 +46,15 @@ export const EstatusColaboradores = function() {
         if (!colaboradores) {
             return null
         };                    
-
-        console.log(estatusEstaciones)
+ 
+        console.log(colaboradores)
     return (   
         <>
-            <Row>
-                <Col xl={12} xs={12} className= { estatusColaboradoresStyles.colTitle }> 
-                    <h1 style={{marginTop: "0.3em", marginBottom: "0.3em"}}>Estatus colaboradoes </h1>
-                </Col>
-            </Row>  
+            <div className="px-5">
+                <Row xl={12} xs={12} className= { estatusColaboradoresStyles.colTitle }> 
+                    <h1 style={{marginTop: "0.3em", marginBottom: "0.3em"}}>Estatus colaboradores </h1>
+                </Row>
+            </div>  
 
             <Row>
                 <Col xxl={10} xl={9} lg={12}>
@@ -68,10 +67,10 @@ export const EstatusColaboradores = function() {
                         {colaboradores.map((colaborador, index) => ( 
                             <Col xxl={2} xl={4} lg={4} md={5} sm={5} xs= {11} key={index}
                                 className = { 
-                                    colaborador.ERROR === 1 ? estatusColaboradoresStyles.cardGray 
-                                    : colaborador.ERROR === 2 ? estatusColaboradoresStyles.cardGreen
-                                    : colaborador.ERROR === 3 ? estatusColaboradoresStyles.cardBlue
-                                    : colaborador.ERROR === 4 ? estatusColaboradoresStyles.cardGreenSpecial
+                                    colaborador.ERROR === 1 ? estatusColaboradoresStyles.cardYellow 
+                                    : colaborador.ERROR === 2 ? estatusColaboradoresStyles.cardRed
+                                    : colaborador.ERROR === 3 ? estatusColaboradoresStyles.cardGreen
+                                    : colaborador.ERROR === 4 ? estatusColaboradoresStyles.cardGray
                                     : estatusColaboradoresStyles.cardGray 
                             }> 
 
@@ -81,8 +80,8 @@ export const EstatusColaboradores = function() {
                                     </Col>
                                     
                                     <Col xs={8} className= { estatusColaboradoresStyles.cardName }> 
-                                        <h3 style={{marginTop: "1em"}}> {colaborador.NombreEmpleado} </h3>
-                                        <h4 style={{marginTop: "0.2em"}}> {colaborador.GrupoEstacion} </h4>
+                                        <h3 style={{marginTop: "1em"}}> {colaborador.NOMBRE} </h3>
+                                        <h4 style={{marginTop: "0.2em"}}> {colaborador.DESCRIPCION} </h4>
                                     </Col>
                                 </Row>
                                 
@@ -94,20 +93,15 @@ export const EstatusColaboradores = function() {
                                     
                                     <Col className= { estatusColaboradoresStyles.rowEstacion } >      
                                         <h4 style={{marginTop: "0.5em"}}> Turno: </h4>
-                                        <h1> {colaborador.Turno} </h1>
-                                        <h4> {colaborador.TiempoGlobal} </h4>
+                                        <h1> {colaborador.TURNO} </h1>
+                                        <h4> {colaborador.TIEMPO} </h4>
 
                                     </Col>
                                 </Row>
 
                                 <Row className= { estatusColaboradoresStyles.rowPausa } style={{marginTop: "1em"}}>
                                         <Row >
-                                            <Col xs={7}>
-                                                <h4> {colaborador.EstatusTurno}</h4>
-                                            </Col>
-                                            <Col xs={5}> 
-                                                <h4> {colaborador.TiempoUltimoEstatus} </h4>
-                                            </Col>
+                                            <h4> {colaborador.MENSAJE}</h4>
                                         </Row>
                                 </Row>
 

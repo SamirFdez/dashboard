@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import cantidadDeTurnosStyles  from "./cantidadDeTurnos.module.css"
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col, Card } from 'react-bootstrap'
 
 export const CantidadDeTurnos = function() {
 
@@ -33,41 +33,33 @@ export const CantidadDeTurnos = function() {
   
     return (   
         <>
-            <Row style={{marginTop: "1em", marginBottom: "1em"}}>
-                <Col className= { cantidadDeTurnosStyles.colTitle }> 
-                    <h1 style={{marginTop: "0.3em", marginBottom: "0.3em"}}>Cantidad de turnos y tiempo de espera por área </h1>
-                </Col>
-            </Row>
+            <div className="px-5">
+                <Row className={cantidadDeTurnosStyles.colTitle} style={{marginTop: "1em", marginBottom: "1em"}}>
+                    <h1 style={{marginTop: "0.3em", marginBottom: "0.3em"}}> Cantidad de turnos y tiempo de espera por área </h1>
+                </Row>
+            </div>
 
             <Container>
                 <Row className= { cantidadDeTurnosStyles.colBody }>
 
                     {cantidadTurno.map((canturno, index) => (
-                    <Col xl={2} lg={3} md={4} sm={5} xs= {5} key={index} className= { cantidadDeTurnosStyles.card }>
+                    <Col xxl={2} xl={3} lg={3} md={4} sm={5} xs= {5} key={index} className= { cantidadDeTurnosStyles.card }>
                         <Row>
-                        <h3 style={{color: "white"}}> 
-                            
-                            {canturno.DESCRIPCION} 
-                        
-                        </h3> 
+                            <h3 style={{color: "white"}}> {canturno.DESCRIPCION} </h3> 
                         </Row>
                         <Container>
-                        <Row style={{marginBottom:"1em"}}>
-                            <Col className= { cantidadDeTurnosStyles.cardBody } style={{marginRight: "0.5em"}}> 
-                            
-                                {canturno.CANTIDAD} T
-                            
-                            </Col>
-                            <Col className= { cantidadDeTurnosStyles.cardBody }> 
-                            
-                                {canturno.TIEPOESPERA} min
-                            
-                            </Col>
-                        </Row>
+                            <Row style={{marginBottom:"1em"}}>
+                                <Col className= { cantidadDeTurnosStyles.cardBody } style={{marginRight: "1em"}}> 
+                                    <h4> {canturno.CANTIDAD} Turno </h4>
+                                </Col>
+                                <Col className= { cantidadDeTurnosStyles.cardBody }> 
+                                    <h4 style={{ alignItems: "center"}}> {canturno.TIEPOESPERA} min </h4>
+                                </Col>
+                            </Row>
                         </Container>
                     </Col>
-                    ))}
-                    
+                    ))}     
+
                 </Row>
             </Container>
         </>

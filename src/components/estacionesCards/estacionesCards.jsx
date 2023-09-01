@@ -33,11 +33,11 @@ export const EstacionsCards = function() {
           
     return (   
         <>
-            <Row>
-                <Col xl={12} xs={12} className= { EstacionesCardsStyles.colTitle }> 
+            <div className="px-5">
+                <Row xl={12} xs={12} className= { EstacionesCardsStyles.colTitle }> 
                     <h1 style={{marginTop: "0.3em", marginBottom: "0.3em"}}>Estatus estaciones </h1>
-                </Col>
-            </Row>  
+                </Row>
+            </div>  
 
             <Row>
                 <Col xs={12}>

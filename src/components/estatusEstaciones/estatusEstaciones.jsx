@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import estatusEstacionesStyles  from "./estatusEstaciones.module.css"
 import { Container, Row, Col } from 'react-bootstrap'
@@ -8,7 +8,7 @@ export const EstatusEstaciones = function() {
     const baseUrl = import.meta.env.VITE_APP_BASEURL
     const estatusEstacionesProc = import.meta.env.VITE_APP_API_estatusEstaciones;
     const ApiKey = import.meta.env.VITE_APP_APIKEY;
-    const [estatusEstaciones, setEstatusEstaciones] = React.useState(null);
+    const [estatusEstaciones, setEstatusEstaciones] = useState(null);
 
     const config = {
         headers:{
@@ -33,23 +33,22 @@ export const EstatusEstaciones = function() {
 
     return (
         <>
-            <Row style={{ marginBottom: "1em" }}>
-                <Col className={estatusEstacionesStyles.colTitle}>
+            <div className="px-5" style={{ marginBottom: "1em" }}>
+                <Row className={estatusEstacionesStyles.colTitle}>
                     <h1 style={{ marginTop: "0.3em", marginBottom: "0.3em" }}> Estatus estaciones </h1>
-                </Col>
-            </Row>
+                </Row>
+            </div>
 
             <Row className={estatusEstacionesStyles.colBody}>
                 {estatusEstaciones.map((estatusEstaciones, index) => (
-                    <Col xxl={2} xl={2} lg={3} md={4} sm={5} xs={5} className={estatusEstacionesStyles.card} key={index}>
+                    <Col xl={2} lg={3} md={4} sm={5} xs={5} className={estatusEstacionesStyles.card} key={index}>
                         <Row>
-                            <h3 style={{ color: "white" }}>Servicio</h3>
+                            <h3 style={{ color: "white" }}>{estatusEstaciones.Estacion}</h3>
                         </Row>
-
                         <Container>
                             <Row>
-                                <Col className={estatusEstacionesStyles.cardBody} style={{ marginRight: "0.5em" }}>
-                                    Onl. {estatusEstaciones.EnLinea}
+                                <Col className={estatusEstacionesStyles.cardBody} style={{ marginRight: "1em" }}>
+                                    <h4> Onl. {estatusEstaciones.EnLinea}</h4>
                                 </Col>
                                 <Col className={estatusEstacionesStyles.cardBody}>
                                     Disp. {estatusEstaciones.Disponibles}

@@ -34,11 +34,11 @@ export const EstatusOperadores = function() {
 
     return (   
         <>   
-            <Row style={{marginTop: "1em", marginBottom: "1em"}}>
-                <Col className= { estatusOperadoresStyles.colTitle }> 
+            <div className="px-5">
+                <Row className= { estatusOperadoresStyles.colTitle }> 
                     <h1 style={{marginTop: "0.3em", marginBottom: "0.3em"}}>Estatus Operadores</h1>
-                </Col>
-            </Row>
+                </Row>
+            </div>
             
             <Row style={{marginBottom: "1em", justifyContent: "Center"}}>
                             
