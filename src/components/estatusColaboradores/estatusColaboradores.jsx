@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 import estatusColaboradoresStyles  from "./estatusColaboradores.module.css"
 
 
@@ -64,13 +64,13 @@ export const EstatusColaboradores = function() {
                     
                     <Row className="justify-content-center px-5" >
 
-                        {colaboradores.map((colaborador, index) => ( 
-                            <Col xxl={2} xl={4} lg={4} md={5} sm={5} xs= {11} key={index}
+                        {colaboradores?.length > 0 && colaboradores.filter(colaboradores => colaboradores.ACCION === "LOGIN").map((colaborador, index) => ( 
+                            <Col xs="auto" key={index}
                                 className = { 
-                                    colaborador.ERROR === 1 ? estatusColaboradoresStyles.cardYellow 
-                                    : colaborador.ERROR === 2 ? estatusColaboradoresStyles.cardRed
-                                    : colaborador.ERROR === 3 ? estatusColaboradoresStyles.cardGreen
-                                    : colaborador.ERROR === 4 ? estatusColaboradoresStyles.cardGray
+                                    colaborador.error === 1 ? estatusColaboradoresStyles.cardYellow 
+                                    : colaborador.error === 2 ? estatusColaboradoresStyles.cardRed
+                                    : colaborador.error === 3 ? estatusColaboradoresStyles.cardGreen
+                                    : colaborador.error === 4 ? estatusColaboradoresStyles.cardGray
                                     : estatusColaboradoresStyles.cardGray 
                             }> 
 
@@ -88,7 +88,7 @@ export const EstatusColaboradores = function() {
                                 <Row className= { estatusColaboradoresStyles.rowInfo } style={{marginTop: "1em"}}>
                                     <Col className= { estatusColaboradoresStyles.rowEstacion } style={{marginRight: "1em"}}>
                                         <h1 style={{marginTop: "0.2em"}}> {colaborador.NumeroEstacion} </h1>
-                                        <h2>Estación de {colaborador.GrupoEstacion}</h2>
+                                        <h2>Estación de {colaborador.DescripcionPantalla}</h2>
                                     </Col>
                                     
                                     <Col className= { estatusColaboradoresStyles.rowEstacion } >      

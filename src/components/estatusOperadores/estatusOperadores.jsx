@@ -40,8 +40,9 @@ export const EstatusOperadores = function() {
                 </Row>
             </div>
             
+            <Col xs={12}>
             <Row style={{marginBottom: "1em", justifyContent: "Center"}}>
-                            
+                           
                 {operadores.map((operador, index) => (
                     <Col xxl={2} xl={3} lg={4} md={5} sm={10} xs= {10} className= { estatusOperadoresStyles.card } key={index}>
                         <Row className= { estatusOperadoresStyles.rowImgName }>
@@ -114,6 +115,7 @@ export const EstatusOperadores = function() {
                     </Col>
                 ))}
             </Row> 
+            </Col>
         </>
     )
 }  

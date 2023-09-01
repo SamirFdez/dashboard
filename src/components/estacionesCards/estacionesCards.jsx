@@ -41,11 +41,10 @@ export const EstacionsCards = function() {
 
             <Row>
                 <Col xs={12}>
-                    
                     <Row style={{textAlign: "Center", justifyContent: "center"}}>
 
                         {colaboradores.map((colaborador, index) => ( 
-                            <Col xxl={2} xl={4} lg={4} md={5} sm={11} xs= {11} key={index}
+                            <Col xs="auto" key={index}
                                 className = { 
                                     colaborador.ERROR === 1 ? EstacionesCardsStyles.cardGray 
                                     : colaborador.ERROR === 2 ? EstacionesCardsStyles.cardGreen
@@ -56,10 +55,16 @@ export const EstacionsCards = function() {
 
                                 <Row className= { EstacionesCardsStyles.rowImgName }>
                                     <Col xs={4}>
-                                        <img src={`data:image/jpeg;base64,${colaborador.Foto}`} alt="" className= { EstacionesCardsStyles.cardImg }/>
+                                        <img src={`data:image/jpeg;base64,${colaborador.Foto}`} 
+                                        className= { 
+                                            colaborador.ERROR === 3 ? EstacionesCardsStyles.cardImgOffline
+                                            : EstacionesCardsStyles.cardImg}/>
                                     </Col>
                                     
-                                    <Col xs={8} className= { EstacionesCardsStyles.cardName }> 
+                                    <Col xs={8} 
+                                            className= { 
+                                            colaborador.ERROR === 3 ? EstacionesCardsStyles.cardNameOffline
+                                            : EstacionesCardsStyles.cardName}>
                                         <h3 style={{marginTop: "1em"}}> {colaborador.NombreEmpleado} </h3>
                                         <h4 style={{marginTop: "0.2em"}}> {colaborador.GrupoEstacion} </h4>
                                     </Col>
