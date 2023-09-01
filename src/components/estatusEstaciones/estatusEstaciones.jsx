@@ -51,7 +51,7 @@ export const EstatusEstaciones = function() {
                                     <h4> Onl. {estatusEstaciones.EnLinea}</h4>
                                 </Col>
                                 <Col className={estatusEstacionesStyles.cardBody}>
-                                    Disp. {estatusEstaciones.Disponibles}
+                                    <h4> Disp. {estatusEstaciones.Disponibles}</h4>
                                 </Col>
                             </Row>
                         </Container>
