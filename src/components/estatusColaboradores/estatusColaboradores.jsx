@@ -60,10 +60,10 @@ export const EstatusColaboradores = function() {
                             <h3>Colaboradores Online</h3>
                         </Col>
                          
-                        <Row style={{justifyContent:"center"}}>
+                        <Row className="rowCards">
 
                             {colaboradores?.length > 0 && colaboradores.filter(colaboradores => colaboradores.ACCION === "LOGIN").map((colaborador, index) => ( 
-                                <Col xs="auto" key={index} 
+                                <Col md={3} sm={5} xs={11} key={index} 
                                     className = {
                                         colaborador.error === 1 ? "cardYellow"
                                         : colaborador.error === 2 ? "cardRed"

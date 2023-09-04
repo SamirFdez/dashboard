@@ -21,6 +21,7 @@
     border-radius: 1em;
     margin-bottom: 1em;
     margin-right: 1.5em;
+    width: 220px !important;
 }
 
 .cardBody {

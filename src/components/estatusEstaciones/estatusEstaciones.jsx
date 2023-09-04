@@ -41,7 +41,7 @@ export const EstatusEstaciones = function() {
 
             <Row className={estatusEstacionesStyles.colBody}>
                 {estatusEstaciones.map((estatusEstaciones, index) => (
-                    <Col xl={2} lg={3} md={4} sm={5} xs={5} className={estatusEstacionesStyles.card} key={index}>
+                    <Col xs="auto" className={estatusEstacionesStyles.card} key={index}>
                         <Row>
                             <h3 style={{ color: "white" }}>{estatusEstaciones.Estacion}</h3>
                         </Row>

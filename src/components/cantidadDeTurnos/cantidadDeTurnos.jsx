@@ -43,7 +43,7 @@ export const CantidadDeTurnos = function() {
                 <Row className= { cantidadDeTurnosStyles.colBody }>
 
                     {cantidadTurno.map((canturno, index) => (
-                    <Col xxl={2} xl={3} lg={3} md={4} sm={5} xs= {5} key={index} 
+                    <Col xs="auto" key={index} 
                     className = { 
                         canturno.ERROR === 1 ? cantidadDeTurnosStyles.cardYellow 
                         : canturno.ERROR === 2 ? cantidadDeTurnosStyles.cardRed

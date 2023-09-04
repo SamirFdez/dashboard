@@ -18,6 +18,10 @@
     margin-bottom: 1.5em;
 }
 
+.rowCards {
+    justify-content: center;
+}
+
 .cardGray {
     text-align: center;
     border-radius: 1em;
@@ -66,9 +70,102 @@
     width: 280px !important
 }
 
-@media screen and (max-width: 390px) {
-    .cardGray {
-        font-size: 12px;
+@media screen and (max-width: 1470px) {
+    .cardGray{
+        width: 260px !important
+    }
+    .cardYellow{
+        width: 260px !important
+    }
+    .cardRed {
+        width: 260px !important
+    }
+
+    .cardGreen {
+        width: 260px !important
+    }
+}
+
+@media screen and (max-width: 1399px) {
+    .rowCards {
+        justify-content: center;
+    }
+    .cardGray{
+        width: 260px !important
+    }
+    .cardYellow{
+        width: 260px !important
+    }
+    .cardRed {
+        width: 260px !important
+    }
+
+    .cardGreen {
+        width: 260px !important
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .cardGray{
+        width: 255px !important
+    }
+    .cardYellow{
+        width: 255px !important
+    }
+    .cardRed {
+        width: 255px !important
+    }
+
+    .cardGreen {
+        width: 255px !important
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .cardGray{
+        width: 300px !important
+    }
+    .cardYellow{
+        width: 300px !important
+    }
+    .cardRed {
+        width: 300px !important
+    }
+
+    .cardGreen {
+        width: 300px !important
+    }
+}
+
+@media screen and (max-width: 708px) {
+    .cardGray{
+        width: 250px !important
+    }
+    .cardYellow{
+        width: 250px !important
+    }
+    .cardRed {
+        width: 250px !important
+    }
+
+    .cardGreen {
+        width: 250px !important
+    }
+}
+
+@media screen and (max-width: 608px) {
+    .cardGray{
+        width: 90% !important
+    }
+    .cardYellow{
+        width: 90% !important
+    }
+    .cardRed {
+        width: 90% !important
+    }
+
+    .cardGreen {
+        width: 90% !important
     }
 }
 
