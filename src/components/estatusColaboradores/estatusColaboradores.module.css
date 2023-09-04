@@ -19,14 +19,12 @@
 
 .cardGray {
     background-color: #6c757c;
-    justify-content: center;
     text-align: center;
     border-radius: 1em;
     border-style: solid;
     border-color: #6c757c;
     border-width: 0.7em;
-    margin-bottom: 1em;
-    margin-right: 0.3em;
+
 }
 
 .cardGreen {
@@ -37,10 +35,8 @@
     border-style: solid;
     border-color: #28a745;
     border-width: 0.7em;
-    margin-bottom: 1em;
-    margin-right: 0em;
 }
-
+ 
 .cardBlue {
     background-color: #0275d8;
     justify-content: center;
@@ -49,8 +45,6 @@
     border-style: solid;
     border-color: #0275d8;
     border-width: 0.7em;
-    margin-bottom: 1em;
-    margin-right: 0em;
 }
 
 .cardGreenSpecial {
@@ -61,8 +55,6 @@
     border-style: solid;
     border-color: #19692c;
     border-width: 0.7em;
-    margin-bottom: 1em;
-    margin-right: 0em;
 }
 
 .cardYellow {
@@ -73,8 +65,6 @@
     border-style: solid;
     border-color: #ffc107;
     border-width: 0.7em;
-    margin-bottom: 1em;
-    margin-right: 0em;
 }
 
 .cardRed {
@@ -85,8 +75,6 @@
     border-style: solid;
     border-color: #dc3545;
     border-width: 0.7em;
-    margin-bottom: 1em;
-    margin-right: 0.3em;
 }
 
 .rowImgName{

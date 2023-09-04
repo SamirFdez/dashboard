@@ -60,11 +60,11 @@ export const EstatusColaboradores = function() {
                         <Col className= { estatusColaboradoresStyles.colSubTitle } >
                             <h3>Colaboradores Online</h3>
                         </Col>
-                        
-                        <Row className="justify-content-center" >
+                         
+                        <Row className="justify-content-center">
 
                             {colaboradores?.length > 0 && colaboradores.filter(colaboradores => colaboradores.ACCION === "LOGIN").map((colaborador, index) => ( 
-                                <Col xxl={2} xl={3} lg={3} xs={5} key={index}
+                                <Col xxl={2} lg={3} md={4} sm={6} xs= {12} key={index} style={{marginRight: "0.7em", marginBottom: "1em"}}
                                     className = { 
                                         colaborador.error === 1 ? estatusColaboradoresStyles.cardYellow 
                                         : colaborador.error === 2 ? estatusColaboradoresStyles.cardRed
@@ -114,7 +114,6 @@ export const EstatusColaboradores = function() {
                                     </Row>
                                 </Col>
                             ))}
-                                
                         </Row>
                     </Col>
 
@@ -134,7 +133,7 @@ export const EstatusColaboradores = function() {
 
                                         <Col xs={7} className= { estatusColaboradoresStyles.OfflinecardName }> 
                                             <h6 style={{marginTop: "0.5em", fontSize: "20px"}}> {operadorOff.NOMBRE} </h6>
-                                            <h6 style={{marginTop: "0.5em", fontSize: "16px"}}> {operadorOff.MOTIVO} </h6>
+                                            <h6 style={{marginTop: "0.5em", fontSize: "14px"}}> {operadorOff.MOTIVO} </h6>
                                             <h6 style={{fontSize: "16px"}}> {operadorOff.TIEMPOLOGUSUARIO} </h6>
                                         </Col>
                                     </Row>
