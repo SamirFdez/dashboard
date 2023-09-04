@@ -1,3 +1,4 @@
+
 .colTitle {
     background-color: #6c757c;
     color: #FFFFFF;
@@ -18,63 +19,57 @@
 }
 
 .cardGray {
+    text-align: center;
+    border-radius: 1em;
+    border-style: solid;
+    border-width: 0.7em;
+    margin-bottom: 1em;
+    margin-right: 0.7em;
     background-color: #6c757c;
-    text-align: center;
-    border-radius: 1em;
-    border-style: solid;
     border-color: #6c757c;
-    border-width: 0.7em;
-
-}
-
-.cardGreen {
-    background-color: #28a745;
-    justify-content: center;
-    text-align: center;
-    border-radius: 1em;
-    border-style: solid;
-    border-color: #28a745;
-    border-width: 0.7em;
-}
- 
-.cardBlue {
-    background-color: #0275d8;
-    justify-content: center;
-    text-align: center;
-    border-radius: 1em;
-    border-style: solid;
-    border-color: #0275d8;
-    border-width: 0.7em;
-}
-
-.cardGreenSpecial {
-    background-color: #19692c;
-    justify-content: center;
-    text-align: center;
-    border-radius: 1em;
-    border-style: solid;
-    border-color: #19692c;
-    border-width: 0.7em;
+    width: 280px !important
 }
 
 .cardYellow {
-    background-color: #ffc107;
-    justify-content: center;
     text-align: center;
     border-radius: 1em;
     border-style: solid;
-    border-color: #ffc107;
     border-width: 0.7em;
+    margin-bottom: 1em;
+    margin-right: 0.7em;
+    background-color: #ffc107;
+    border-color: #ffc107;
+    width: 280px !important
 }
 
 .cardRed {
-    background-color: #dc3545;
-    justify-content: center;
     text-align: center;
     border-radius: 1em;
     border-style: solid;
-    border-color: #dc3545;
     border-width: 0.7em;
+    margin-bottom: 1em;
+    margin-right: 0.7em;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    width: 280px !important
+}
+
+.cardGreen {
+    text-align: center;
+    border-radius: 1em;
+    border-style: solid;
+    border-width: 0.7em;
+    margin-bottom: 1em;
+    margin-right: 0.7em;
+    background-color: #28a745;
+    border-color: #28a745;
+    width: 280px !important
+}
+
+@media screen and (max-width: 390px) {
+    .cardGray {
+        font-size: 12px;
+    }
 }
 
 .rowImgName{
@@ -133,8 +128,6 @@
     margin-bottom: 1em;
     color: white;
 }
-
-
 
   .offlineImg {
     align-items: center;
