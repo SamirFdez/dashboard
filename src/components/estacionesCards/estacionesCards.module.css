@@ -69,6 +69,38 @@
     width: 280px !important
 }
 
+@media screen and (max-width: 708px) {
+    .cardGray{
+        width: 250px !important
+    }
+    .cardGreen{
+        width: 250px !important
+    }
+    .cardBlue {
+        width: 250px !important
+    }
+
+    .cardGreenSpecial {
+        width: 250px !important
+    }
+}
+
+@media screen and (max-width: 608px) {
+    .cardGray{
+        width: 90% !important
+    }
+    .cardGreen{
+        width: 90% !important
+    }
+    .cardBlue {
+        width: 90% !important
+    }
+
+    .cardGreenSpecial {
+        width: 90% !important
+    }
+}
+
 .rowImgName{
     border-radius: 1em;
     background-color: white;

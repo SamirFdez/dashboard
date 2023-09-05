@@ -15,16 +15,29 @@
 }
 
 .card {
-    background-color: #6c757c;
     justify-content: center;
     text-align: center;
     border-radius: 1em;
     border-style: solid;
-    border-color: #6c757c;
     border-width: 1em;
     margin-bottom: 1em;
-    margin-right: 1em;
+    margin-right: 0.7em;
+    background-color: #6c757c;
+    border-color: #6c757c;
+    width: 280px !important
 } 
+
+@media screen and (max-width: 708px) {
+    .card{
+        width: 250px !important
+    }
+}
+
+@media screen and (max-width: 608px) {
+    .card{
+        width: 90% !important
+    }
+}
 
 .rowImgName{
     border-radius: 1em;
@@ -34,10 +47,12 @@
 .cardImg {
     align-items: center;
     width: 9em;
-    border-radius: 9em;
+    height: 9em;
+    object-fit: cover;
+    border-radius: 4.5em;
     border-style: solid;
     border-color: white;
-    border-width: 0.4em;
+    border-width: 1em;
 }
 
 .cardName {
