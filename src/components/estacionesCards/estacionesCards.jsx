@@ -44,7 +44,7 @@ export const EstacionsCards = function() {
                     <Row style={{textAlign: "Center", justifyContent: "center"}}>
 
                         {colaboradores.map((colaborador, index) => ( 
-                            <Col xs="auto" key={index}
+                            <Col md={3} sm={5} xs={11} key={index}
                                 className = { 
                                     colaborador.ERROR === 1 ? EstacionesCardsStyles.cardGray 
                                     : colaborador.ERROR === 2 ? EstacionesCardsStyles.cardGreen

@@ -18,82 +18,56 @@
 }
 
 .cardGray {
-    background-color: #6c757c;
     justify-content: center;
     text-align: center;
     border-radius: 1em;
     border-style: solid;
-    border-color: #6c757c;
     border-width: 1em;
     margin-bottom: 1em;
-    margin-right: 1em;
+    margin-right: 0.7em;
+    background-color: #6c757c;
+    border-color: #6c757c;
+    width: 280px !important
 }
 
 .cardGreen {
-    background-color: #28a745;
     justify-content: center;
     text-align: center;
     border-radius: 1em;
     border-style: solid;
-    border-color: #28a745;
     border-width: 1em;
     margin-bottom: 1em;
-    margin-right: 1em;
+    margin-right: 0.7em;
+    background-color: #28a745;
+    border-color: #28a745;
+    width: 280px !important
 }
 
 .cardBlue {
-    background-color: #0275d8;
     justify-content: center;
     text-align: center;
     border-radius: 1em;
     border-style: solid;
-    border-color: #0275d8;
     border-width: 1em;
     margin-bottom: 1em;
-    margin-right: 1em;
+    margin-right: 0.7em;
+    background-color: #0275d8;
+    border-color: #0275d8;
+    width: 280px !important
 }
 
 .cardGreenSpecial {
+    justify-content: center;
+    text-align: center;
+    border-radius: 1em;
+    border-style: solid;
+    border-width: 1em;
+    margin-bottom: 1em;
+    margin-right: 0.7em;
     background-color: #19692c;
-    justify-content: center;
-    text-align: center;
-    border-radius: 1em;
-    border-style: solid;
     border-color: #19692c;
-    border-width: 1em;
-    margin-bottom: 1em;
-    margin-right: 1em;
+    width: 280px !important
 }
-
-.cardYellow {
-    background-color: #ffc107;
-    justify-content: center;
-    text-align: center;
-    border-radius: 1em;
-    border-style: solid;
-    border-color: #ffc107;
-    border-width: 1em;
-    margin-bottom: 1em;
-    margin-right: 1em;
-}
-
-.cardRed {
-    background-color: #dc3545;
-    justify-content: center;
-    text-align: center;
-    border-radius: 1em;
-    border-style: solid;
-    border-color: #dc3545;
-    border-width: 1em;
-    margin-bottom: 1em;
-    margin-right: 1em;
-    /* box-shadow: 0 0.2em 0.6em 0 #6c757c, 0 0.4em 0.8em 0 #6c757c; */
-    /* animation: cardRed 3s infinite; */
-}
-
-/* @keyframes cardRed {
-    1% {scale: 0.8 1;}
-  } */
 
 .rowImgName{
     border-radius: 1em;
