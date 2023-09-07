@@ -46,7 +46,7 @@ export const EstacionsCards = function() {
                                 <Col md={3} sm={5} xs={11} key={index}
                                     className = { 
                                         colaborador.ERROR === 1 ? EstacionesCardsStyles.cardGray 
-                                        : colaborador.ERROR === 2 ? EstacionesCardsStyles.cardGreen
+                                        : colaborador.ERROR ===  2? EstacionesCardsStyles.cardGreen
                                         : colaborador.ERROR === 3 ? EstacionesCardsStyles.cardBlue
                                         : colaborador.ERROR === 4 ? EstacionesCardsStyles.cardGreenSpecial
                                         : EstacionesCardsStyles.cardGray 
@@ -55,17 +55,26 @@ export const EstacionsCards = function() {
                                     <Row className= { EstacionesCardsStyles.rowImgName }>
                                         <Col xs={4}>
                                             <img src={`data:image/jpeg;base64,${colaborador.Foto}`} 
-                                            className= { 
-                                                colaborador.ERROR === 3 ? EstacionesCardsStyles.cardImgOffline
-                                                : EstacionesCardsStyles.cardImg}/>
+                                            className= {EstacionesCardsStyles.cardImg}/>
                                         </Col>
                                         
-                                        <Col xs={8} 
-                                                className= { 
-                                                colaborador.ERROR === 3 ? EstacionesCardsStyles.cardNameOffline
-                                                : EstacionesCardsStyles.cardName}>
-                                            <h3 style={{marginTop: "1em"}}> {colaborador.NombreEmpleado} </h3>
-                                            <h4 style={{marginTop: "0.2em"}}> {colaborador.GrupoEstacion} </h4>
+                                        <Col xs={8} className= { EstacionesCardsStyles.cardName}>
+                                            {
+                                                colaborador.ERROR === 3 ?
+                                                    (
+                                                        <>
+                                                            <h5 style={{marginTop: "1em"}}>Notificado</h5>
+                                                            <h3> {colaborador.NombreEmpleado} </h3>
+                                                            <h4 style={{marginTop: "0.2em", color: "#dc3545"}}> {colaborador.TIempoNotificacion} </h4>
+                                                        </>
+                                                    ) : 
+                                                    (
+                                                        <>
+                                                            <h3 style={{marginTop: "1em"}}> {colaborador.NombreEmpleado} </h3>
+                                                            <h4 style={{marginTop: "0.2em"}}> {colaborador.GrupoEstacion} </h4>
+                                                        </>
+                                                    )
+                                            }
                                         </Col>
                                     </Row>
                                     

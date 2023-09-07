@@ -9,7 +9,7 @@ export const CantidadDeTurnos = function() {
     const cantidadDeTurnosProc = import.meta.env.VITE_APP_API_cantidadDeTurnos;
     const ApiKey = import.meta.env.VITE_APP_APIKEY;
     const [cantidadTurno, setCantidadTurno] = React.useState(null);
-
+ 
     const config = {
         headers:{
             "Content-Type": "application/json",
