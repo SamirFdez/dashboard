@@ -65,7 +65,7 @@ export const EstacionsCards = function() {
                                                         <>
                                                             <h5 style={{marginTop: "1em"}}>Notificado</h5>
                                                             <h3> {colaborador.NombreEmpleado} </h3>
-                                                            <h4 style={{marginTop: "0.2em", color: "#dc3545"}}> {colaborador.TIempoNotificacion} </h4>
+                                                            <h4 style={{marginTop: "0.2em", color: "#dc3545"}}> {colaborador.TiempoNotificacion} </h4>
                                                         </>
                                                     ) : 
                                                     (
