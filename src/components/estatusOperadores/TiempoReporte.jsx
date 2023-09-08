@@ -33,7 +33,6 @@ export const TiempoReporte = ({operador}) => {
       return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
     }
       
-
   return (
     <h4> {formatTime(currentTime)} </h4>
   )
