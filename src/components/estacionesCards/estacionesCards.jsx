@@ -1,14 +1,17 @@
-import React, { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Row, Col } from 'react-bootstrap'
 import EstacionesCardsStyles  from "./estacionesCards.module.css"
+import { TiempoNotificado } from './tiempoNotificado'
+import { TiempoGlobal } from './tiempoGlobal'
+import { TiempoUltimoEstatus } from './tiempoUltimoEstatus'
 
 export const EstacionsCards = function() {
 
     const baseUrl = import.meta.env.VITE_APP_BASEURL
     const estatusColaboradesProc = import.meta.env.VITE_APP_API_estatusColaboradores;
     const ApiKey = import.meta.env.VITE_APP_APIKEY;
-    const [colaboradores, setColaboradores] = React.useState(null);
+    const [colaboradores, setColaboradores] = useState(null);
 
     const config = {
         headers:{
@@ -18,8 +21,15 @@ export const EstacionsCards = function() {
       };
 
       const getEstacionesCards = async () =>{
-        const response = await axios.get(baseUrl+estatusColaboradesProc, config);
-        setColaboradores(response.data);
+
+        try {
+            const response = await axios.get(baseUrl+estatusColaboradesProc, config);
+            setColaboradores(response.data);
+            
+        } catch (error) {
+            console.error('Error al obtener el nuevo valor del contador:', error);
+        }
+
       }
 
       useEffect(() => {
@@ -65,7 +75,14 @@ export const EstacionsCards = function() {
                                                         <>
                                                             <h5 style={{marginTop: "1em"}}>Notificado</h5>
                                                             <h3> {colaborador.NombreEmpleado} </h3>
-                                                            <h4 style={{marginTop: "0.2em", color: "#dc3545"}}> {colaborador.TiempoNotificacion} </h4>
+                                                            {
+                                                                colaborador.Notificacion_24h === 0 ?
+                                                                    <TiempoNotificado colaborador={colaborador.TiempoNotificacion}/>   
+                                                                : 
+                                                                    <h4 style={{marginTop: "0.2em", color: "#dc3545"}}> Más de un día </h4>
+
+                                                            }
+
                                                         </>
                                                     ) : 
                                                     (
@@ -87,20 +104,30 @@ export const EstacionsCards = function() {
                                         <Col className= { EstacionesCardsStyles.rowEstacion } >      
                                             <h4 style={{marginTop: "0.5em"}}> Turno: </h4>
                                             <h1> {colaborador.Turno} </h1>
-                                            <h4> {colaborador.TiempoGlobal} </h4>
+                                                {
+                                                    colaborador.Global_24h === 0 ?
+                                                        <TiempoGlobal colaborador={colaborador.TiempoGlobal}/>
+                                                    :
+                                                        <h4> Más de un día </h4>
+                                                }
 
                                         </Col>
                                     </Row>
 
                                     <Row className= { EstacionesCardsStyles.rowPausa } style={{marginTop: "1em"}}>
-                                            <Row >
-                                                <Col xs={7}>
-                                                    <h4> {colaborador.EstatusTurno}</h4>
-                                                </Col>
-                                                <Col xs={5}> 
-                                                    <h4> {colaborador.TiempoUltimoEstatus} </h4>
-                                                </Col>
-                                            </Row>
+                                        <Row style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                                            <Col xs={7}>
+                                                <h4> {colaborador.EstatusTurno}</h4>
+                                            </Col>
+                                            <Col xs={5}> 
+                                                {
+                                                    colaborador.TiempoUltimoEstatus === 0 ?
+                                                        <TiempoUltimoEstatus colaborador={colaborador.TiempoUltimoEstatus}/>
+                                                    :
+                                                        <h4> Más de un día </h4>
+                                                }
+                                            </Col>
+                                        </Row>
                                     </Row>
 
                                     <Row className= { EstacionesCardsStyles.rowCita } style={{marginTop: "1em"}}>
