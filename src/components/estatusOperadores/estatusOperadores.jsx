@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import axios from 'axios'
 import { Row, Col } from 'react-bootstrap'
 import estatusOperadoresStyles  from "./estatusOperadores.module.css"
+import { TiempoReporte } from './TiempoReporte'
 
 export const EstatusOperadores = function() {
         
@@ -108,7 +109,7 @@ export const EstatusOperadores = function() {
                                                 <h4> { "Tiempo " + operador.ACCION.toLowerCase()}:</h4>
                                             </Col>
                                             <Col xs={2}> 
-                                                <h4> {operador.TIEMPOLOGUSUARIO} </h4>
+                                                <TiempoReporte operador={operador.TIEMPOLOGUSUARIO}/>
                                             </Col>
                                         </Row>
                                     </Row>

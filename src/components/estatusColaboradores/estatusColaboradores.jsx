@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Row, Col } from 'react-bootstrap'
 import './estatusColaboradoresStyle.css'
 import { TiempoTurno } from './tiempoTurno'
+import { TiempoLogOut } from './tiempoLogOut'
 
 export const EstatusColaboradores = function() {
 
@@ -94,8 +95,10 @@ export const EstatusColaboradores = function() {
                                     </Row>
 
                                     <Row className= "rowPausa" style={{marginTop: "0.7em"}}>
-                                            <Row >
-                                                <h6 style={{fontSize: "16px"}}> {operadoresOn.MENSAJE}</h6>
+                                            <Row style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                                                <Col>
+                                                    <h6 style={{fontSize: "16px"}}> {operadoresOn.MENSAJE}</h6>
+                                                </Col>   
                                             </Row>
                                     </Row>
 
@@ -129,7 +132,7 @@ export const EstatusColaboradores = function() {
                                         <Col xs={7} className= "OfflinecardName"> 
                                             <h6 style={{marginTop: "0.5em", fontSize: "20px"}}> {operadorOff.NOMBRE} </h6>
                                             <h6 style={{marginTop: "0.5em", fontSize: "14px"}}> {operadorOff.MOTIVO} </h6>
-                                            <h6 style={{fontSize: "16px"}}> {operadorOff.TIEMPOLOGUSUARIO} </h6>
+                                            <TiempoLogOut operadorOff={operadorOff.TIEMPOLOGUSUARIO}/>
                                         </Col>
                                     </Row>
                                 </Col>
