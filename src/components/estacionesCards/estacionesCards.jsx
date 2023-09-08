@@ -104,12 +104,12 @@ export const EstacionsCards = function() {
                                         <Col className= { EstacionesCardsStyles.rowEstacion } >      
                                             <h4 style={{marginTop: "0.5em"}}> Turno: </h4>
                                             <h1> {colaborador.Turno} </h1>
-                                                {
-                                                    colaborador.Global_24h === 0 ?
-                                                        <TiempoGlobal colaborador={colaborador.TiempoGlobal}/>
-                                                    :
-                                                        <h4> Más de un día </h4>
-                                                }
+                                            {
+                                                colaborador.Global_24h === 0 ?
+                                                    <TiempoGlobal colaborador={colaborador.TiempoGlobal}/>
+                                                :
+                                                    <h4> Más de un día </h4>
+                                            }
 
                                         </Col>
                                     </Row>
