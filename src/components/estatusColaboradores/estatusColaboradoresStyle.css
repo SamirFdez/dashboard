@@ -31,7 +31,7 @@
     margin-right: 0.7em;
     background-color: #6c757c;
     border-color: #6c757c;
-    width: 280px !important
+    width: 260px !important
 }
 
 .cardYellow {
@@ -43,7 +43,7 @@
     margin-right: 0.7em;
     background-color: #ffc107;
     border-color: #ffc107;
-    width: 280px !important
+    width: 260px !important
 }
 
 .cardRed {
@@ -55,7 +55,7 @@
     margin-right: 0.7em;
     background-color: #dc3545;
     border-color: #dc3545;
-    width: 280px !important
+    width: 260px !important
 }
 
 .cardGreen {
@@ -67,7 +67,7 @@
     margin-right: 0.7em;
     background-color: #28a745;
     border-color: #28a745;
-    width: 280px !important
+    width: 260px !important
 }
 
 @media screen and (max-width: 1470px) {

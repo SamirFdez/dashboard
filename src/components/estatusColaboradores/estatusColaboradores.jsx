@@ -132,8 +132,7 @@ export const EstatusColaboradores = function() {
                                         <Col xs={7} className= "OfflinecardName"> 
                                             <h6 style={{marginTop: "0.5em", fontSize: "20px"}}> {operadorOff.NOMBRE} </h6>
                                             <h6 style={{marginTop: "0.5em", fontSize: "14px"}}> {operadorOff.MOTIVO} </h6>
-                                            <TiempoLogOut operadorOff={operadorOff.TIEMPOLOGUSUARIO}/>
-                                        </Col>
+                                            <TiempoLogOut operadorOff={operadorOff.TIEMPOLOGUSUARIO}/>                                        </Col>
                                     </Row>
                                 </Col>
                             )}

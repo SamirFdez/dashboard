@@ -36,8 +36,9 @@ DASHBOARD ~
 Funcionalidades:
 
 - Login
-	* Valida si todos los campos estan llenos, si no, tira msg de info
-	* Valida si el usuario y la password coinciden, si no, tira msg de error
+	* Valida si todos los campos estan llenos, si no, manda mensaje de info.
+	* Valida si el usuario y la password coinciden, si las credenciales son correctas accedes al sistema, si el usuario y la contraseña no coinciden, manda mensaje de error.
+	* No se puede entrar a ninguna vista sin antes autenticarse. Si intentas poner una ruta existente u otra ruta no existente sin haberte logeado, te envia al login.
 
 - Cantidad de turnos y tiempo de espera por area
 	* Se suman los turnos y se pone el tiempo de espera del primer turno en cola. Ej: Si hay dos turnos el primero 10 min y segundo el min 5 (la salida sera 15), cuando se atienda el primero, la cola bajara a 5 min.
