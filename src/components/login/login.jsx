@@ -46,7 +46,7 @@ export const LoginForm = function() {
                 if(response.data[0] ) {
                     setLogin(response.data[0]);
                     navigate("/dashboard")
-                    localStorage.setItem("nombre", response.data[0].Nombre)
+                    sessionStorage.setItem("nombre", response.data[0].Nombre)
                     dispatch(updateAuthenticationState(true))
                     return
                 }

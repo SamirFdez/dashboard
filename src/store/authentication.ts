@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const sessionLogin = localStorage.getItem("nombre");
+const sessionLogin = sessionStorage.getItem("nombre");
 
 const initialState = {
     // state can be 'authenticated' | 'no-authenticated';

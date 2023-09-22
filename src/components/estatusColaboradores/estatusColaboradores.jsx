@@ -53,7 +53,7 @@ export const EstatusColaboradores = function() {
                         <Col className= "colSubTitle" >
                             <h3>Colaboradores Online</h3>
                         </Col>
-                         
+                          
                         <Row className="rowCards">
 
                             {operadoresOn?.length > 0 && operadoresOn.filter(colaboradores => colaboradores.ACCION === "LOGIN").map((operadoresOn, index) => ( 

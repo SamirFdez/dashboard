@@ -47,10 +47,10 @@ export const EstatusOperadores = function() {
                             {operadores.map((operador, index) => (
                                 <Col md={3} sm={5} xs={11} className= { estatusOperadoresStyles.card } key={index}>
                                     <Row className= { estatusOperadoresStyles.rowImgName }>
-                                        <Col xs={5}>
+                                        <Col xs={4}>
                                             <img src={`data:image/jpeg;base64,${operador.Foto}`} alt="Imagen operador" className= { estatusOperadoresStyles.cardImg }/>
                                         </Col>
-                                        <Col xs={7} className= { estatusOperadoresStyles.cardName }> 
+                                        <Col xs={8} className= { estatusOperadoresStyles.cardName }> 
                                             <h3 style={{marginTop: "1.2em"}}> {operador.NOMBRE} </h3>
                                             <h4 style={{marginTop: "0.6em"}}> {operador.DESCRIPCION} </h4>
                                         </Col>
