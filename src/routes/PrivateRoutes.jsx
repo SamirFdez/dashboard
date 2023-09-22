@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { Dashboard } from '../Views/Dashboard';
+import { Dashboard } from '../Views/dashboard';
 import { Estaciones } from '../Views/estaciones';
 import { Reporte } from '../Views/reporte';
 import { ConfiguracionDashboard } from '../Views/configuracion';
