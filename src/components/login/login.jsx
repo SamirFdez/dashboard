@@ -4,7 +4,7 @@ import swal from 'sweetalert';
 import { useDispatch } from 'react-redux'
 import { updateAuthenticationState } from '../../store/authentication'
 import { useNavigate } from "react-router-dom";
-import Logo from '../../assets/img/user.png';
+import imgUser from '../../../public/images/user.png';
 import logintStyles from './login.module.css'
 
 
@@ -67,7 +67,7 @@ export const LoginForm = function() {
     return (
         <>
          <div className={logintStyles.LoginBox}>
-            <img className={logintStyles.LoginBoxLogo} src={Logo} alt="Logo"/> 
+            <img className={logintStyles.LoginBoxLogo} src={imgUser} alt="Logo"/> 
             <h1 className={logintStyles.LoginBoxH1}> Iniciar Sesión </h1>   
 
             <form onSubmit={noRecargarPagina}>
