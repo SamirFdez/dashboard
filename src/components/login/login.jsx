@@ -4,7 +4,7 @@ import swal from 'sweetalert';
 import { useDispatch } from 'react-redux'
 import { updateAuthenticationState } from '../../store/authentication'
 import { useNavigate } from "react-router-dom";
-import imgUser from '../../assets/images/user.png'
+import imgUser from './user.png'
 import logintStyles from './login.module.css'
 
 
