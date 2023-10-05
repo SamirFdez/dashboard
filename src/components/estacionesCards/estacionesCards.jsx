@@ -121,20 +121,24 @@ export const EstacionsCards = function() {
                                             </Col>
                                             <Col xs={5}> 
                                                 {
-                                                    colaborador.TiempoUltimoEstatus === 0 ?
+                                                    colaborador.UltEstatus_24h === 0 ?
                                                         <TiempoUltimoEstatus colaborador={colaborador.TiempoUltimoEstatus}/>
                                                     :
                                                         <h4> Más de un día </h4>
                                                 }
-                                            </Col>
+                                            </Col> 
                                         </Row>
                                     </Row>
 
                                     <Row className= { EstacionesCardsStyles.rowCita } style={{marginTop: "1em"}}>
                                         <Row>
                                             <Col>
-                                                <h4> {colaborador.NombreCita} </h4>
-                                                <h4> {colaborador.NumeroCita} </h4>
+                                                {
+                                                    colaborador.NombreCita !== null ?
+                                                        <h4> {colaborador.NombreCita} </h4>
+                                                    : null
+                                                }
+                                                {/* <h4> {colaborador.NumeroCita} </h4> */}
                                             </Col>
                                         </Row>
                                     </Row>

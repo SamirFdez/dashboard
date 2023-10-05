@@ -105,8 +105,12 @@ export const EstatusColaboradores = function() {
                                     <Row className= "rowCliente" style={{marginTop: "0.7em"}}>
                                         <Row>
                                             <Col>
-                                                <h6 style={{fontSize: "16px"}}> {operadoresOn.NombreCita} </h6>
-                                                <h6 style={{fontSize: "16px"}}> {operadoresOn.NumeroCita} </h6>
+                                                {
+                                                    operadoresOn.NombreCita !== null ?
+                                                        <h6 style={{fontSize: "16px"}}> {operadoresOn.NombreCita} </h6>
+                                                    : null
+                                                }
+                                                {/* <h6 style={{fontSize: "16px"}}> {operadoresOn.NumeroCita} </h6> */}
                                             </Col>
                                         </Row>
                                     </Row>
