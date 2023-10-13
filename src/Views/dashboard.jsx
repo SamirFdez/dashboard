@@ -1,5 +1,6 @@
 import { Header } from "../components/header/header";
 import { NavbarMenu } from "../components/navbar/navbar";
+import { FullDashboard } from "../components/dashboard/fullDashboard";
 import { CantidadDeTurnos } from "../components/cantidadDeTurnos/cantidadDeTurnos"
 import { EstatusColaboradores } from "../components/estatusColaboradores/estatusColaboradores"
 import { EstatusEstaciones } from "../components/estatusEstaciones/estatusEstaciones"
@@ -16,6 +17,7 @@ export const Dashboard = function() {
   return (   
       <>  
         <NavbarMenu />
+        <FullDashboard/>
 
       </>
 )

@@ -64,7 +64,48 @@ body {
     }
 }
 
+/*--------------------------------------------------------------
+>>> Full Dashboard
+----------------------------------------------------------------*/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 12;
+    background-color: #2196F3;
+    gap: 5px
+  }
+  
+  .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  }
+
+  .item1{
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+  
+  .item2 {
+    grid-column-start: 4;
+    grid-column-end: 11;
+  }
+
+  .item3 {
+    grid-column-start: 11;
+    grid-column-end: 13;
+  }
+
+  
 @media screen and (max-width: 767px) {
+    .containerfk {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 14px) {
     .containerfk {
         display: none;
     }
