@@ -1,99 +1,91 @@
-import React from "react"
-import navBarStyles  from "./navbar.module.css"
-import { Link, useNavigate } from "react-router-dom";
-import { SlScreenDesktop, SlUser, SlPeople, SlSettings, SlLogout} from "react-icons/sl";
-import {useDispatch} from 'react-redux'
-import {updateAuthenticationState} from '../../store/authentication'
+import React, { useState } from "react";
+import {
+  Navbar,
+  Container,
+  Form,
+  Nav,
+  NavDropdown,
+} from "react-bootstrap";
+import {
+  SlGrid,
+  SlScreenDesktop,
+  SlUser,
+  SlPeople,
+  SlSettings,
+  SlLogout,
+} from "react-icons/sl";
 
-export const NavBar = function() {
+export const NavbarMenu = () => {
+  const [offset, setOffset] = useState(0);
+  const [expanded, setExpanded] = useState(false);
 
-    const dispatch = useDispatch()
-    const navigate = useNavigate();
-    const handleLogOutUser = () => {
-        swal({
-            title: "¿Estás seguro de cerrar sesión?",
-            text: "",
-            icon: "warning",
-            buttons: ["Cancelar", true],
-            dangerMode: true,
-          })
-          .then((cerrarSesion) => {
-            if (cerrarSesion) {
-                navigate("/")
-                dispatch(updateAuthenticationState(false))
-                sessionStorage.removeItem("nombre")
-            } else {
-            }
-          });
-        
+  const closeNav = () => {
+    setExpanded(false);
+  };
+
+  const handleNavLinkClick = (sectionId) => {
+    closeNav();
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const offsetTop = section.offsetTop - 60;
+      window.scrollTo({ top: offsetTop, behavior: "smooth" });
+      setOffset(offsetTop);
     }
+  };
+  return (
+    <>
+      <Navbar className="Navbar fixed-bottom" expand="lg">
+        <Container>
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ma-auto">
+                <Nav.Link className="navLink mx-3">
+                  <SlUser/>
+                </Nav.Link>
+                <Nav.Link className="navLink mx-3">
+                  <SlScreenDesktop/>
+                </Nav.Link>
+                <Nav.Link className="navLink mx-3">
+                  <SlUser/>
+                </Nav.Link>
 
-    return (   
-        <>
-            <div className={navBarStyles.sidenav}>
+              {/* <NavDropdown
+                title={<SlUser />}
+                id="navDropDown"
+                className="dropup"
+                data-bs-theme="dark"
+              >
+                <NavDropdown.Item className="dropDownItem">
+                  Action
+                </NavDropdown.Item>
+                <NavDropdown.Item className="dropDownItem">
+                  Another action
+                </NavDropdown.Item>
+                <NavDropdown.Item className="dropDownItem">
+                  Something
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item className="dropDownItem">
+                  Separated link
+                </NavDropdown.Item>
+              </NavDropdown> */}
+            </Nav>
+          </Navbar.Collapse>
+          <Navbar.Brand className="NavbarBrand">
+            ESTATUS GESTION DE COLA
+          </Navbar.Brand>
 
-                <div className={navBarStyles.iconosUp}>
-                    <Link to='/dashboard' className={navBarStyles.link}>
-                        <SlUser/>
-                    </Link>   
-                </div>
-                <div className={navBarStyles.iconosUp}>
-                    <Link to='/estaciones' className={navBarStyles.link}>
-                        <SlScreenDesktop/>               
-                    </Link>  
-                </div>
-                <div className={navBarStyles.iconosUp}>
-                    <Link to='/reporte' className={navBarStyles.link}>
-                        <SlPeople/>             
-                    </Link>  
-                </div>
+          {/* <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+            />
+          </Form> */}
 
-                <div className={navBarStyles.iconoSetting}>
-                    <Link to='' className={navBarStyles.link}>
-                        <SlSettings/>                    
-                    </Link>  
-                </div>
-
-                <div className={navBarStyles.iconoLogOut}>
-                    <Link className={navBarStyles.link} onClick={handleLogOutUser}>
-                        <SlLogout/>                    
-                    </Link>  
-                </div>
-            </div>
-        </>
- )
-}  
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+          {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
+        </Container>
+      </Navbar>
+    </>
+  );
+};
