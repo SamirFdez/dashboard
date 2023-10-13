@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-  Navbar,
-  Container,
-  Form,
-  Nav,
-  NavDropdown,
-} from "react-bootstrap";
+import { Navbar, Container, Form, Nav, NavDropdown } from "react-bootstrap";
 import {
   SlGrid,
   SlScreenDesktop,
@@ -34,21 +28,21 @@ export const NavbarMenu = () => {
   };
   return (
     <>
-      <Navbar className="Navbar fixed-bottom" expand="lg">
-        <Container>
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ma-auto">
-                <Nav.Link className="navLink mx-3">
-                  <SlUser/>
-                </Nav.Link>
-                <Nav.Link className="navLink mx-3">
-                  <SlScreenDesktop/>
-                </Nav.Link>
-                <Nav.Link className="navLink mx-3">
-                  <SlUser/>
-                </Nav.Link>
+      <Navbar className="Navbar fixed-bottom" >
+        <div className="container-fluid">
+          {/* <Navbar.Collapse id="basic-navbar-nav"> */}
+          <Nav className="ma-auto Nav">
+            <Nav.Link className="navLink me-3 ">
+              <SlUser />
+            </Nav.Link>
+            <Nav.Link className="navLink mx-3">
+              <SlScreenDesktop />
+            </Nav.Link>
+            <Nav.Link className="navLink mx-3">
+              <SlPeople />
+            </Nav.Link>
 
-              {/* <NavDropdown
+            {/* <NavDropdown
                 title={<SlUser />}
                 id="navDropDown"
                 className="dropup"
@@ -68,11 +62,20 @@ export const NavbarMenu = () => {
                   Separated link
                 </NavDropdown.Item>
               </NavDropdown> */}
-            </Nav>
-          </Navbar.Collapse>
+          </Nav>
+          {/* </Navbar.Collapse> */}
           <Navbar.Brand className="NavbarBrand">
             ESTATUS GESTION DE COLA
           </Navbar.Brand>
+
+          <Nav className="ma-auto">
+            <Nav.Link className="navLink mx-3">
+              <SlSettings />
+            </Nav.Link>
+            <Nav.Link className="navLink mx-3">
+              <SlLogout />
+            </Nav.Link>
+          </Nav>
 
           {/* <Form className="d-flex">
             <Form.Control
@@ -84,7 +87,7 @@ export const NavbarMenu = () => {
           </Form> */}
 
           {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
-        </Container>
+        </div>
       </Navbar>
     </>
   );
