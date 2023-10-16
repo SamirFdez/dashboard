@@ -39,7 +39,7 @@ export const EstatusColaboradores = function () {
           className="rowTitle"
           style={{ marginTop: "0.5em", marginBottom: "0.5em" }}
         >
-          <h3 className="title" style={{textAlign: "left"}}>
+          <h3 className="title" style={{ textAlign: "left" }}>
             <SlUser style={{ marginRight: "10px" }} /> Colaborador
           </h3>
         </Row>
@@ -48,7 +48,7 @@ export const EstatusColaboradores = function () {
             operadoresOn
               .filter((colaboradores) => colaboradores.ACCION === "LOGIN")
               .map((operadoresOn, index) => (
-                <Col xs="auto">
+                <Col xs="auto" key={index}>
                   <Card
                     className={
                       operadoresOn.error === 1
@@ -61,16 +61,14 @@ export const EstatusColaboradores = function () {
                     }
                   >
                     <Row>
-                        <div className="d-flex justify-content-around">
-                            <div>
-                            <img
+                      <div className="d-flex justify-content-around">
+                        <div>
+                          <img
                             src={`data:image/jpeg;base64,${operadoresOn.Foto}`}
                             className="cardImg"
                           />
-                            </div>
-
-
                         </div>
+                      </div>
                     </Row>
                   </Card>
                 </Col>

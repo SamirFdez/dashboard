@@ -42,7 +42,7 @@ export const CantidadDeTurnos = function () {
 
         <Row>
           {cantidadTurno.map((canturno, index) => (
-            <Col xs="auto">
+            <Col xs="auto" key={index}>
               <Card
                 className={
                   canturno.ERROR === 1
@@ -51,7 +51,6 @@ export const CantidadDeTurnos = function () {
                     ? "canturnoRed"
                     : "canturnoGray"
                 }
-                key={index}
               >
                 <Card.Body style={{ padding: "0px" }}>
                   <h6
