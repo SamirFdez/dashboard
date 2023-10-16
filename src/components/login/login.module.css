@@ -1,6 +1,6 @@
 .LoginBox {
     width: 32em;
-    height: 37em;
+    height: 33em;
     background: #fff;
     top: 50%;
     left: 50%;
@@ -11,12 +11,12 @@
     }
     
     .LoginBoxLogo{
-        width: 15em;
-        height: 15em;
+        width: 12.5em;
+        height: 12.5em;
         border-radius: 50%;
         position: absolute;
         top: -7.5em;
-        left: calc(50% - 7.5em);
+        left: calc(50% - 6.5em);
     }
     
     .LoginBoxH1 {

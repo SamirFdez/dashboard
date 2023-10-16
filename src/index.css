@@ -72,41 +72,322 @@ body {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 12;
-    background-color: #2196F3;
-    gap: 5px
-  }
-  
-  .grid-container > div {
+    gap: 10px
+}
+
+/* .grid-container > div {
     background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
-  }
+  } */
 
-  .item1{
+.grid1 {
     grid-column-start: 1;
     grid-column-end: 4;
-  }
-  
-  .item2 {
+}
+
+.grid2 {
     grid-column-start: 4;
     grid-column-end: 11;
-  }
+}
 
-  .item3 {
+.grid3 {
     grid-column-start: 11;
     grid-column-end: 13;
-  }
+}
 
-  
-@media screen and (max-width: 767px) {
-    .containerfk {
-        display: none;
+/*--------------------------------------------------------------
+>>> titulos 
+----------------------------------------------------------------*/
+
+.rowTitle{
+    background-color: #6c757c;
+    color: #FFFFFF;
+    text-align: center;
+    border-style: solid;
+    border-color: #3c3f40;
+    border-radius: 0.5em;
+}
+
+.title {
+    margin: 0px;
+    padding: 8px;
+}
+
+/*--------------------------------------------------------------
+>>> Cantidad de turnos
+----------------------------------------------------------------*/
+
+.canturnoYellow {
+    text-align: center;
+    background-color: #ffc107 !important;
+    border-radius: 0.50em !important;
+    margin-bottom: 1em;
+    width: 11.5em;
+    padding: 5px;
+}
+
+.canturnoGray {
+    text-align: center;
+    background-color: #6c757c !important;
+    border-radius: 0.50em !important;
+    margin-bottom: 1em;
+    width: 11.5em;
+    padding: 8px;
+}
+
+.canturnoRed {
+    text-align: center;
+    background-color: #dc3545 !important;
+    border-radius: 0.50em !important;
+    margin-bottom: 1em;
+    width: 11.5em;
+    padding: 8px;
+}
+
+.canturnoCardTitleYellow {
+    color: #3c3f40;
+    margin: 0px;
+    padding-bottom: 8px;
+}
+
+.canturnoCardTitleAll {
+    color: #FFFFFF;
+    margin: 0px;
+    padding-bottom: 8px;
+}
+
+.canturnoCardBody {
+    width: 81px;
+    padding: 4px;
+    background-color: #FFFFFF;
+    border-radius: 0.25em;
+}
+
+/*--------------------------------------------------------------
+>>> Colaborador Online
+----------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+.cardGray {
+    text-align: center;
+    border-radius: 1em;
+    border-style: solid;
+    border-width: 0.7em;
+    margin-bottom: 1em;
+    margin-right: 0.7em;
+    background-color: #6c757c;
+    border-color: #6c757c;
+    width: 260px !important
+}
+
+.cardYellow {
+    text-align: center;
+    border-radius: 1em;
+    border-style: solid;
+    border-width: 0.7em;
+    margin-bottom: 1em;
+    margin-right: 0.7em;
+    background-color: #ffc107;
+    border-color: #ffc107;
+    width: 260px !important
+}
+
+.cardRed {
+    text-align: center;
+    border-radius: 1em;
+    border-style: solid;
+    border-width: 0.7em;
+    margin-bottom: 1em;
+    margin-right: 0.7em;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    width: 260px !important
+}
+
+.cardGreen {
+    text-align: center;
+    border-radius: 1em;
+    border-style: solid;
+    border-width: 0.7em;
+    margin-bottom: 1em;
+    margin-right: 0.7em;
+    background-color: #28a745;
+    border-color: #28a745;
+    width: 260px !important
+}
+
+@media screen and (max-width: 1470px) {
+    .cardGray{
+        width: 260px !important
+    }
+    .cardYellow{
+        width: 260px !important
+    }
+    .cardRed {
+        width: 260px !important
+    }
+
+    .cardGreen {
+        width: 260px !important
     }
 }
 
-@media screen and (max-width: 14px) {
-    .containerfk {
-        display: none;
+@media screen and (max-width: 1399px) {
+    .rowCards {
+        justify-content: center;
     }
+    .cardGray{
+        width: 260px !important
+    }
+    .cardYellow{
+        width: 260px !important
+    }
+    .cardRed {
+        width: 260px !important
+    }
+
+    .cardGreen {
+        width: 260px !important
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .cardGray{
+        width: 255px !important
+    }
+    .cardYellow{
+        width: 255px !important
+    }
+    .cardRed {
+        width: 255px !important
+    }
+
+    .cardGreen {
+        width: 255px !important
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .cardGray{
+        width: 300px !important
+    }
+    .cardYellow{
+        width: 300px !important
+    }
+    .cardRed {
+        width: 300px !important
+    }
+
+    .cardGreen {
+        width: 300px !important
+    }
+}
+
+@media screen and (max-width: 708px) {
+    .cardGray{
+        width: 250px !important
+    }
+    .cardYellow{
+        width: 250px !important
+    }
+    .cardRed {
+        width: 250px !important
+    }
+
+    .cardGreen {
+        width: 250px !important
+    }
+}
+
+@media screen and (max-width: 608px) {
+    .cardGray{
+        width: 90% !important
+    }
+    .cardYellow{
+        width: 90% !important
+    }
+    .cardRed {
+        width: 90% !important
+    }
+
+    .cardGreen {
+        width: 90% !important
+    }
+}
+
+.rowImgName{
+    border-radius: 1em;
+    background-color: white;
+}
+
+.cardImg {
+    align-items: center;
+    width: 9em;
+    height: 9em;
+    object-fit: cover;
+    border-radius: 4.5em;
+    border-style: solid;
+    border-color: white;
+    border-width: 1.5em;
+}
+
+.cardName {
+    color: #000000;
+    font-weight: 500;
+    text-align: center;
+    justify-content: center;
+}
+
+.rowEstacion{
+    text-align: center;
+    border-radius: 1em;
+    border-style: solid;
+    border-color: #6c757c;
+    border-width: 0em;
+    background-color: white;
+    color: #000000;
+}
+
+.rowPausa{
+    text-align: center;
+    border-radius: 0.5em;
+    background-color: white;
+}
+
+.rowCliente{
+    text-align: center;
+    border-radius: 1em;
+    background-color: white;
+}
+
+.Offlinecard {
+    background-color: #6c757c;
+    justify-content: center;
+    text-align: center;
+    border-radius: 1em;
+    border-style: solid;
+    border-color: #6c757c;
+    border-width: 1em;
+    margin-bottom: 1em;
+    color: white;
+}
+
+  .offlineImg {
+    align-items: center;
+    width: 9em;
+    height: 9em;
+    object-fit: cover;
+    border-radius: 10em;
+    border-style: solid;
+    border-color: #E13145;
+    border-width: 0.4em;
 }

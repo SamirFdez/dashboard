@@ -1,72 +1,90 @@
-import React, { useEffect } from 'react';
-import axios from 'axios';
-import cantidadDeTurnosStyles  from "./cantidadDeTurnos.module.css"
-import { Container, Row, Col, Card } from 'react-bootstrap'
+import React, { useEffect } from "react";
+import axios from "axios";
+import { Row, Col, Card } from "react-bootstrap";
 
-export const CantidadDeTurnos = function() {
+export const CantidadDeTurnos = function () {
+  const baseUrl = import.meta.env.VITE_APP_BASEURL;
+  const cantidadDeTurnosProc = import.meta.env.VITE_APP_API_cantidadDeTurnos;
+  const ApiKey = import.meta.env.VITE_APP_APIKEY;
+  const [cantidadTurno, setCantidadTurno] = React.useState(null);
 
-    const baseUrl = import.meta.env.VITE_APP_BASEURL
-    const cantidadDeTurnosProc = import.meta.env.VITE_APP_API_cantidadDeTurnos;
-    const ApiKey = import.meta.env.VITE_APP_APIKEY;
-    const [cantidadTurno, setCantidadTurno] = React.useState(null);
- 
-    const config = {
-        headers:{
-            "Content-Type": "application/json",
-            'APIKey': ApiKey
-        }
-      };
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      APIKey: ApiKey,
+    },
+  };
 
-      const getCantidadDeTurnos = async () => {
-        const response = await axios.get(baseUrl+cantidadDeTurnosProc, config);
-        setCantidadTurno(response.data)
-      }
+  const getCantidadDeTurnos = async () => {
+    const response = await axios.get(baseUrl + cantidadDeTurnosProc, config);
+    setCantidadTurno(response.data);
+  };
 
-      useEffect(() => {
-        getCantidadDeTurnos();
+  useEffect(() => {
+    getCantidadDeTurnos();
+  }, []);
 
-     }, []);
-    
-        if (!cantidadTurno) {
-            return null
-        };
-  
-    return (   
-        <>
-            <div className="px-5">
-                <Row className={cantidadDeTurnosStyles.colTitle} style={{marginTop: "1em", marginBottom: "1em"}}>
-                    <h1 style={{marginTop: "0.3em", marginBottom: "0.3em"}}> Cantidad de turnos y tiempo de espera por área </h1>
-                </Row>
-            </div>
+  if (!cantidadTurno) {
+    return null;
+  }
 
-            <Container>
-                <Row className= { cantidadDeTurnosStyles.colBody }>
+  return (
+    <>
+      <div>
+        <Row
+          className="rowTitle"
+          style={{ marginTop: "0.5em", marginBottom: "0.5em" }}
+        >
+          <h3 className="title">
+            Cantidad de turnos Vs tiempo de espera
+          </h3>
+        </Row>
 
-                    {cantidadTurno.map((canturno, index) => (
-                    <Col xs="auto" key={index} 
-                    className = { 
-                        canturno.ERROR === 1 ? cantidadDeTurnosStyles.cardYellow 
-                        : canturno.ERROR === 2 ? cantidadDeTurnosStyles.cardRed
-                        : cantidadDeTurnosStyles.cardGray }
-                    >
-                        <Row>
-                            <h3 style={{color: "white"}}> {canturno.DESCRIPCION} </h3> 
-                        </Row>
-                        <Container>
-                            <Row style={{marginBottom:"1em"}}>
-                                <Col className= { cantidadDeTurnosStyles.cardBody } style={{marginRight: "1em"}}> 
-                                    <h4> {canturno.CANTIDAD} Turno </h4>
-                                </Col>
-                                <Col className= { cantidadDeTurnosStyles.cardBody }> 
-                                    <h4 style={{ alignItems: "center"}}> {canturno.TIEPOESPERA} min </h4>
-                                </Col>
-                            </Row>
-                        </Container>
-                    </Col>
-                    ))}     
-
-                </Row>
-            </Container>
-        </>
-    )
-}  
+        <Row>
+          {cantidadTurno.map((canturno, index) => (
+            <Col xs="auto">
+              <Card
+                className={
+                  canturno.ERROR === 1
+                    ? "canturnoYellow"
+                    : canturno.ERROR === 2
+                    ? "canturnoRed"
+                    : "canturnoGray"
+                }
+                key={index}
+              >
+                <Card.Body style={{ padding: "0px" }}>
+                  <h6
+                    className={
+                      canturno.ERROR === 1
+                        ? "canturnoCardTitleYellow"
+                        : "canturnoCardTitleAll"
+                    }
+                  >
+                    {canturno.DESCRIPCION.length > 15
+                      ? `${canturno.DESCRIPCION.slice(0, 20)}...`
+                      : canturno.DESCRIPCION}
+                  </h6>
+                  <Row>
+                    <div className="d-flex justify-content-around">
+                      <div className="canturnoCardBody align-middle">
+                        <h6 style={{ margin: "0px" }}> {canturno.CANTIDAD} turno </h6>
+                      </div>
+                      <div className="canturnoCardBody">
+                        <h6 style={{ margin: "0px" }}>
+                          {canturno.TIEPOESPERA > 1000
+                            ? "∞ min"
+                            : canturno.TIEPOESPERA} min
+                        </h6>
+                      </div>
+                    </div>
+                  </Row>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </div>
+    </>
+  );
+};
