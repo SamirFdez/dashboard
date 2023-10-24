@@ -36,7 +36,7 @@ export const CantidadDeTurnos = function () {
           style={{ marginTop: "0.5em", marginBottom: "0.5em" }}
         >
           <h3 className="title">
-            Cantidad de turnos Vs tiempo de espera
+            Cantidad de turnos
           </h3>
         </Row>
 
@@ -45,17 +45,19 @@ export const CantidadDeTurnos = function () {
             <Col xs="auto" key={index}>
               <Card
                 className={
-                  canturno.ERROR === 1
+                  canturno.ERROR === 1 && canturno.TIEPOESPERA < 1000
                     ? "canturnoYellow"
-                    : canturno.ERROR === 2
+                    : canturno.ERROR === 2 && canturno.TIEPOESPERA < 1000
                     ? "canturnoRed"
+                    : canturno.TIEPOESPERA > 999 
+                    ? "canturnoOrange"
                     : "canturnoGray"
                 }
               >
                 <Card.Body style={{ padding: "0px" }}>
                   <h6
                     className={
-                      canturno.ERROR === 1
+                      canturno.ERROR === 1 && canturno.TIEPOESPERA < 1000
                         ? "canturnoCardTitleYellow"
                         : "canturnoCardTitleAll"
                     }
@@ -71,9 +73,9 @@ export const CantidadDeTurnos = function () {
                       </div>
                       <div className="canturnoCardBody">
                         <h6 style={{ margin: "0px" }}>
-                          {canturno.TIEPOESPERA > 1000
+                          {canturno.TIEPOESPERA > 999
                             ? "∞ min"
-                            : canturno.TIEPOESPERA} min
+                            : `${canturno.TIEPOESPERA} min`} 
                         </h6>
                       </div>
                     </div>

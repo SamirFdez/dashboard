@@ -1,39 +1,46 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import estatusEstacionesStyles  from "./estatusEstaciones.module.css"
-import { Container, Row, Col } from 'react-bootstrap'
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import estatusEstacionesStyles from "./estatusEstaciones.module.css";
+import { Container, Row, Col } from "react-bootstrap";
 
-export const EstatusEstaciones = function() {
+export const EstatusEstaciones = function () {
+  const baseUrl = import.meta.env.VITE_APP_BASEURL;
+  const estatusEstacionesProc = import.meta.env.VITE_APP_API_estatusEstaciones;
+  const ApiKey = import.meta.env.VITE_APP_APIKEY;
+  const [estatusEstaciones, setEstatusEstaciones] = useState(null);
 
-    const baseUrl = import.meta.env.VITE_APP_BASEURL
-    const estatusEstacionesProc = import.meta.env.VITE_APP_API_estatusEstaciones;
-    const ApiKey = import.meta.env.VITE_APP_APIKEY;
-    const [estatusEstaciones, setEstatusEstaciones] = useState(null);
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      APIKey: ApiKey,
+    },
+  };
 
-    const config = {
-        headers:{
-            "Content-Type": "application/json",
-            'APIKey': ApiKey
-        }
-      };
+  const getEstatusEstaciones = async () => {
+    const response = await axios.get(baseUrl + estatusEstacionesProc, config);
+    setEstatusEstaciones(response.data);
+  };
 
-      const getEstatusEstaciones = async () => {
-        const response = await axios.get(baseUrl+estatusEstacionesProc, config);
-        setEstatusEstaciones(response.data)
-      }
+  useEffect(() => {
+    getEstatusEstaciones();
+  }, []);
 
-      useEffect(() => {
-        getEstatusEstaciones();
+  if (!estatusEstaciones) {
+    return null;
+  }
 
-     }, []);
-    
-        if (!estatusEstaciones) {
-            return null
-        };
+  return (
+    <>
+      <div>
+        <Row
+          className="rowTitle"
+          style={{ marginTop: "0.5em", marginBottom: "0.5em" }}
+        >
+          <h3 className="title">Cantidad de turnos Vs tiempo de espera</h3>
+        </Row>
+      </div>
 
-    return (
-        <>
-            <div className="px-5" style={{ marginBottom: "1em" }}>
+      {/* <div className="px-5" style={{ marginBottom: "1em" }}>
                 <Row className={estatusEstacionesStyles.colTitle}>
                     <h1 style={{ marginTop: "0.3em", marginBottom: "0.3em" }}> Estatus estaciones </h1>
                 </Row>
@@ -57,8 +64,7 @@ export const EstatusEstaciones = function() {
                         </Container>
                     </Col>
                 ))}
-            </Row>
-        </>
-    );
-
-}  
+            </Row> */}
+    </>
+  );
+};

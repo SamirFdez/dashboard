@@ -146,6 +146,15 @@ body {
     padding: 8px;
 }
 
+.canturnoOrange {
+    text-align: center;
+    background-color: #ff6200 !important;
+    border-radius: 0.50em !important;
+    margin-bottom: 1em;
+    width: 11.5em;
+    padding: 8px;
+}
+
 .canturnoCardTitleYellow {
     color: #3c3f40;
     margin: 0px;
@@ -169,63 +178,55 @@ body {
 >>> Colaborador Online
 ----------------------------------------------------------------*/
 
-
-
-
-
-
-
-
-
-.cardGray {
+.colabadoresOnline .cardGray {
     text-align: center;
-    border-radius: 1em;
+    border-radius: 0.50em;
     border-style: solid;
-    border-width: 0.7em;
+    border-width: 0.5em;
     margin-bottom: 1em;
     margin-right: 0.7em;
     background-color: #6c757c;
     border-color: #6c757c;
-    width: 260px !important
+    width: 235px !important
 }
 
-.cardYellow {
+.colabadoresOnline .cardYellow {
     text-align: center;
-    border-radius: 1em;
+    border-radius: 0.50em;
     border-style: solid;
     border-width: 0.7em;
     margin-bottom: 1em;
     margin-right: 0.7em;
     background-color: #ffc107;
     border-color: #ffc107;
-    width: 260px !important
+    width: 235px !important
 }
 
-.cardRed {
+.colabadoresOnline .cardRed {
     text-align: center;
-    border-radius: 1em;
+    border-radius: 0.50em;
     border-style: solid;
-    border-width: 0.7em;
+    border-width: 0.5em;
     margin-bottom: 1em;
     margin-right: 0.7em;
     background-color: #dc3545;
     border-color: #dc3545;
-    width: 260px !important
+    width: 235px !important
 }
 
-.cardGreen {
+.colabadoresOnline .cardGreen {
     text-align: center;
-    border-radius: 1em;
+    border-radius: 0.50em;
     border-style: solid;
-    border-width: 0.7em;
+    border-width: 0.5em;
     margin-bottom: 1em;
     margin-right: 0.7em;
     background-color: #28a745;
     border-color: #28a745;
-    width: 260px !important
+    width: 235px !important
 }
 
-@media screen and (max-width: 1470px) {
+/* @media screen and (max-width: 1470px) {
     .cardGray{
         width: 260px !important
     }
@@ -322,22 +323,22 @@ body {
     .cardGreen {
         width: 90% !important
     }
-}
+} */
 
 .rowImgName{
-    border-radius: 1em;
+    border-radius: 0.25em;
     background-color: white;
 }
 
 .cardImg {
     align-items: center;
-    width: 9em;
-    height: 9em;
+    width: 5.5em;
+    height: 5.5em;
     object-fit: cover;
     border-radius: 4.5em;
     border-style: solid;
     border-color: white;
-    border-width: 1.5em;
+    border-width: 0.5em;
 }
 
 .cardName {
@@ -345,28 +346,35 @@ body {
     font-weight: 500;
     text-align: center;
     justify-content: center;
+    height: 94px;
 }
 
 .rowEstacion{
     text-align: center;
-    border-radius: 1em;
+    border-radius: 0.25em;
     border-style: solid;
     border-color: #6c757c;
     border-width: 0em;
     background-color: white;
     color: #000000;
+    height: 90px;
 }
 
 .rowPausa{
     text-align: center;
-    border-radius: 0.5em;
+    border-radius: 0.25em;
     background-color: white;
+    height: 47px;
+    display: flex !important;
+    align-items: center !important;
+    padding: 0px !important;
+
 }
 
 .rowCliente{
     text-align: center;
-    border-radius: 1em;
-    background-color: white;
+    border-radius: 0.25em;
+     background-color: white;
 }
 
 .Offlinecard {
