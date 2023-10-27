@@ -31,25 +31,24 @@ export const CantidadDeTurnos = function () {
   return (
     <>
       <div>
-        <Row
-          className="rowTitle"
-          style={{ marginTop: "0.5em", marginBottom: "0.5em" }}
-        >
-          <h3 className="title">
-            Cantidad de turnos
-          </h3>
+        <Row className="rowTitle">
+          <h3 className="title">Turnos en espera</h3>
         </Row>
 
-        <Row>
+        <Row className="cantidadDeTurnos">
           {cantidadTurno.map((canturno, index) => (
-            <Col xs="auto" key={index}>
+            <Col
+              xs="auto"
+              key={index}
+              style={{ paddingLeft: "8px", paddingRight: "8px" }}
+            >
               <Card
                 className={
                   canturno.ERROR === 1 && canturno.TIEPOESPERA < 1000
                     ? "canturnoYellow"
                     : canturno.ERROR === 2 && canturno.TIEPOESPERA < 1000
                     ? "canturnoRed"
-                    : canturno.TIEPOESPERA > 999 
+                    : canturno.TIEPOESPERA > 999
                     ? "canturnoOrange"
                     : "canturnoGray"
                 }
@@ -63,19 +62,21 @@ export const CantidadDeTurnos = function () {
                     }
                   >
                     {canturno.DESCRIPCION.length > 15
-                      ? `${canturno.DESCRIPCION.slice(0, 20)}...`
+                      ? `${canturno.DESCRIPCION.slice(0, 17)}...`
                       : canturno.DESCRIPCION}
                   </h6>
                   <Row>
                     <div className="d-flex justify-content-around">
                       <div className="canturnoCardBody align-middle">
-                        <h6 style={{ margin: "0px" }}> {canturno.CANTIDAD} turno </h6>
+                        <h6 style={{ margin: "0px" }}>
+                          {canturno.CANTIDAD} Turno
+                        </h6>
                       </div>
                       <div className="canturnoCardBody">
                         <h6 style={{ margin: "0px" }}>
                           {canturno.TIEPOESPERA > 999
                             ? "∞ min"
-                            : `${canturno.TIEPOESPERA} min`} 
+                            : `${canturno.TIEPOESPERA} min`}
                         </h6>
                       </div>
                     </div>

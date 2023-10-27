@@ -6,8 +6,14 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: sans-serif !important;
     text-decoration: none;
+}
+
+.App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /*--------------------------------------------------------------
@@ -65,22 +71,99 @@ body {
 }
 
 /*--------------------------------------------------------------
+>>> Footer
+----------------------------------------------------------------*/
+
+.footer {
+    margin-top: auto;
+    justify-content: center;
+    background-color: #000000;
+}
+
+.textFooter {
+    color: gray;
+    font-size: 18px;
+}
+
+/*--------------------------------------------------------------
+>>> Login
+----------------------------------------------------------------*/
+
+.LoginBox {
+    width: 27em;
+    height: 25.5em;
+    background: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 80px 20px;
+    border-radius: 0.75rem !important;
+}
+
+.LoginBoxLogo {
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    border-width: 0.5em !important;
+    border: 1px solid white;
+    position: absolute;
+    top: -5.1em;
+    left: calc(50% - 5.05em);
+}
+
+.LoginBoxH1 {
+    margin: 0px;
+    padding-bottom: 12px;
+    text-align: center;
+    font-size: 3em !important;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+}
+
+.LoginBoxLabel {
+    margin-bottom: 4px;
+    font-size: 1.2em !important;
+    font-weight: bold;
+    display: block;
+}
+ 
+.LoginBoxInput {
+    width: 100%;
+    margin-bottom: 16px;
+    height: 2.5em;
+    font-size: 1em !important;
+}
+
+.LoginBoxButton {
+    width: 100%;
+    margin-top: 4px;
+    font-family: sans-serif;
+    border: none;
+    height: 2em;
+    background-color: #999999;
+    color: white;
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+/*--------------------------------------------------------------
 >>> Full Dashboard
 ----------------------------------------------------------------*/
 
-.grid-container {
+/* .grid-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 12;
     gap: 10px
 }
 
-/* .grid-container > div {
+.grid-container > div {
     background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
-  } */
+  }
 
 .grid1 {
     grid-column-start: 1;
@@ -95,24 +178,27 @@ body {
 .grid3 {
     grid-column-start: 11;
     grid-column-end: 13;
-}
+} */
 
 /*--------------------------------------------------------------
 >>> titulos 
 ----------------------------------------------------------------*/
 
-.rowTitle{
+.rowTitle {
     background-color: #6c757c;
     color: #FFFFFF;
     text-align: center;
     border-style: solid;
     border-color: #3c3f40;
     border-radius: 0.5em;
+    margin: 0.5em 0em !important;
+    padding: 0px !important;
 }
 
 .title {
     margin: 0px;
-    padding: 8px;
+    padding: 4px;
+    font-size: 20px;
 }
 
 /*--------------------------------------------------------------
@@ -124,7 +210,7 @@ body {
     background-color: #ffc107 !important;
     border-radius: 0.50em !important;
     margin-bottom: 1em;
-    width: 11.5em;
+    width: 10em;
     padding: 5px;
 }
 
@@ -133,8 +219,8 @@ body {
     background-color: #6c757c !important;
     border-radius: 0.50em !important;
     margin-bottom: 1em;
-    width: 11.5em;
-    padding: 8px;
+    width: 10em;
+    padding: 5px;
 }
 
 .canturnoRed {
@@ -142,8 +228,8 @@ body {
     background-color: #dc3545 !important;
     border-radius: 0.50em !important;
     margin-bottom: 1em;
-    width: 11.5em;
-    padding: 8px;
+    width: 10em;
+    padding: 5px;
 }
 
 .canturnoOrange {
@@ -151,8 +237,8 @@ body {
     background-color: #ff6200 !important;
     border-radius: 0.50em !important;
     margin-bottom: 1em;
-    width: 11.5em;
-    padding: 8px;
+    width: 10em;
+    padding: 5px;
 }
 
 .canturnoCardTitleYellow {
@@ -168,188 +254,195 @@ body {
 }
 
 .canturnoCardBody {
-    width: 81px;
-    padding: 4px;
+    width: 70px;
+    padding: 3px;
     background-color: #FFFFFF;
     border-radius: 0.25em;
 }
+
+.canturnoCardBody h6 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/*--------------------------------------------------------------
+>>> Turnos transferidos
+----------------------------------------------------------------*/
+
+.turTransferidoYellow {
+    text-align: center;
+    background-color: #ffc107 !important;
+    border-radius: 0.50em !important;
+    margin-bottom: 1em;
+    width: 10em;
+    padding: 5px;
+}
+
+.turTransferidoGray {
+    text-align: center;
+    background-color: #6c757c !important;
+    border-radius: 0.50em !important;
+    margin-bottom: 1em;
+    width: 10em;
+    padding: 5px;
+}
+
+.turTransferidoRed {
+    text-align: center;
+    background-color: #dc3545 !important;
+    border-radius: 0.50em !important;
+    margin-bottom: 1em;
+    width: 10em;
+    padding: 5px;
+}
+
+.turTransferidoOrange {
+    text-align: center;
+    background-color: #ff6200 !important;
+    border-radius: 0.50em !important;
+    margin-bottom: 1em;
+    width: 10em;
+    padding: 5px;
+}
+
+.turTransferidoCardTitleYellow {
+    color: #3c3f40;
+    margin: 0px;
+    padding-bottom: 8px;
+}
+
+.turTransferidoCardTitleAll {
+    color: #FFFFFF;
+    margin: 0px;
+    padding-bottom: 8px;
+}
+
+.turTransferidoCardBody {
+    width: 70px;
+    padding: 3px;
+    background-color: #FFFFFF;
+    border-radius: 0.25em;
+}
+
+.turTransferidoCardBody h6 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
 
 /*--------------------------------------------------------------
 >>> Colaborador Online
 ----------------------------------------------------------------*/
 
 .colabadoresOnline .cardGray {
-    text-align: center;
-    border-radius: 0.50em;
-    border-style: solid;
-    border-width: 0.5em;
+    background-color: #6c757c !important;
+    border-radius: 0.50em !important;
     margin-bottom: 1em;
-    margin-right: 0.7em;
-    background-color: #6c757c;
-    border-color: #6c757c;
-    width: 235px !important
+    width: 12em;
+    padding: 6px;
 }
 
 .colabadoresOnline .cardYellow {
-    text-align: center;
-    border-radius: 0.50em;
-    border-style: solid;
-    border-width: 0.7em;
-    margin-bottom: 1em;
-    margin-right: 0.7em;
     background-color: #ffc107;
-    border-color: #ffc107;
-    width: 235px !important
+    border-radius: 0.50em !important;
+    margin-bottom: 1em;
+    width: 12em;
+    padding: 6px;
+
 }
 
 .colabadoresOnline .cardRed {
-    text-align: center;
-    border-radius: 0.50em;
-    border-style: solid;
-    border-width: 0.5em;
-    margin-bottom: 1em;
-    margin-right: 0.7em;
     background-color: #dc3545;
-    border-color: #dc3545;
-    width: 235px !important
+    border-radius: 0.50em !important;
+    margin-bottom: 1em;
+    width: 12em;
+    padding: 6px;
 }
 
 .colabadoresOnline .cardGreen {
-    text-align: center;
-    border-radius: 0.50em;
-    border-style: solid;
-    border-width: 0.5em;
-    margin-bottom: 1em;
-    margin-right: 0.7em;
     background-color: #28a745;
-    border-color: #28a745;
-    width: 235px !important
+    border-radius: 0.50em !important;
+    margin-bottom: 1em;
+    width: 12em;
+    padding: 6px;
 }
 
-/* @media screen and (max-width: 1470px) {
-    .cardGray{
-        width: 260px !important
-    }
-    .cardYellow{
-        width: 260px !important
-    }
-    .cardRed {
-        width: 260px !important
-    }
-
-    .cardGreen {
-        width: 260px !important
-    }
-}
-
-@media screen and (max-width: 1399px) {
-    .rowCards {
-        justify-content: center;
-    }
-    .cardGray{
-        width: 260px !important
-    }
-    .cardYellow{
-        width: 260px !important
-    }
-    .cardRed {
-        width: 260px !important
-    }
-
-    .cardGreen {
-        width: 260px !important
-    }
-}
-
-@media screen and (max-width: 1199px) {
-    .cardGray{
-        width: 255px !important
-    }
-    .cardYellow{
-        width: 255px !important
-    }
-    .cardRed {
-        width: 255px !important
-    }
-
-    .cardGreen {
-        width: 255px !important
-    }
-}
-
-@media screen and (max-width: 850px) {
-    .cardGray{
-        width: 300px !important
-    }
-    .cardYellow{
-        width: 300px !important
-    }
-    .cardRed {
-        width: 300px !important
-    }
-
-    .cardGreen {
-        width: 300px !important
-    }
-}
-
-@media screen and (max-width: 708px) {
-    .cardGray{
-        width: 250px !important
-    }
-    .cardYellow{
-        width: 250px !important
-    }
-    .cardRed {
-        width: 250px !important
-    }
-
-    .cardGreen {
-        width: 250px !important
-    }
-}
-
-@media screen and (max-width: 608px) {
-    .cardGray{
-        width: 90% !important
-    }
-    .cardYellow{
-        width: 90% !important
-    }
-    .cardRed {
-        width: 90% !important
-    }
-
-    .cardGreen {
-        width: 90% !important
-    }
-} */
-
-.rowImgName{
+.rowImgName {
+    height: 80px;
+    padding: 8px;
     border-radius: 0.25em;
-    background-color: white;
+    background-color: white !important;
 }
 
 .cardImg {
     align-items: center;
-    width: 5.5em;
-    height: 5.5em;
+    width: 4em;
+    height: 4em;
     object-fit: cover;
     border-radius: 4.5em;
-    border-style: solid;
-    border-color: white;
-    border-width: 0.5em;
 }
 
-.cardName {
-    color: #000000;
-    font-weight: 500;
+.cardName h5 {
+    font-size: 14px !important;
     text-align: center;
-    justify-content: center;
-    height: 94px;
+    margin-top: 0px;
 }
 
-.rowEstacion{
+.cardName h6 {
+    font-size: 12px !important;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.rowEstacionTurno {
+    margin-top: 8px;
+    /* padding: 8px; */
+    border-radius: 0.25em;
+}
+
+.estacion {
+    width: 85px;
+    height: 82px;
+    border-radius: 0.25em;
+    background-color: white;
+    padding: 4px;
+}
+
+.estacion h5 {
+    font-size: 18px !important;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+
+.estacion h6 {
+    font-size: 14px !important;
+    text-align: center;
+}
+
+.turno {
+    width: 85px;
+    height: 82px;
+    border-radius: 0.25em;
+    background-color: white;
+}
+
+.turno h5 {
+    font-size: 16px !important;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 0px;
+}
+
+.turno h6 {
+    font-size: 14px !important;
+    text-align: center;
+    margin-top: 6px;
+    margin-bottom: 0px;
+}
+
+/* .rowEstacion {
     text-align: center;
     border-radius: 0.25em;
     border-style: solid;
@@ -360,7 +453,7 @@ body {
     height: 90px;
 }
 
-.rowPausa{
+.rowPausa {
     text-align: center;
     border-radius: 0.25em;
     background-color: white;
@@ -371,10 +464,10 @@ body {
 
 }
 
-.rowCliente{
+.rowCliente {
     text-align: center;
     border-radius: 0.25em;
-     background-color: white;
+    background-color: white;
 }
 
 .Offlinecard {
@@ -389,7 +482,7 @@ body {
     color: white;
 }
 
-  .offlineImg {
+.offlineImg {
     align-items: center;
     width: 9em;
     height: 9em;
@@ -398,4 +491,85 @@ body {
     border-style: solid;
     border-color: #E13145;
     border-width: 0.4em;
+} */
+
+
+
+
+/*--------------------------------------------------------------
+>>> ajustes de Responsive
+----------------------------------------------------------------*/
+
+/* cantidad de turnos */
+.cantidadDeTurnos {
+    display: flex !important;
+    justify-content: center !important;
 }
+
+@media screen and (max-width: 1407px) {
+    .cantidadDeTurnos {
+        justify-content: center !important;
+    }
+}
+
+.TurnosTransferidos {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+@media screen and (max-width: 1407px) {
+    .cantidadDeTurnos {
+        justify-content: center !important;
+    }
+}
+
+/* colaboradores cards */
+
+@media screen and (max-width: 400px) {
+
+    .colabadoresOnline .cardGray {
+        width: 165px
+    }
+
+    .colabadoresOnline .cardYellow {
+        width: 180px
+    }
+    
+    .colabadoresOnline .cardRed {
+        width: 165px
+    }
+    
+    .colabadoresOnline .cardGreen {
+        width: 180px
+    }
+
+    .cardImg {
+        width: 3.5em;
+        height: 3.5em;
+    }
+
+    .estacion {
+        width: 71px;
+        height: 82px;
+    }
+
+    .turno {
+        width: 71px;
+        height: 82px;
+    }
+
+}
+
+@media screen and (max-width: 1199px) {
+    .colabadoresOnline {
+        display: flex !important;
+        justify-content: center !important;
+    }
+}
+
+/* @media only screen and (max-width: 1199px) and (min-width: 992px) {
+    .colabadoresOnline {
+        display: flex !important;
+        justify-content: center !important;
+    }
+} */

@@ -35,6 +35,6 @@ export const TiempoTurno = ({operadoresOn}) => {
       
 
   return (
-    <h6 style={{fontSize: "18px"}}> {formatTime(currentTime)} </h6>
+    <h6> {formatTime(currentTime)} </h6>
   )
 }

@@ -13,11 +13,11 @@ export const Estaciones = function() {
 
   return (   
     <>  
-      <NavbarMenu />
+      {/* <NavbarMenu />
         <div style={{marginLeft: "4em", marginRight: "4em"}}>
           <Header/>
           <EstacionsCards/>
-        </div>
+        </div> */}
     </>
   )
 }   
