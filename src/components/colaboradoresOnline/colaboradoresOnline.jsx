@@ -1,62 +1,55 @@
-import { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 import { Row, Col, Card } from "react-bootstrap";
-import EstacionesCardsStyles from "./estacionesCards.module.css";
-import { TiempoNotificado } from "./tiempoNotificado";
-import { TiempoGlobal } from "./tiempoGlobal";
-import { TiempoUltimoEstatus } from "./tiempoUltimoEstatus";
+import { TiempoTurno } from "./tiempoTurno";
+import { SlUser } from "react-icons/sl";
 
-export const EstacionsCards = function () {
-  const baseUrl = import.meta.env.VITE_APP_BASEURL
-  const estatusColaboradesProc = import.meta.env.VITE_APP_API_estatusColaboradores;
+export const ColaboradoresOnline = function () {
+  const baseUrl = import.meta.env.VITE_APP_BASEURL;
+  const estatusColaboradesProc = import.meta.env.VITE_APP_API_estatusOperadores;
   const ApiKey = import.meta.env.VITE_APP_APIKEY;
-  const [colaboradores, setColaboradores] = useState(null);
+  const [operadoresOn, setOperadoresOn] = React.useState(null);
 
   const config = {
-      headers:{
-          "Content-Type": "application/json",
-          'APIKey': ApiKey
-      }
-    };
+    headers: {
+      "Content-Type": "application/json",
+      APIKey: ApiKey,
+    },
+  };
 
-    const getEstacionesCards = async () =>{
+  const getOperadoresOn = async () => {
+    const response = await axios.get(baseUrl + estatusColaboradesProc, config);
+    setOperadoresOn(response.data);
+  };
 
-      try {
-          const response = await axios.get(baseUrl+estatusColaboradesProc, config);
-          setColaboradores(response.data);
-          
-      } catch (error) {
-          console.error('Error al obtener el nuevo valor del contador:', error);
-      }
+  useEffect(() => {
+    getOperadoresOn();
+  }, []);
 
-    }
+  if (!operadoresOn) {
+    return null;
+  }
 
-    useEffect(() => {
-      getEstacionesCards();
+  const colaboradoresLogin =
+    operadoresOn?.length > 0 &&
+    operadoresOn.filter((colaboradores) => colaboradores.ACCION === "LOGIN");
 
-   }, []);
-
-      if (!colaboradores) {
-          return null
-      };  
-
-      const clientesFiltrados = colaboradores?.filter(
-        (colaboradores) => colaboradores.NombreCita !== null
-      );
-
-
+  const clientesFiltrados = operadoresOn.filter(
+    (colaboradores) => colaboradores.NombreCita !== null
+  );
 
   return (
     <>
       <div>
-        <Row className="rowTitle" style={{margin: "0.5em"}}>
+        <Row className="rowTitle">
           <h3 className="title" style={{ textAlign: "center" }}>
-            Estatus estaciones
+            {/* <SlUser style={{ marginRight: "10px" }} />  */}
+            Colaborador
           </h3>
         </Row>
         <Row className="colabadoresOnline">
-          {colaboradores?.map((operadoresOn, index) => {
-            const name = operadoresOn.NombreEmpleado;
+          {colaboradoresLogin.map((operadoresOn, index) => {
+            const name = operadoresOn.NOMBRE;
             const nameDivider = name.split(" ");
             return (
               <Col
@@ -85,8 +78,8 @@ export const EstacionsCards = function () {
                     {nameDivider.length === 1 ? (
                       <div className="cardName">
                         <h5> </h5>
-                        <h5> {operadoresOn.NombreEmpleado} </h5>
-                        <h6> {operadoresOn.GrupoEstacion} </h6>
+                        <h5> {operadoresOn.NOMBRE} </h5>
+                        <h6> {operadoresOn.DESCRIPCION} </h6>
                       </div>
                     ) : nameDivider.length === 2 ? (
                       <div className="col-7 cardName">
@@ -94,12 +87,12 @@ export const EstacionsCards = function () {
                           {nameDivider[0]}
                         </h5>
                         <h5> {nameDivider[1]} </h5>
-                        <h6> {operadoresOn.GrupoEstacion} </h6>
+                        <h6> {operadoresOn.DESCRIPCION} </h6>
                       </div>
                     ) : (
                       <div className="cardName">
-                        <h5> {operadoresOn.NombreEmpleado} </h5>
-                        <h6> {operadoresOn.GrupoEstacion} </h6>
+                        <h5> {operadoresOn.NOMBRE} </h5>
+                        <h6> {operadoresOn.DESCRIPCION} </h6>
                       </div>
                     )}
                   </div>
@@ -110,9 +103,9 @@ export const EstacionsCards = function () {
                     </div>
                     <div className="turno">
                       <h5>Turno:</h5>
-                      <h6>{operadoresOn.Turno}</h6>
+                      <h6>{operadoresOn.TURNO}</h6>
                       {operadoresOn.TIEMPO !== "--:--:--" ? (
-                        <TiempoUltimoEstatus colaborador={operadoresOn.TiempoUltimoEstatus} />
+                        <TiempoTurno operadoresOn={operadoresOn.TIEMPO} />
                       ) : (
                         <h6> --:--:-- </h6>
                       )}
@@ -140,7 +133,6 @@ export const EstacionsCards = function () {
             );
           })}
         </Row>
-
       </div>
     </>
   );

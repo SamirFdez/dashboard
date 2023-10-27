@@ -35,7 +35,7 @@ export const TiempoUltimoEstatus = ({colaborador}) => {
       
 
   return (
-    <h4> {formatTime(currentTime)} </h4>
+    <h6> {formatTime(currentTime)} </h6>
   )
 }
  

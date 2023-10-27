@@ -191,7 +191,8 @@ body {
     border-style: solid;
     border-color: #3c3f40;
     border-radius: 0.5em;
-    margin: 0.5em 0em !important;
+    margin-top: 0.5em !important;
+    margin-bottom: 0.5em !important;
     padding: 0px !important;
 }
 
@@ -442,59 +443,96 @@ body {
     margin-bottom: 0px;
 }
 
-/* .rowEstacion {
-    text-align: center;
+.rowEstatus {
+    margin-top: 8px;
+    height: 35px;
+    padding: 8px;
     border-radius: 0.25em;
-    border-style: solid;
-    border-color: #6c757c;
-    border-width: 0em;
-    background-color: white;
-    color: #000000;
-    height: 90px;
+    background-color: white !important;
 }
 
-.rowPausa {
+.rowEstatus h6 {
+    font-size: 14px !important;
+    margin: 0;
     text-align: center;
+}
+
+.rowPaciente {
+    margin-top: 8px;
+    height: 25px;
+    padding: 8px;
     border-radius: 0.25em;
-    background-color: white;
-    height: 47px;
+    background-color: white !important;
+}
+
+.rowPaciente h6 {
+    font-size: 14px !important;
+    margin: 0;
+    text-align: center;
+}
+
+.rowPacienteNull {
+    margin-top: 8px;
+    height: 25px;
+    padding: 8px;
+    border-radius: 0.25em;
+    background-color: transparent !important;
+}
+
+/*--------------------------------------------------------------
+>>> Colaborador Offline
+----------------------------------------------------------------*/
+
+.colaboradoresOffline {
     display: flex !important;
-    align-items: center !important;
-    padding: 0px !important;
-
+    justify-content: center !important;
 }
 
-.rowCliente {
-    text-align: center;
-    border-radius: 0.25em;
-    background-color: white;
-}
 
-.Offlinecard {
-    background-color: #6c757c;
-    justify-content: center;
-    text-align: center;
-    border-radius: 1em;
-    border-style: solid;
-    border-color: #6c757c;
-    border-width: 1em;
+.colaboradoresOffline .cardGray {
+    background-color: #6c757c !important;
+    border-radius: 0.50em !important;
     margin-bottom: 1em;
+    padding: 6px;
+}
+
+
+.rowImgNameOff {
+    height: 80px;
+    padding: 8px;
+    border-radius: 0.25em;
+}
+
+.cardImgOff {
+    width: 4em;
+    height: 4em;
+    object-fit: cover;
+    border-radius: 4.5em;
+}
+
+.error {
+    border: 0.3em solid #dc3545;
+}
+
+.normal {
+    border: 0.3em solid gainsboro;
+}
+
+.cardNameOff h5 {
+    font-size: 14px !important;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0;
     color: white;
 }
 
-.offlineImg {
-    align-items: center;
-    width: 9em;
-    height: 9em;
-    object-fit: cover;
-    border-radius: 10em;
-    border-style: solid;
-    border-color: #E13145;
-    border-width: 0.4em;
-} */
-
-
-
+.cardNameOff h6 {
+    font-size: 14px !important;
+    text-align: center;
+    margin-top: 6px;
+    margin-bottom: 0;
+    color: white;
+}
 
 /*--------------------------------------------------------------
 >>> ajustes de Responsive
@@ -523,8 +561,7 @@ body {
     }
 }
 
-/* colaboradores cards */
-
+/* colaboradores cards Online */
 @media screen and (max-width: 400px) {
 
     .colabadoresOnline .cardGray {
@@ -573,3 +610,22 @@ body {
         justify-content: center !important;
     }
 } */
+
+/* colaboradores cards Offline */
+@media screen and (min-width: 1599px) {
+    .cardNameOff h5 {
+        font-size: 15px !important;
+
+    }
+    
+    .cardNameOff h6 {
+        font-size: 14px !important;
+
+    }
+
+    .cardImgOff {
+        text-align: center;
+        width: 4.5em;
+        height: 4.5em;
+    }
+}

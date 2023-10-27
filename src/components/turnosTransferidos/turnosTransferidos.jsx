@@ -33,7 +33,7 @@ export const TurnosTransferidos = function () {
     <>
       <div>
         <Row className="rowTitle">
-          <h3 className="title">Turnos transferitos</h3>
+          <h3 className="title">Turnos transferidos</h3>
         </Row>
 
         <Row className="TurnosTransferidos">

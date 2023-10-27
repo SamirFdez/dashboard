@@ -1,6 +1,5 @@
-import { Header } from "../components/header/header";
 import { NavbarMenu } from "../components/navbar/navbar";
-import { EstacionsCards } from "../components/EstacionesCards/EstacionesCards";
+import { EstacionsCards } from "../components/estacionesCards/estacionesCards";
 
 export const Estaciones = function() {
 
@@ -13,11 +12,8 @@ export const Estaciones = function() {
 
   return (   
     <>  
-      {/* <NavbarMenu />
-        <div style={{marginLeft: "4em", marginRight: "4em"}}>
-          <Header/>
-          <EstacionsCards/>
-        </div> */}
+      <NavbarMenu/>
+      <EstacionsCards/>
     </>
   )
 }   

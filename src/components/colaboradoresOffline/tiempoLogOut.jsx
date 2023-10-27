@@ -1,10 +1,9 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 
-export const TiempoLogOut = ({operadorOff}) => {
+export const TiempoLogOut = ({operadoresOff}) => {
 
-
-    const initialTime = operadorOff
+    const initialTime = operadoresOff
     const [currentTime, setCurrentTime] = useState(parseTime(initialTime));
   
     useEffect(() => {
@@ -35,6 +34,6 @@ export const TiempoLogOut = ({operadorOff}) => {
       
 
   return (
-    <h6 style={{fontSize: "16px"}}> {formatTime(currentTime)} </h6>
+    <h6> {formatTime(currentTime)} </h6>
   )
 }

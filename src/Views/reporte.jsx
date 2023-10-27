@@ -1,5 +1,4 @@
-import { Header } from "../components/header/header";
-import { EstatusOperadores } from "../components/estatusOperadores/estatusOperadores";
+
 import { NavbarMenu } from "../components/navbar/navbar";
 
 export const Reporte = function() {
@@ -13,10 +12,6 @@ export const Reporte = function() {
   return (   
     <>  
       <NavbarMenu />
-        <div style={{marginLeft: "4em", marginRight: "4em"}}>
-          <Header/>
-          <EstatusOperadores/>
-        </div>
     </>
   )
 }   

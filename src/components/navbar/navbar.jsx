@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Navbar, Container, Form, Nav, NavDropdown } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import {
   SlGrid,
   SlScreenDesktop,
@@ -8,37 +9,45 @@ import {
   SlSettings,
   SlLogout,
 } from "react-icons/sl";
+import {useDispatch} from 'react-redux'
+import {updateAuthenticationState} from '../../store/authentication'
 
 export const NavbarMenu = () => {
-  const [offset, setOffset] = useState(0);
-  const [expanded, setExpanded] = useState(false);
 
-  const closeNav = () => {
-    setExpanded(false);
-  };
+  const dispatch = useDispatch()
+  const navigate = useNavigate();
+  const handleLogOutUser = () => {
+      swal({
+          title: "¿Estás seguro de cerrar sesión?",
+          text: "",
+          icon: "warning",
+          buttons: ["Cancelar", true],
+          dangerMode: true,
+        })
+        .then((cerrarSesion) => {
+          if (cerrarSesion) {
+              navigate("/")
+              dispatch(updateAuthenticationState(false))
+              sessionStorage.removeItem("nombre")
+          } else {
+          }
+        });
+      
+  }
 
-  const handleNavLinkClick = (sectionId) => {
-    closeNav();
-    const section = document.getElementById(sectionId);
-    if (section) {
-      const offsetTop = section.offsetTop - 60;
-      window.scrollTo({ top: offsetTop, behavior: "smooth" });
-      setOffset(offsetTop);
-    }
-  };
   return (
     <>
       <Navbar className="Navbar fixed-bottom" >
         <div className="container-fluid">
           {/* <Navbar.Collapse id="basic-navbar-nav"> */}
           <Nav className="ma-auto Nav">
-            <Nav.Link className="navLink me-3 ">
+            <Nav.Link className="navLink me-3" href="/dashboard">
               <SlUser />
             </Nav.Link>
-            <Nav.Link className="navLink mx-3">
+            <Nav.Link className="navLink mx-3" href="/estaciones">
               <SlScreenDesktop />
             </Nav.Link>
-            <Nav.Link className="navLink mx-3">
+            <Nav.Link className="navLink mx-3" href="/reporte">
               <SlPeople />
             </Nav.Link>
 
@@ -72,7 +81,7 @@ export const NavbarMenu = () => {
             <Nav.Link className="navLink mx-3">
               <SlSettings />
             </Nav.Link>
-            <Nav.Link className="navLink mx-3">
+            <Nav.Link className="navLink mx-3" onClick={handleLogOutUser}>
               <SlLogout />
             </Nav.Link>
           </Nav>
