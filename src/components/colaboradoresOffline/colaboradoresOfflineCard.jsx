@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import { TiempoLogOut } from "./tiempoLogOut";
 
-export const ColaboradoresOfflineCard = () => {
+export const ColaboradoresOfflineCard = ({ operadoresOff, nameDivider }) => {
   return (
     <>
       <Card className="cardGray">

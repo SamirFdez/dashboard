@@ -48,10 +48,8 @@ export const ColaboradoresOnline = function () {
           </h3>
         </Row>
         <Row className="colabadoresOnline">
-          {
-            colaboradoresLogin.length ? 
-            (
-              colaboradoresLogin?.map((operadoresOn, index) => {
+          {colaboradoresLogin.length
+            ? colaboradoresLogin.map((operadoresOn, index) => {
                 const name = operadoresOn.NOMBRE;
                 const nameDivider = name.split(" ");
                 return (
@@ -60,12 +58,15 @@ export const ColaboradoresOnline = function () {
                     key={index}
                     style={{ paddingLeft: "4px", paddingRight: "4px" }}
                   >
-                    <ColaboradoresOnline operadoresOn={operadoresOn} nameDivider={nameDivider}/>
+                    <ColaboradoresOnlineCard
+                      operadoresOn={operadoresOn}
+                      nameDivider={nameDivider}
+                      clientesFiltrados={clientesFiltrados}
+                    />
                   </Col>
                 );
               })
-            ) : null
-          }
+            : null}
         </Row>
       </div>
     </>

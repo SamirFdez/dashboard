@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import { TiempoTurno } from "./tiempoTurno";
 
-export const ColaboradoresOnlineCard = ({ operadoresOn, nameDivider}) => {
+export const ColaboradoresOnlineCard = ({ operadoresOn, nameDivider, clientesFiltrados }) => {
   return (
     <>
       <Card

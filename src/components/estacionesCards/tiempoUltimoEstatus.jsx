@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 
 export const TiempoUltimoEstatus = ({colaborador}) => {
 
-
     const initialTime = colaborador
     const [currentTime, setCurrentTime] = useState(parseTime(initialTime));
   

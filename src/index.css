@@ -498,7 +498,6 @@ body {
     padding: 6px;
 }
 
-
 .rowImgNameOff {
     height: 80px;
     padding: 8px;
@@ -531,9 +530,49 @@ body {
 .cardNameOff h6 {
     font-size: 14px !important;
     text-align: center;
-    margin-top: 6px;
+    margin-top: 5px;
     margin-bottom: 0;
     color: white;
+}
+
+/*--------------------------------------------------------------
+>>> Estatus estaciones cards
+----------------------------------------------------------------*/
+
+.estacionesCards {
+    margin: 0.5em !important;
+}
+
+.estacionesCards .cardGray {
+    background-color: #6c757c !important;
+    border-radius: 0.50em !important;
+    margin-bottom: 1em;
+    width: 12em;
+    padding: 6px;
+}
+
+.estacionesCards .cardGreen {
+    background-color: #28a745 !important;
+    border-radius: 0.50em !important;
+    margin-bottom: 1em;
+    width: 12em;
+    padding: 6px;
+}
+
+.estacionesCards .cardBlue {
+    background-color: #0275d8 !important;
+    border-radius: 0.50em !important;
+    margin-bottom: 1em;
+    width: 12em;
+    padding: 6px;
+}
+
+.estacionesCards .cardGreenSpecial {
+    background-color: #19692c !important;
+    border-radius: 0.50em !important;
+    margin-bottom: 1em;
+    width: 12em;
+    padding: 6px;
 }
 
 /*--------------------------------------------------------------
@@ -650,5 +689,13 @@ body {
         text-align: center;
         width: 4.5em;
         height: 4.5em;
+    }
+}
+
+/* Estatus estaciones Cards */
+@media screen and (max-width: 1199px) {
+    .estacionesCards{
+        display: flex !important;
+        justify-content: center !important;
     }
 }

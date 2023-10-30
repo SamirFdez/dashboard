@@ -43,7 +43,7 @@ export const ColaboradoresOffline = () => {
         </Row>
 
         <Row className="colaboradoresOffline">
-          {colaboradoresLogOut.length
+          {colaboradoresLogOut.length 
             ? colaboradoresLogOut.map((operadoresOff, index) => {
                 const name = operadoresOff.NOMBRE;
                 const nameDivider = name.split(" ");
