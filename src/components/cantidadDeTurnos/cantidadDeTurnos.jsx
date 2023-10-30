@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-import { Row, Col, Card } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
+import { CantidadDeTurnosCard } from "./cantidadDeTurnosCard";
 
 export const CantidadDeTurnos = function () {
   const baseUrl = import.meta.env.VITE_APP_BASEURL;
@@ -36,55 +37,17 @@ export const CantidadDeTurnos = function () {
         </Row>
 
         <Row className="cantidadDeTurnos">
-          {cantidadTurno.map((canturno, index) => (
-            <Col
-              xs="auto"
-              key={index}
-              style={{ paddingLeft: "8px", paddingRight: "8px" }}
-            >
-              <Card
-                className={
-                  canturno.ERROR === 1 && canturno.TIEPOESPERA < 1000
-                    ? "canturnoYellow"
-                    : canturno.ERROR === 2 && canturno.TIEPOESPERA < 1000
-                    ? "canturnoRed"
-                    : canturno.TIEPOESPERA > 999
-                    ? "canturnoOrange"
-                    : "canturnoGray"
-                }
-              >
-                <Card.Body style={{ padding: "0px" }}>
-                  <h6
-                    className={
-                      canturno.ERROR === 1 && canturno.TIEPOESPERA < 1000
-                        ? "canturnoCardTitleYellow"
-                        : "canturnoCardTitleAll"
-                    }
-                  >
-                    {canturno.DESCRIPCION.length > 15
-                      ? `${canturno.DESCRIPCION.slice(0, 17)}...`
-                      : canturno.DESCRIPCION}
-                  </h6>
-                  <Row>
-                    <div className="d-flex justify-content-around">
-                      <div className="canturnoCardBody align-middle">
-                        <h6 style={{ margin: "0px" }}>
-                          {canturno.CANTIDAD} Turno
-                        </h6>
-                      </div>
-                      <div className="canturnoCardBody">
-                        <h6 style={{ margin: "0px" }}>
-                          {canturno.TIEPOESPERA > 999
-                            ? "∞ min"
-                            : `${canturno.TIEPOESPERA} min`}
-                        </h6>
-                      </div>
-                    </div>
-                  </Row>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
+          {cantidadTurno.length
+            ? cantidadTurno.map((canturno, index) => (
+                <Col
+                  xs="auto"
+                  key={index}
+                  style={{ paddingLeft: "8px", paddingRight: "8px" }}
+                >
+                  <CantidadDeTurnosCard canturno={canturno} />
+                </Col>
+              ))
+            : null}
         </Row>
       </div>
     </>

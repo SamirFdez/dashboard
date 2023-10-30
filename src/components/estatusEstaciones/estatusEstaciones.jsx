@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Row, Col, Card } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
+import { EstatusEstacionesCard } from "./estatusEstacionesCard";
 
 export const EstatusEstaciones = function () {
   const baseUrl = import.meta.env.VITE_APP_BASEURL;
@@ -36,41 +37,17 @@ export const EstatusEstaciones = function () {
         </Row>
 
         <Row className="TurnosTransferidos">
-          {estatusEstaciones.map((estEstaciones, index) => (
-            <Col
-              xs="auto"
-              key={index}
-              style={{ paddingLeft: "8px", paddingRight: "8px" }}
-            >
-              <Card
-                className="turTransferidoGray"
-              >
-                <Card.Body style={{ padding: "0px" }}>
-                  <h6
-                    className="turTransferidoCardTitleAll"
-                  >
-                    {estEstaciones.Estacion.length > 15
-                      ? `${estEstaciones.Estacion.slice(0, 17)}...`
-                      : estEstaciones.Estacion}
-                  </h6>
-                  <Row>
-                    <div className="d-flex justify-content-around">
-                      <div className="turTransferidoCardBody align-middle">
-                        <h6 style={{ margin: "0px" }}>
-                          Onl. {estEstaciones.EnLinea}
-                        </h6>
-                      </div>
-                      <div className="turTransferidoCardBody">
-                        <h6 style={{ margin: "0px" }}>
-                          Disp. {estEstaciones.Disponibles}
-                        </h6>
-                      </div>
-                    </div>
-                  </Row>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
+          {estatusEstaciones.length 
+            ? estatusEstaciones.map((estEstaciones, index) => (
+                <Col
+                  xs="auto"
+                  key={index}
+                  style={{ paddingLeft: "8px", paddingRight: "8px" }}
+                >
+                  <EstatusEstacionesCard estEstaciones={estEstaciones} />
+                </Col>
+              ))
+            : null}
         </Row>
       </div>
     </>

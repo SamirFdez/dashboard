@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Navbar, Container, Form, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
+import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import {
   SlGrid,
@@ -9,35 +10,34 @@ import {
   SlSettings,
   SlLogout,
 } from "react-icons/sl";
-import {useDispatch} from 'react-redux'
-import {updateAuthenticationState} from '../../store/authentication'
+import { useDispatch } from "react-redux";
+import { updateAuthenticationState } from "../../store/authentication";
 
 export const NavbarMenu = () => {
-
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleLogOutUser = () => {
-      swal({
-          title: "¿Estás seguro de cerrar sesión?",
-          text: "",
-          icon: "warning",
-          buttons: ["Cancelar", true],
-          dangerMode: true,
-        })
-        .then((cerrarSesion) => {
-          if (cerrarSesion) {
-              navigate("/")
-              dispatch(updateAuthenticationState(false))
-              sessionStorage.removeItem("nombre")
-          } else {
-          }
-        });
-      
-  }
+    Swal.fire({
+      title: "¿Estás seguro de cerrar sesión?",
+      text: "",
+      icon: "warning",
+      showCancelButton: true,
+      showConfirmButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonText: "Cancelar",
+      confirmButtonText: "Cerrar Sesión",
+    }).then((cerrarSesion) => {
+      if (cerrarSesion.isConfirmed) {
+        navigate("/");
+        dispatch(updateAuthenticationState(false));
+        sessionStorage.removeItem("nombre");
+      }
+    });
+  };
 
   return (
     <>
-      <Navbar className="Navbar fixed-bottom" >
+      <Navbar className="Navbar fixed-bottom">
         <div className="container-fluid">
           {/* <Navbar.Collapse id="basic-navbar-nav"> */}
           <Nav className="ma-auto Nav">

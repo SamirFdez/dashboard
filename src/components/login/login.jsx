@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import swal from "sweetalert";
+import Swal from "sweetalert2";
 import { useDispatch } from "react-redux";
 import { updateAuthenticationState } from "../../store/authentication";
 import { useNavigate } from "react-router-dom";
@@ -30,35 +30,63 @@ export const LoginForm = function () {
     setPassword(e.target.value);
   };
 
-  const iniciarSesion = async () => {
+  const noRecargarPagina = (e) => {
+    e.preventDefault();
+  };
+
+  const completeFields = () => {
+    Swal.fire({
+      icon: "info",
+      title: "",
+      text: "Completa todos los campos para continuar",
+    });
+  };
+
+  const loadingUser = () => {
+    Swal.fire({
+      title: "Iniciando Sesión...",
+      didOpen: () => {
+        Swal.showLoading()
+      },
+    });
+  };
+
+  const invalidUser = () => {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "El nombre de usuario y la contraseña no coinciden",
+    });
+    setUsername("");
+    setPassword("");
+  };
+
+  const logIn = async () => {
     try {
       if (username.length === 0 || password.length === 0) {
-        swal("Completa todos los campos para continuar", "", "info");
+        completeFields();
         return;
       }
+
+      loadingUser();
       const response = await axios.get(
         baseUrl + `${loginProc}@Username=${username},@Password=${password}`,
         config
       );
-
       if (response.data[0]) {
         setLogin(response.data[0]);
         navigate("/dashboard");
         sessionStorage.setItem("nombre", response.data[0].Nombre);
         dispatch(updateAuthenticationState(true));
+        Swal.close();
         return;
       }
-
-      swal("El nombre de usuario y la contraseña no coinciden", "", "error");
-      setUsername("");
-      setPassword("");
+      
+      Swal.close();
+      invalidUser();
     } catch (err) {
       console.log(err.message);
     }
-  };
-
-  const noRecargarPagina = (e) => {
-    e.preventDefault();
   };
 
   return (
@@ -71,7 +99,7 @@ export const LoginForm = function () {
         />
         <h1 className="LoginBoxH1"> Iniciar Sesión </h1>
 
-        <form onSubmit={noRecargarPagina} autocomplete="off">
+        <form onSubmit={noRecargarPagina} autoComplete="off">
           <label className="LoginBoxLabel" htmlFor="username">
             Usuario
           </label>
@@ -97,7 +125,7 @@ export const LoginForm = function () {
           />
 
           <input
-            onClick={iniciarSesion}
+            onClick={logIn}
             className="LoginBoxButton"
             type="submit"
             value="Iniciar sesión"
