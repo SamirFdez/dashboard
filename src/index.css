@@ -11,6 +11,7 @@ body {
 }
 
 .App {
+    width: 100vw;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -82,7 +83,8 @@ body {
 
 .textFooter {
     color: gray;
-    font-size: 18px;
+    font-size: 16px;
+    text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -537,6 +539,27 @@ body {
 /*--------------------------------------------------------------
 >>> ajustes de Responsive
 ----------------------------------------------------------------*/
+
+/* footer */
+@media screen and (max-width: 400px) {
+    .textFooter {
+        font-size: 12px !important;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .textFooter {
+        font-size: 14px;
+    }
+}
+
+/* login */
+@media screen and (max-width: 460px) {
+    .LoginBox {
+        width: 21em;
+        height: 25.5em;
+    }
+}
 
 /* cantidad de turnos */
 .cantidadDeTurnos {
