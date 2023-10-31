@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from "react";
 
-export const TiempoReporte = ({operador}) => {
+export const TiempoReporte = ({ operador }) => {
 
 
     const initialTime = operador
@@ -34,6 +34,6 @@ export const TiempoReporte = ({operador}) => {
     }
       
   return (
-    <h4> {formatTime(currentTime)} </h4>
+    <h6> {formatTime(currentTime)} </h6>
   )
 }

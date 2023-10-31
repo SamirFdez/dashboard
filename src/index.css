@@ -129,7 +129,7 @@ body {
     font-weight: bold;
     display: block;
 }
- 
+
 .LoginBoxInput {
     width: 100%;
     margin-bottom: 16px;
@@ -351,7 +351,6 @@ body {
     margin-bottom: 1em;
     width: 12em;
     padding: 6px;
-
 }
 
 .colabadoresOnline .cardRed {
@@ -516,7 +515,7 @@ body {
 }
 
 .normal {
-    border: 0.3em solid gainsboro;
+    border: 0.3em solid rgb(255, 255, 255);
 }
 
 .cardNameOff h5 {
@@ -576,6 +575,63 @@ body {
 }
 
 /*--------------------------------------------------------------
+>>> Operadores Reporte
+----------------------------------------------------------------*/
+
+.estatusOperadores {
+    margin: 0.5em !important;
+}
+
+.estatusOperadores .cardGray {
+    background-color: #6c757c !important;
+    border-radius: 0.50em !important;
+    margin-bottom: 1em;
+    width: 12em;
+    padding: 6px;
+}
+
+.rowReporte {
+    margin-top: 8px;
+    padding: 8px;
+    border-radius: 0.25em;
+    background-color: white !important;
+}
+
+.rowReporte h5 {
+    font-size: 12px !important;
+    font-weight: 500;
+    margin-top: 0px;
+    margin-bottom: 0;
+    color: black;
+}
+
+.rowReporte h6 {
+    font-size: 12px !important;
+    margin-top: 0px;
+    margin-bottom: 0;
+    color: black;
+}
+
+.tipoReporte {
+    text-align: right;
+}
+
+.cantidadReporte {
+    text-align: left;
+}
+
+.rowReporte .row {
+    margin-top: 4px;
+}
+
+.rowEstatusLogin {
+    margin-top: 8px;
+    padding: 8px;
+    border-radius: 0.25em;
+    background-color: white !important;
+}
+
+/*--------------------------------------------------------------
 >>> ajustes de Responsive
 ----------------------------------------------------------------*/
 
@@ -631,15 +687,15 @@ body {
     }
 
     .colabadoresOnline .cardYellow {
-        width: 180px
+        width: 165px
     }
-    
+
     .colabadoresOnline .cardRed {
         width: 165px
     }
-    
+
     .colabadoresOnline .cardGreen {
-        width: 180px
+        width: 165px
     }
 
     .cardImg {
@@ -666,20 +722,13 @@ body {
     }
 }
 
-/* @media only screen and (max-width: 1199px) and (min-width: 992px) {
-    .colabadoresOnline {
-        display: flex !important;
-        justify-content: center !important;
-    }
-} */
-
 /* colaboradores cards Offline */
 @media screen and (min-width: 1599px) {
     .cardNameOff h5 {
         font-size: 15px !important;
 
     }
-    
+
     .cardNameOff h6 {
         font-size: 14px !important;
 
@@ -694,8 +743,48 @@ body {
 
 /* Estatus estaciones Cards */
 @media screen and (max-width: 1199px) {
-    .estacionesCards{
+    .estacionesCards {
         display: flex !important;
         justify-content: center !important;
+    }
+
+    .estacionesCards {
+        margin: 0em !important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .estacionesCards .cardGray {
+        width: 165px
+    }
+
+    .estacionesCards .cardGreen {
+        width: 165px
+    }
+
+    .estacionesCards .cardBlue {
+        width: 165px
+    }
+
+    .estacionesCards .cardGreenSpecial {
+        width: 165px
+    }
+}
+
+/* Estatus operadores Reporte */
+@media screen and (max-width: 1199px) {
+    .estatusOperadores {
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .estatusOperadores {
+        margin: 0em !important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .estatusOperadores .cardGray {
+        width: 165px
     }
 }

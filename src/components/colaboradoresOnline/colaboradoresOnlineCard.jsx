@@ -42,7 +42,7 @@ export const ColaboradoresOnlineCard = ({ operadoresOn, nameDivider, clientesFil
             </div>
           )}
         </div>
-        <div className="d-flex justify-content-between rowEstacionTurno">
+        <div className="d-flex justify-content-around rowEstacionTurno">
           <div className="estacion">
             <h5> {operadoresOn.NumeroEstacion} </h5>
             <h6>Estación de {operadoresOn.DescripcionPantalla}</h6>

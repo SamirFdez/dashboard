@@ -4,7 +4,11 @@ import { TiempoNotificado } from "./tiempoNotificado";
 import { TiempoGlobal } from "./tiempoGlobal";
 import { TiempoUltimoEstatus } from "./tiempoUltimoEstatus";
 
-export const EstacionesCardsCards = ({ estColaboradores, nameDivider, clientesFiltrados}) => {
+export const EstacionesCardsCards = ({
+  estColaboradores,
+  nameDivider,
+  clientesFiltrados,
+}) => {
   return (
     <>
       <Card
@@ -54,12 +58,12 @@ export const EstacionesCardsCards = ({ estColaboradores, nameDivider, clientesFi
           <div className="turno">
             <h5>Turno:</h5>
             <h6>{estColaboradores.Turno}</h6>
-            {estColaboradores.TIEMPO !== "--:--:--" ? (
-              <TiempoUltimoEstatus
-                colaborador={estColaboradores.TiempoUltimoEstatus}
-              />
+            {estColaboradores.TiempoGlobal === "+24 horas" ? (
+              <h6>+24 horas</h6>
             ) : (
-              <h6> --:--:-- </h6>
+              <TiempoGlobal
+                colaborador={estColaboradores.TiempoGlobal}
+              />
             )}
           </div>
         </div>
@@ -69,17 +73,24 @@ export const EstacionesCardsCards = ({ estColaboradores, nameDivider, clientesFi
             <h6>{estColaboradores.EstatusTurno}</h6>
           </div>
         ) : (
-          <div className="d-flex rowEstatus justify-content-between align-items-center">
+          <div className="d-flex rowEstatus justify-content-around align-items-center">
             <h6>{estColaboradores.EstatusTurno}</h6>
-            <TiempoUltimoEstatus
-              colaborador={estColaboradores.TiempoUltimoEstatus}
-            />
+            {estColaboradores.TiempoUltimoEstatus === "+24 horas" ? (
+              <h6>+24 horas</h6>
+            ) : (
+              <TiempoUltimoEstatus
+                colaborador={estColaboradores.TiempoUltimoEstatus}
+              />
+            )}
           </div>
         )}
-
         {clientesFiltrados.length ? (
           <>
             {estColaboradores.NombreCita !== null ? (
+              <div className="d-flex rowPaciente justify-content-center align-items-center">
+                <h6>{estColaboradores.NombreCita}</h6>
+              </div>
+            ) : estColaboradores.NombreCita !== null ? (
               <div className="d-flex rowPaciente justify-content-center align-items-center">
                 <h6>{estColaboradores.NombreCita}</h6>
               </div>
