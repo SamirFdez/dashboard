@@ -86,5 +86,3 @@ export const EstatusOperadoresCard = ({ operadoresReporte, nameDivider }) => {
     </>
   );
 };
-
-// ACCION

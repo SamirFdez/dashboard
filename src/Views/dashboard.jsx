@@ -3,7 +3,7 @@ import { FullDashboard } from "../components/dashboard/fullDashboard";
 
 export const Dashboard = function() {
 
-  const tiempoAleatorio = Math.floor(Math.random() * (60000 - 150000 + 1)) + 30000;
+  const tiempoAleatorio = Math.floor(Math.random() * (90000 - 60000 + 1)) + 60000;
   setTimeout(() => {
     location.reload();
   }, tiempoAleatorio);
