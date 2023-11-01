@@ -37,6 +37,7 @@ export const NavbarMenu = () => {
 
   return (
     <>
+    <div style={{height: "50px"}}></div>
       <Navbar className="Navbar fixed-bottom">
         <div className="container-fluid">
           {/* <Navbar.Collapse id="basic-navbar-nav"> */}

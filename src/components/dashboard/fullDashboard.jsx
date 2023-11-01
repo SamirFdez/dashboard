@@ -9,7 +9,7 @@ import { ColaboradoresOffline } from "../colaboradoresOffline/colaboradoresOffli
 export const FullDashboard = () => {
   return (
     <>
-      <Row style={{ margin: "0px", display: "flex", justifyContent: "center", marginBottom: "50px" }}>
+      <Row style={{ margin: "0px", display: "flex", justifyContent: "center" }}>
         
         <Col xl={3} lg={3} md={12}>
           <CantidadDeTurnos />

@@ -10,8 +10,8 @@ export const Dashboard = function() {
 
   return (   
       <>  
-        <NavbarMenu />
         <FullDashboard/>
+        <NavbarMenu />
       </>
 )
  
