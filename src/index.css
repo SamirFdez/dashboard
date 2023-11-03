@@ -494,11 +494,11 @@ body {
     background-color: #6c757c !important;
     border-radius: 0.50em !important;
     margin-bottom: 1em;
-    padding: 6px;
+    padding: 4px;
 }
 
 .rowImgNameOff {
-    height: 80px;
+    height: 95px;
     padding: 8px;
     border-radius: 0.25em;
 }
@@ -527,9 +527,9 @@ body {
 }
 
 .cardNameOff h6 {
-    font-size: 14px !important;
+    font-size: 12px !important;
     text-align: center;
-    margin-top: 5px;
+    margin-top: 6px;
     margin-bottom: 0;
     color: white;
 }

@@ -27,7 +27,12 @@ export const ColaboradoresOfflineCard = ({ operadoresOff, nameDivider }) => {
             ) : (
               <h5>{`${nameDivider[0]} ${nameDivider[1]} ${nameDivider[2]}`}</h5>
             )}
-            <h6> {operadoresOff.MOTIVO} </h6>
+            <h6>
+              {" "}
+              {operadoresOff.MOTIVO === "Termino de jornada laboral"
+                ? "Fin jornada laboral"
+                : operadoresOff.MOTIVO}
+            </h6>
             <TiempoLogOut operadoresOff={operadoresOff.TIEMPOLOGUSUARIO} />
           </div>
         </div>
