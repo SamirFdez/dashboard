@@ -46,7 +46,7 @@ export const EstatusOperadoresCard = ({ operadoresReporte, nameDivider }) => {
               <h5 className="tipoReporte"> Finalizados </h5>
             </div>
             <div className="col-4">
-              <h5 className="cantidadReporte">{operadoresReporte.ATENDIDOS}</h5>
+              <h5 className="cantidadReporte">{operadoresReporte.FINALIZADO}</h5>
             </div>
           </div>
           <div className="row">
@@ -54,7 +54,7 @@ export const EstatusOperadoresCard = ({ operadoresReporte, nameDivider }) => {
               <h5 className="tipoReporte"> Declinados </h5>
             </div>
             <div className="col-4">
-              <h5 className="cantidadReporte">{operadoresReporte.ATENDIDOS}</h5>
+              <h5 className="cantidadReporte">{operadoresReporte.DECLINADOS}</h5>
             </div>
           </div>
           <div className="row">
@@ -62,7 +62,7 @@ export const EstatusOperadoresCard = ({ operadoresReporte, nameDivider }) => {
               <h5 className="tipoReporte"> Transferidos </h5>
             </div>
             <div className="col-4">
-              <h5 className="cantidadReporte">{operadoresReporte.ATENDIDOS}</h5>
+              <h5 className="cantidadReporte">{operadoresReporte.TRANSFERIDOS}</h5>
             </div>
           </div>
           <div className="row">
@@ -70,7 +70,7 @@ export const EstatusOperadoresCard = ({ operadoresReporte, nameDivider }) => {
               <h5 className="tipoReporte"> En espera </h5>
             </div>
             <div className="col-4">
-              <h5 className="cantidadReporte">{operadoresReporte.ATENDIDOS}</h5>
+              <h5 className="cantidadReporte">{operadoresReporte.ESPERA}</h5>
             </div>
           </div>
         </div>

@@ -35,6 +35,18 @@ export const NavbarMenu = () => {
     });
   };
 
+  const goDashboard = () => {
+    navigate("/dashboard");
+  }
+
+  const goEstaciones = () => {
+    navigate("/estaciones");
+  }
+
+  const goReporte = () => {
+    navigate("/reporte");
+  }
+
   return (
     <>
     <div style={{height: "50px"}}></div>
@@ -42,13 +54,13 @@ export const NavbarMenu = () => {
         <div className="container-fluid">
           {/* <Navbar.Collapse id="basic-navbar-nav"> */}
           <Nav className="ma-auto Nav">
-            <Nav.Link className="navLink me-3" href="/dashboard">
+            <Nav.Link className="navLink me-3" onClick={goDashboard}>
               <SlUser />
             </Nav.Link>
-            <Nav.Link className="navLink mx-3" href="/estaciones">
+            <Nav.Link className="navLink mx-3" onClick={goEstaciones}>
               <SlScreenDesktop />
             </Nav.Link>
-            <Nav.Link className="navLink mx-3" href="/reporte">
+            <Nav.Link className="navLink mx-3" onClick={goReporte}>
               <SlPeople />
             </Nav.Link>
 
