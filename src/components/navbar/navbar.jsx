@@ -37,19 +37,38 @@ export const NavbarMenu = () => {
 
   const goDashboard = () => {
     navigate("/dashboard");
-  }
+  };
 
   const goEstaciones = () => {
     navigate("/estaciones");
-  }
+  };
 
   const goReporte = () => {
     navigate("/reporte");
-  }
+  };
+
+  const goConfiguracion = () => {
+    Swal.fire({
+      icon: "info",
+      // title: "¿Cuál es tu nombre?",
+      text: "Ingrese la clave para continuar a esta sección",
+      input: "password",
+      showCancelButton: true,
+      confirmButtonColor: "#28a745",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Ingresar",
+      cancelButtonText: "Cancelar",    }).then((result) => {
+      if (result.value === "1414") {
+        navigate("/configuracion");
+      } else {
+        navigate("/dashboard");
+      }
+    });
+  };
 
   return (
     <>
-    <div style={{height: "50px"}}></div>
+      <div style={{ height: "50px" }}></div>
       <Navbar className="Navbar fixed-bottom">
         <div className="container-fluid">
           {/* <Navbar.Collapse id="basic-navbar-nav"> */}
@@ -91,7 +110,7 @@ export const NavbarMenu = () => {
           </Navbar.Brand>
 
           <Nav className="ma-auto">
-            <Nav.Link className="navLink mx-3">
+            <Nav.Link className="navLink mx-3" onClick={goConfiguracion}>
               <SlSettings />
             </Nav.Link>
             <Nav.Link className="navLink mx-3" onClick={handleLogOutUser}>
